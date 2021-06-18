@@ -102,9 +102,27 @@ class IAMFacade(AWSBaseFacade):
              self._get_and_set_user_tags,
              self._get_and_set_user_login_profile,
              self._get_and_set_user_access_keys,
-             self._get_and_set_user_mfa_devices],
+             self._get_and_set_user_mfa_devices,
+             self._get_and_set_user_last_activity],
             users)
         return users
+
+    async def _get_and_set_user_last_activity(self, user: {}):
+        client = AWSFacadeUtils.get_client('iam', self.session)
+        try:
+            job_id = await run_concurrently(
+                lambda: client.generate_service_last_accessed_details(Arn=user['Arn'], Granularity='ACTION_LEVEL')["JobId"])
+        except Exception as e:
+            print_exception(f'Failed to generate last accessed details: {e}')
+        try:
+            last_actions = await run_concurrently(
+                lambda: client.get_service_last_accessed_details(JobId=job_id)["ServicesLastAccessed"])
+        except Exception as e:
+            print_exception(f'Failed to get last accessed details: {e}')
+        for report in last_actions:
+            if "LastAuthenticated" in report.keys():
+                user["LastAuthenticated"] = report["LastAuthenticated"]
+                break
 
     async def _get_and_set_user_login_profile(self, user: {}):
         client = AWSFacadeUtils.get_client('iam', self.session)
