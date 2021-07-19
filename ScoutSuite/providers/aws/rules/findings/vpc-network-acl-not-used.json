@@ -3,6 +3,9 @@
     "rationale": "Maintaining unused resources increases risks of misconfigurations and increases the difficulty of audits.",
     "dashboard_name": "Network ACLs",
     "path": "vpc.regions.id.vpcs.id.network_acls.id",
+    "associated_risks": [
+        "Cost optimization"
+    ],
     "conditions": [
         "and",
         [
