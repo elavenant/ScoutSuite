@@ -32,7 +32,7 @@ class ProcessingEngine:
         for finding_path in self._filter_rules(self.rules, cloud_provider.service_list):
             for rule in self.rules[finding_path]:
 
-                if not rule.enabled:  # or rule.service not in []: # TODO: handle this...
+                if not rule.enabled: # or rule.service not in []: # TODO: handle this...
                     continue
 
                 print_debug(f'Processing {rule.service} rule "{rule.description}" ({rule.filename})')
@@ -43,15 +43,37 @@ class ProcessingEngine:
                 cloud_provider.services[service][self.ruleset.rule_type][rule.key] = {}
                 cloud_provider.services[service][self.ruleset.rule_type][rule.key]['description'] = rule.description
                 cloud_provider.services[service][self.ruleset.rule_type][rule.key]['path'] = rule.path
-                for attr in ['level', 'id_suffix', 'class_suffix', 'display_path']:
+
+                for attr in ['level', 'id_suffix', 'class_suffix', 'display_path', 'automated', 'filter', 'associated_risks', 'id']:
                     if hasattr(rule, attr):
                         cloud_provider.services[service][self.ruleset.rule_type][rule.key][attr] = getattr(rule, attr)
+
+                if not rule.automated:
+                    cloud_provider.services[service][self.ruleset.rule_type][rule.key]['checked_items'] = 0
+                    cloud_provider.services[service][self.ruleset.rule_type][rule.key]['flagged_items'] = 0
+                    cloud_provider.services[service][self.ruleset.rule_type][rule.key]['enabled'] = False
+                    cloud_provider.services[service][self.ruleset.rule_type][rule.key]['dashboard_name'] = \
+                        rule.dashboard_name
+                    cloud_provider.services[service][self.ruleset.rule_type][rule.key]['associated_risks'] = \
+                        rule.associated_risks if hasattr(rule, 'associated_risks') else None
+                    cloud_provider.services[service][self.ruleset.rule_type][rule.key]['service'] = rule.service
+                    cloud_provider.services[service][self.ruleset.rule_type][rule.key]['rationale'] = \
+                        rule.rationale if hasattr(rule, 'rationale') else None
+                    cloud_provider.services[service][self.ruleset.rule_type][rule.key]['remediation'] = \
+                        rule.remediation if hasattr(rule, 'remediation') else None
+                    cloud_provider.services[service][self.ruleset.rule_type][rule.key]['compliance'] = \
+                        rule.compliance if hasattr(rule, 'compliance') else None
+                    cloud_provider.services[service][self.ruleset.rule_type][rule.key]['references'] = \
+                        rule.references if hasattr(rule, 'references') else None
+                    continue
+
                 try:
                     setattr(rule, 'checked_items', 0)
                     cloud_provider.services[service][self.ruleset.rule_type][rule.key]['items'] = recurse(
                         cloud_provider.services, cloud_provider.services, path, [], rule, True)
                     if skip_dashboard:
                         continue
+                    cloud_provider.services[service][self.ruleset.rule_type][rule.key]['enabled'] = True
                     cloud_provider.services[service][self.ruleset.rule_type][rule.key]['dashboard_name'] = \
                         rule.dashboard_name
                     cloud_provider.services[service][self.ruleset.rule_type][rule.key]['checked_items'] = \
@@ -59,6 +81,8 @@ class ProcessingEngine:
                     cloud_provider.services[service][self.ruleset.rule_type][rule.key]['flagged_items'] = \
                         len(cloud_provider.services[service][self.ruleset.rule_type][rule.key]['items'])
                     cloud_provider.services[service][self.ruleset.rule_type][rule.key]['service'] = rule.service
+                    cloud_provider.services[service][self.ruleset.rule_type][rule.key]['associated_risks'] = \
+                        rule.associated_risks if hasattr(rule, 'associated_risks') else None
                     cloud_provider.services[service][self.ruleset.rule_type][rule.key]['rationale'] = \
                         rule.rationale if hasattr(rule, 'rationale') else None
                     cloud_provider.services[service][self.ruleset.rule_type][rule.key]['remediation'] = \

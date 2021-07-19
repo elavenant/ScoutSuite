@@ -22,6 +22,9 @@
     "references": [
         "https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html"
     ],
+    "associated_risks": [
+        "Unauthorized access"
+    ],
     "dashboard_name": "Keys",
     "display_path": "kms.regions.id.keys.id",
     "path": "kms.regions.id.keys.id",

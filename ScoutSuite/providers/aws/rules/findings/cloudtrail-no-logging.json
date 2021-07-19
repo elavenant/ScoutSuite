@@ -22,6 +22,9 @@
     "references": [
         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/best-practices-security.html"
     ],
+    "associated_risks": [
+      "Undetected incident"
+    ],
     "dashboard_name": "Configurations",
     "path": "cloudtrail.regions.id.trails.id",
     "conditions": [

@@ -6,6 +6,9 @@
     ],
     "dashboard_name": "Clusters",
     "path": "redshift.regions.id.vpcs.id.clusters.id",
+    "associated_risks": [
+      "Depreciated configuration"
+    ],
     "conditions": [
         "and",
         [

@@ -1,0 +1,14 @@
+{
+    "description": "AWS CloudWatch Events In Use",
+    "rationale": "Ensure that Amazon CloudWatch Events service is in use in order to enable you to react selectively and efficiently to system events that describe changes within your AWS resources. Specifically, with CloudWatch Events service you can create rules that match event patterns and take actions in response to those patterns. AWS CloudWatch Events make use of 3 main components: events, rules and targets. An event indicates a change in your AWS environment, a target processes events and a rule matches any incoming events and routes them to targets for processing. Cloud Conformity Real-Time Threat Monitoring and Analysis (RTMA) works in the same way, i.e. the changes made within your AWS account are streamed into Cloud Conformity system then run them against the rules engine to take actions such as detecting anomalies, sending alert notifications, etc.\nExample of Amazon CloudWatch Events use cases:\nSend alert notifications when someone uses root credentials to sign-in to your AWS account.\nTake a snapshot of an AWS EBS volume on a schedule.\nNotify when there is an Amazon Web Services health notification posted to your account health dashboard.\nInvoke an AWS Lambda function to pass a notification to a Slack channel when a specific event occurs within your AWS account.\nDirect a particular API record from AWS CloudTrail to a Kinesis stream for detailed analysis of potential security risks.\n\nThis rule can help you with the following compliance standards:\n\nNIST 800-53 (Rev. 4)\nThis rule can help you work with the AWS Well-Architected Framework.",
+    "references": [
+      "https://www.cloudconformity.com/knowledge-base/aws/CloudWatchEvents/events-in-use.html"
+    ],
+    "dashboard_name": "Events",
+    "associated_risks": [
+      "Untreated incident"
+    ],
+    "path": "cloudwatch.regions.id",
+    "conditions": [
+    ]
+}

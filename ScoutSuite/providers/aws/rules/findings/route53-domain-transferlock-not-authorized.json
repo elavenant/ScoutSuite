@@ -5,6 +5,9 @@
         "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html"
     ],
     "dashboard_name": "Domains",
+    "associated_risks": [
+        "Resource compromission"
+    ],
     "path": "route53.regions.id.domains.id",
     "conditions": [
         "and",

@@ -1,0 +1,14 @@
+{
+    "description": "App-Tier EC2 Instance Using IAM Roles\n",
+    "rationale": "Ensure that your app-tier EC2 instances are using IAM roles to grant the necessary permissions (following the principle of least privilege) to the applications running on these instances.",
+    "references": [
+        "https://www.cloudconformity.com/knowledge-base/aws/EC2/app-tier-iam-role-for-ec2.html"
+    ],
+  "associated_risks": [
+      "Resource compromission"
+    ],
+    "dashboard_name": "Instances",
+    "path": "ec2.regions.id.vpcs.id.instances.id",
+    "conditions": [
+    ]
+}

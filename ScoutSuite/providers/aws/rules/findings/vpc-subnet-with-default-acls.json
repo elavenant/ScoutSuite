@@ -11,6 +11,9 @@
             ""
         ]
     ],
+    "associated_risks": [
+        "Resource exposed"
+    ],
     "key": "vpc-subnet-with-default-_ARG_0_-acls",
     "arg_names": [
         "Direction of traffic (ingress or egress)",

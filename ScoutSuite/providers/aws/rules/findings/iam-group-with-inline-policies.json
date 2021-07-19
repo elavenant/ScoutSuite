@@ -7,6 +7,9 @@
     ],
     "dashboard_name": "Groups",
     "path": "iam.groups.id",
+    "associated_risks": [
+      "Maintenance difficulty"
+    ],
     "conditions": [
         "and",
         [

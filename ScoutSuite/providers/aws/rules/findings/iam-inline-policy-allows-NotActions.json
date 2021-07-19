@@ -1,10 +1,14 @@
 {
     "description": "Inline _ARG_0_ Policy Allows \"NotActions\"",
-    "rationale": "The combination of \"effect = allow\" and \"NotAction\" results in the policy allowing every action except those listed in the statement. The target policy does not follow the principle of least privilege because thousands of actions exist in AWS and because this policy automatically authorizes users to perform new actions created, regardless of their nature.",
+    "rationale": "The combination of \"effect = allow\" and \"NotAction\" results in the policy allowing every action except those listed in the statement. The target policy does not follow the principle of least privilege because thousands of actions exist in AWS and because this policy automatically authorizes users to perform new actions created, regardless of their nature.From the security perspective, blacklisting to some degree (allowing everything with some exceptions) does not follow best practices and in case of IAM policies does not comply with the principle of least privilege (i.e. providing the minimal set of actions required to perform successfully the desired task(s)).",
     "references": [
         "https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html",
         "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_notaction.html",
         "https://aws.amazon.com/blogs/security/back-to-school-understanding-the-iam-policy-grammar/"
+    ],
+    "associated_risks": [
+      "Privilege escalation",
+       "Maintenance difficulty"
     ],
     "dashboard_name": "Statements",
     "display_path": "iam._ARG_0_s.id",

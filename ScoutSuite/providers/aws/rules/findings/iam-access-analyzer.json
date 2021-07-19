@@ -1,0 +1,14 @@
+{
+    "description": "Ensure IAM Access Analyzer is enabled",
+    "rationale": "Access Analyzer allows to keep track of access.",
+    "automated": false,
+    "dashboard_name": "General",
+    "path": "iam",
+    "conditions": [
+    ],
+    "arg_names": [
+    ],
+    "associated_risks": [
+      "Deprecated configuration"
+    ]
+}

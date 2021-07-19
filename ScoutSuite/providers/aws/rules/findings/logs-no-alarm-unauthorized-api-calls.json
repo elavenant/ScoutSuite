@@ -2,6 +2,9 @@
     "description": "No CloudWatch Alarm for \"Unauthorized API Calls\"",
     "rationale": "There was no CloudWatch alarm for unauthorized API calls. Monitoring for unauthorized API calls helps reveal application errors and detect malicious activity.",
     "remediation": "Enable a CloudWatch alarm to monitor unauthorized API calls.",
+    "associated_risks": [
+      "Untraceable incident"
+    ],
     "compliance": [
         {
             "name": "CIS Amazon Web Services Foundations",

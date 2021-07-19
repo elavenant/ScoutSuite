@@ -370,7 +370,22 @@ class ScoutSuiteArgumentParser:
                             dest="host_port",
                             type=int,
                             default=8000,
-                            help="[EXPERIMENTAL FEATURE] Port on which you want the server to listen. Defaults to 8000.")
+                            help="[EXPERIMENTAL FEATURE] Port on which you want the server to listen. Defaults to 8000."),
+        parser.add_argument('--input', '-i',
+                            dest="file_input",
+                            type=str,
+                            default=None,
+                            help="Name of the json report"),
+        parser.add_argument('--output', '-o',
+                            dest="file_output",
+                            type=str,
+                            default="default.xlsm",
+                            help="Name of the excel file to generate"),
+        parser.add_argument('--excel',
+                            dest="excel",
+                            action='store_true',
+                            default=False,
+                            help="Run excel generation process")
 
     def parse_args(self, args=None):
         args = self.parser.parse_args(args)

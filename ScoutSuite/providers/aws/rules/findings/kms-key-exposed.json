@@ -1,0 +1,17 @@
+{
+    "description": "Key Exposed",
+    "rationale": "Identify any publicly accessible AWS Key Management Service master keys and update their access policy in order to stop any unsigned requests made to these resources.",
+    "remediation": "Change the policy of the concerned key to prevent access from everyone",
+    "references": [
+        "https://www.cloudconformity.com/knowledge-base/aws/KMS/key-exposed.html"
+    ],
+    "associated_risks": [
+        "Resource exposed",
+      "Resource compromission"
+    ],
+    "dashboard_name": "Keys",
+    "display_path": "kms.regions.id.keys.id",
+    "path": "kms.regions.id.keys.id.policies.id",
+    "conditions": [
+    ]
+}

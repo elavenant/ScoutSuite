@@ -4,6 +4,9 @@
     "references": [
         "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-lock.html"
     ],
+    "associated_risks": [
+        "Resource compromission"
+    ],
     "dashboard_name": "Domains",
     "path": "route53.regions.id.domains.id",
     "conditions": [

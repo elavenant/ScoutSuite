@@ -4,6 +4,9 @@
     "references": [
         "https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/access-log-collection.html"
     ],
+    "associated_risks": [
+      "Untraceable accident"
+    ],
     "dashboard_name": "Load Balancers",
     "path": "elb.regions.id.vpcs.id.elbs.id",
     "conditions": [

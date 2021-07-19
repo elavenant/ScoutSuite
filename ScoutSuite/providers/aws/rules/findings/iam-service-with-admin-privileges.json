@@ -1,0 +1,13 @@
+{
+    "description": "Ensure that only people (not service) are granted admin privileges",
+    "rationale": "This could be tolerated in specific context, for example for a bastion.",
+    "dashboard_name": "Users",
+    "path": "iam.users.id",
+    "conditions": [
+    ],
+    "associated_risks": [
+        "Unauthorized access"
+    ],
+    "arg_names": [
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "description": "Instance Deletion Protection",
+    "rationale": "Ensure that your Amazon Relational Database Service (RDS) instances have Deletion Protection feature enabled in order to protect them from being accidentally deleted.",
+    "references": [
+        "https://www.cloudconformity.com/knowledge-base/aws/RDS/instance-deletion-protection.html"
+    ],
+    "associated_risks": [
+      "Data loss"
+    ],
+    "dashboard_name": "Instances",
+    "display_path": "rds.regions.id.vpcs.id.instances.id",
+    "path": "rds.regions.id.vpcs.id.instances.id",
+    "conditions": [
+    ]
+}

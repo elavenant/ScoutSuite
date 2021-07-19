@@ -18,6 +18,7 @@ from ScoutSuite.output.html import ScoutReport
 from ScoutSuite.output.utils import get_filename
 from ScoutSuite.providers import get_provider
 from ScoutSuite.providers.base.authentication_strategy_factory import get_authentication_strategy
+from ScoutSuite.output.dashboard_scripts.export_excel import Excel
 
 
 def run_from_cli():
@@ -31,50 +32,55 @@ def run_from_cli():
     #  (e.g. aws_profile, azure_user_account)
 
     try:
-        return run(provider=args.get('provider'),
-                   # AWS
-                   profile=args.get('profile'),
-                   aws_access_key_id=args.get('aws_access_key_id'),
-                   aws_secret_access_key=args.get('aws_secret_access_key'),
-                   aws_session_token=args.get('aws_session_token'),
-                   # Azure
-                   cli=args.get('cli'),
-                   user_account=args.get('user_account'),
-                   user_account_browser=args.get('user_account_browser'),
-                   service_account=args.get('service_account'),
-                   msi=args.get('msi'),
-                   service_principal=args.get('service_principal'), file_auth=args.get('file_auth'),
-                   client_id=args.get('client_id'), client_secret=args.get('client_secret'),
-                   username=args.get('username'), password=args.get('password'),
-                   tenant_id=args.get('tenant_id'),
-                   subscription_ids=args.get('subscription_ids'), all_subscriptions=args.get('all_subscriptions'),
-                   # GCP
-                   project_id=args.get('project_id'), folder_id=args.get('folder_id'),
-                   organization_id=args.get('organization_id'), all_projects=args.get('all_projects'),
-                   # Aliyun
-                   access_key_id=args.get('access_key_id'), access_key_secret=args.get('access_key_secret'),
-                   # General
-                   report_name=args.get('report_name'), report_dir=args.get('report_dir'),
-                   timestamp=args.get('timestamp'),
-                   services=args.get('services'), skipped_services=args.get('skipped_services'),
-                   list_services=args.get('list_services'),
-                   result_format=args.get('result_format'),
-                   database_name=args.get('database_name'),
-                   host_ip=args.get('host_ip'),
-                   host_port=args.get('host_port'),
-                   max_workers=args.get('max_workers'),
-                   regions=args.get('regions'),
-                   excluded_regions=args.get('excluded_regions'),
-                   fetch_local=args.get('fetch_local'), update=args.get('update'),
-                   max_rate=args.get('max_rate'),
-                   ip_ranges=args.get('ip_ranges'), ip_ranges_name_key=args.get('ip_ranges_name_key'),
-                   ruleset=args.get('ruleset'), exceptions=args.get('exceptions'),
-                   force_write=args.get('force_write'),
-                   debug=args.get('debug'),
-                   quiet=args.get('quiet'),
-                   log_file=args.get('log_file'),
-                   no_browser=args.get('no_browser'),
-                   programmatic_execution=False)
+        return run(
+            provider=args.get('provider'),
+            # AWS
+            profile=args.get('profile'),
+            aws_access_key_id=args.get('aws_access_key_id'),
+            aws_secret_access_key=args.get('aws_secret_access_key'),
+            aws_session_token=args.get('aws_session_token'),
+            # Azure
+            cli=args.get('cli'),
+            user_account=args.get('user_account'),
+            user_account_browser=args.get('user_account_browser'),
+            service_account=args.get('service_account'),
+            msi=args.get('msi'),
+            service_principal=args.get('service_principal'), file_auth=args.get('file_auth'),
+            client_id=args.get('client_id'), client_secret=args.get('client_secret'),
+            username=args.get('username'), password=args.get('password'),
+            tenant_id=args.get('tenant_id'),
+            subscription_ids=args.get('subscription_ids'), all_subscriptions=args.get('all_subscriptions'),
+            # GCP
+            project_id=args.get('project_id'), folder_id=args.get('folder_id'),
+            organization_id=args.get('organization_id'), all_projects=args.get('all_projects'),
+            # Aliyun
+            access_key_id=args.get('access_key_id'), access_key_secret=args.get('access_key_secret'),
+            # General
+            report_name=args.get('report_name'), report_dir=args.get('report_dir'),
+            timestamp=args.get('timestamp'),
+            services=args.get('services'), skipped_services=args.get('skipped_services'),
+            list_services=args.get('list_services'),
+            result_format=args.get('result_format'),
+            database_name=args.get('database_name'),
+            file_input=args.get('file_input'),
+            file_output=args.get('file_output'),
+            excel=args.get('excel'),
+            host_ip = args.get('host_ip'),
+            host_port = args.get('host_port'),
+            max_workers = args.get('max_workers'),
+            regions = args.get('regions'),
+            excluded_regions = args.get('excluded_regions'),
+            fetch_local = args.get('fetch_local'), update = args.get('update'),
+            max_rate = args.get('max_rate'),
+            ip_ranges = args.get('ip_ranges'), ip_ranges_name_key = args.get('ip_ranges_name_key'),
+            ruleset = args.get('ruleset'), exceptions = args.get('exceptions'),
+            force_write = args.get('force_write'),
+            debug = args.get('debug'),
+            quiet = args.get('quiet'),
+            log_file = args.get('log_file'),
+            no_browser = args.get('no_browser'),
+            programmatic_execution = False)
+
     except (KeyboardInterrupt, SystemExit):
         print_info('Exiting')
         return 130
@@ -103,7 +109,7 @@ def run(provider,
         report_name=None, report_dir=None,
         timestamp=False,
         services=[], skipped_services=[], list_services=None,
-        result_format='json',
+        result_format='json', file_input=None, file_output="default.xlsm", excel=False,
         database_name=None, host_ip='127.0.0.1', host_port=8000,
         max_workers=10,
         regions=[],
@@ -156,7 +162,7 @@ async def _run(provider,
                timestamp,
                services, skipped_services, list_services,
                result_format,
-               database_name, host_ip, host_port,
+               database_name, file_input, file_output, excel, host_ip, host_port,
                regions,
                excluded_regions,
                fetch_local, update,
@@ -177,6 +183,13 @@ async def _run(provider,
     set_logger_configuration(debug, quiet, log_file)
 
     print_info('Launching Scout')
+
+    # If this command, run and exit
+    if excel:
+        print_info('Generating excel report')
+        excel = Excel(provider, services, file_input, file_output)
+        excel.generate()
+        return 0
 
     print_info('Authenticating to cloud provider')
     auth_strategy = get_authentication_strategy(provider)

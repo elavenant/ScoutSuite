@@ -19,6 +19,10 @@
             "reference": "1.16"
         }
     ],
+    "associated_risks": [
+        "Unauthorized access",
+        "Maintenance difficulty"
+    ],
     "dashboard_name": "Users",
     "path": "iam.users.id",
     "conditions": [

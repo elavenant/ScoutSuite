@@ -4,6 +4,10 @@
     "dashboard_name": "Security Groups",
     "display_path": "redshift.regions.id.vpcs.id.security_groups.id",
     "path": "redshift.regions.id.vpcs.id.security_groups.id.IPRanges.id.CIDRIP",
+    "associated_risks": [
+      "Data leakage",
+        "Resource exposition"
+    ],
     "conditions": [
         "and",
         [

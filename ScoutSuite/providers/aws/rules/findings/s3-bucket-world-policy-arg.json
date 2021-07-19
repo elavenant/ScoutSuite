@@ -4,6 +4,9 @@
     "dashboard_name": "Bucket Policy Statements",
     "display_path": "s3.buckets.id",
     "path": "s3.buckets.id.policy.Statement.id",
+    "associated_risks": [
+        "Data leakage"
+    ],
     "conditions": [
         "and",
         [

@@ -5,6 +5,9 @@
         "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html"
     ],
     "dashboard_name": "Alarms",
+    "associated_risks": [
+      "Untreated incident"
+    ],
     "path": "cloudwatch.regions.id.alarms.id",
     "conditions": [
         "and",

@@ -2,6 +2,9 @@
     "description": "No CloudWatch Alarm for \"CloudTrail Configuration Changes\"",
     "rationale": "There was no CloudWatch alarm to monitor CloudTrail configuration changes. Monitoring for CloudTrail policy changes will help ensure sustained visibility to activities performed in the AWS account.",
     "remediation": "Enable a CloudWatch alarm to monitor CloudTrail configuration changes.",
+    "associated_risks": [
+      "Untraceable incident"
+    ],
     "compliance": [
         {
             "name": "CIS Amazon Web Services Foundations",

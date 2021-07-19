@@ -4,6 +4,9 @@
     "dashboard_name": "Statements",
     "display_path": "ses.regions.id.identities.id",
     "path": "ses.regions.id.identities.id.policies.id.Statement.id",
+    "associated_risks": [
+        "Unauthorized access"
+    ],
     "conditions": [
         "and",
         [

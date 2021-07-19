@@ -4,6 +4,9 @@
     "references": [
         "https://aws.amazon.com/rds/features/multi-az/"
     ],
+    "associated_risks": [
+      "Resource availability"
+    ],
     "dashboard_name": "Instances",
     "path": "rds.regions.id.vpcs.id.instances.id",
     "conditions": [

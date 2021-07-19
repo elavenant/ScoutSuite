@@ -24,6 +24,10 @@
             "Active"
         ]
     ],
+    "associated_risks": [
+        "Unauthorized access",
+        "Maintenance difficulty"
+    ],
     "keys": [
         "iam.users.id.name",
         "iam.users.id.AccessKeys"

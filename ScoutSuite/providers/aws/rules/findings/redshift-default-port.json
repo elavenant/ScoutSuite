@@ -1,0 +1,15 @@
+{
+    "description": "Cluster default port",
+    "rationale": "Ensure that your AWS Redshift database clusters are not using their default endpoint port (i.e. 5439) in order to promote port obfuscation as an additional layer of defense against non-targeted attacks.\nChanging the default port number for Redshift database clusters represents a basic security measure and does not completely secure the clusters from port scanning and network attacks. To implement advanced Redshift database security, you should look into security measures such as restricting public access, controlling clusters access through security groups and Network Access Control Lists (NACLs) and encrypting the client connections to the database clusters using SSL.",
+    "references": [
+        "https://www.cloudconformity.com/knowledge-base/aws/Redshift/default-port.html"
+    ],
+    "associated_risks": [
+      "Resources compromission",
+        "Data leakage"
+    ],
+    "dashboard_name": "Clusters",
+    "path": "redshift.regions.id.vpcs.id.clusters.id",
+    "conditions": [
+    ]
+}

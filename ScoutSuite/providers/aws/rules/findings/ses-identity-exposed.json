@@ -1,0 +1,15 @@
+{
+    "description": "Exposed SES Identities\n",
+    "rationale": "Identify any exposed Amazon Simple Email Service (SES) identities and update their sending authorization policy in order to stop unauthorized users from sending emails from domains or addresses owned by your AWS SES account.",
+    "dashboard_name": "Identities",
+  "references": [
+    "https://www.cloudconformity.com/knowledge-base/aws/SES/identity-exposed.html"
+  ],
+    "display_path": "ses.regions.id.identities.id",
+    "path": "ses.regions.id.identities.id",
+    "associated_risks": [
+        "Resource exposition"
+    ],
+    "conditions": [
+    ]
+}

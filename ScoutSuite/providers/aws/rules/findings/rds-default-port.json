@@ -1,0 +1,16 @@
+{
+    "description": "RDS Default Port",
+    "rationale": "Ensure that your Amazon RDS databases instances are not using their default endpoint ports (i.e. MySQL/Aurora port 3306, SQL Server port 1433, PostgreSQL port 5432, etc) in order to promote port obfuscation as an additional layer of defense against non-targeted attacks.",
+    "references": [
+        "https://www.cloudconformity.com/knowledge-base/aws/RDS/rds-default-port.html"
+    ],
+    "associated_risks": [
+      "Resource compromission",
+        "Resource exposition"
+    ],
+    "dashboard_name": "Instances",
+    "display_path": "rds.regions.id.vpcs.id.instances.id",
+    "path": "rds.regions.id.vpcs.id.instances.id",
+    "conditions": [
+    ]
+}

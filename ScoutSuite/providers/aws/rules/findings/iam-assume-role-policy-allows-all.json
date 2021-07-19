@@ -7,6 +7,9 @@
     "dashboard_name": "Roles",
     "display_path": "iam.roles.id",
     "path": "iam.roles.id.assume_role_policy.PolicyDocument.Statement.id",
+    "associated_risks": [
+      "Privilege escalation"
+    ],
     "conditions": [
         "and",
         [

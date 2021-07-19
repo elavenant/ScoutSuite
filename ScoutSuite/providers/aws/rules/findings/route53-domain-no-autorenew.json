@@ -6,6 +6,9 @@
     ],
     "dashboard_name": "Domains",
     "path": "route53.regions.id.domains.id",
+    "associated_risks": [
+        "Resource availability"
+    ],
     "conditions": [
         "and",
         [

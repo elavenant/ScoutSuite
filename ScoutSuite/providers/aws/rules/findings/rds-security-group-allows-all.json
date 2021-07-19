@@ -4,6 +4,10 @@
     "dashboard_name": "Security Groups",
     "display_path": "rds.regions.id.vpcs.id.security_groups.id",
     "path": "rds.regions.id.vpcs.id.security_groups.id.ip_ranges",
+    "associated_risks": [
+      "Data leakage",
+        "Resource compromission"
+    ],
     "conditions": [
         "and",
         [

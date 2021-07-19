@@ -4,6 +4,9 @@
     "references": [
         "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL-certificate-rotation.html"
     ],
+    "associated_risks": [
+      "Data leakage"
+    ],
     "dashboard_name": "Instances",
     "path": "rds.regions.id.vpcs.id.instances.id",
     "conditions": [

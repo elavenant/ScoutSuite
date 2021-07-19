@@ -4,6 +4,9 @@
     "references": [
         "https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html"
     ],
+    "associated_risks": [
+      "Privilege escalation"
+    ],
     "dashboard_name": "Statements",
     "display_path": "iam._ARG_0_s.id",
     "path": "iam._ARG_0_s.id.inline_policies.id.PolicyDocument.Statement.id",

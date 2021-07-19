@@ -14,6 +14,10 @@
             "reference": "1.13"
         }
     ],
+    "associated_risks": [
+      "Resource compromission",
+        "Unauthorized access"
+    ],
     "references": [
         "https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-cis-controls.html#securityhub-cis-controls-1.13"
     ],

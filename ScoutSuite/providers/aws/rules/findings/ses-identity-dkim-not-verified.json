@@ -6,6 +6,9 @@
     ],
     "dashboard_name": "Identities",
     "path": "ses.regions.id.identities.id",
+    "associated_risks": [
+        "Resource exposition"
+    ],
     "conditions": [
         "and",
         [

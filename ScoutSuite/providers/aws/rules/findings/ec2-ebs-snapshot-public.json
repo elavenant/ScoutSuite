@@ -4,6 +4,9 @@
     "references": [
         "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html"
     ],
+    "associated_risks": [
+      "Data leakage"
+    ],
     "dashboard_name": "Snapshots",
     "path": "ec2.regions.id.snapshots.id",
     "conditions": [

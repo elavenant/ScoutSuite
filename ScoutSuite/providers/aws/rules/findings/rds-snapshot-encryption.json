@@ -1,0 +1,15 @@
+{
+    "description": "Enable RDS Snapshot Encryption",
+    "rationale": "Ensure that your Amazon Relational Database Service (RDS) snapshots are encrypted in order to achieve compliance for data-at-rest encryption within your organization. The RDS snapshot encryption and decryption process is handled transparently and does not require any additional action from you or your application. The keys used for AWS RDS database snapshot encryption can be entirely managed and protected by the Amazon Web Services key management infrastructure or fully managed by the AWS customer through Customer Master Keys (CMKs).",
+    "references": [
+        "https://www.cloudconformity.com/knowledge-base/aws/RDS/snapshot-encrypted.html"
+    ],
+    "associated_risks": [
+      "Data leakage"
+    ],
+    "dashboard_name": "Snapshots",
+    "display_path": "rds.regions.id.vpcs.id.snapshots.id",
+    "path": "rds.regions.id.vpcs.id.snapshots.id",
+    "conditions": [
+    ]
+}

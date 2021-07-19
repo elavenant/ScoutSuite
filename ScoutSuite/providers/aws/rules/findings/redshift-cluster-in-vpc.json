@@ -1,0 +1,15 @@
+{
+    "description": "Redshift Cluster In VPC",
+    "rationale": "Ensure that your Redshift clusters are provisioned within the AWS EC2-VPC platform instead of EC2-Classic platform (outdated) for better flexibility and control over clusters security, traffic routing, availability and more",
+    "references": [
+        "https://www.cloudconformity.com/knowledge-base/aws/Redshift/redshift-cluster-in-vpc.html"
+    ],
+    "dashboard_name": "Clusters",
+    "path": "redshift.regions.id.vpcs.id.clusters.id",
+  "associated_risks": [
+      "Resources performance",
+    "Data leakage"
+    ],
+    "conditions": [
+    ]
+}

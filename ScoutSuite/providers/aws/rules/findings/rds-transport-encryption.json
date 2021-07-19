@@ -1,0 +1,15 @@
+{
+    "description": "Enable AWS RDS Transport Encryption",
+    "rationale": "Ensure that all RDS databases instances provisioned within your AWS account are using the latest generation of instance classes in order to get the best performance with lower costs. Using the latest generation of RDS database instances instead of the previous generation instances has tangible benefits such as better hardware performance (more computing capacity and faster CPUs, memory optimization and higher network throughput), better support for latest DB engines versions (e.g. MySQL 5.7) and lower costs for memory and storage. Ensure that Microsoft SQL Server and PostgreSQL instances provisioned with Amazon RDS have Transport Encryption feature enabled in order to meet security and compliance requirements. Transport Encryption is the AWS RDS feature that forces all connections to your SQL Server and PostgreSQL database instances to use SSL. Once enabled, the data transport encryption and decryption is handled transparently and does not require any additional action from you or your application.",
+    "references": [
+        "https://www.cloudconformity.com/knowledge-base/aws/RDS/transport-encryption.html"
+    ],
+    "associated_risks": [
+      "Data leakage"
+    ],
+    "dashboard_name": "Instances",
+    "display_path": "rds.regions.id.vpcs.id.instances.id",
+    "path": "rds.regions.id.vpcs.id.instances.id",
+    "conditions": [
+    ]
+}

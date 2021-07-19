@@ -2,6 +2,9 @@
     "description": "No CloudWatch Alarm for \"Console Logins without MFA\"",
     "rationale": "There was no CloudWatch alarm for console log ins without MFA. Monitoring for console log ins without MFA will provide visibility into the use of accounts not protected by Multi Factor Authentication (MFA).",
     "remediation": "Enable a CloudWatch alarm to monitor console log ins without MFA.",
+    "associated_risks": [
+      "Untraceable incident"
+    ],
     "compliance": [
         {
             "name": "CIS Amazon Web Services Foundations",

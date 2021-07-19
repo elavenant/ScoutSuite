@@ -10,6 +10,7 @@ class AmazonMachineImages(AWSResources):
     async def fetch_all(self):
         raw_images = await self.facade.ec2.get_images(self.region)
         for raw_image in raw_images:
+            print("raw_image :",  raw_image)
             name, resource = self._parse_image(raw_image)
             self[name] = resource
 

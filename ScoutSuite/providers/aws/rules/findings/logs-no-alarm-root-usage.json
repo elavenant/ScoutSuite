@@ -2,6 +2,9 @@
     "description": "No CloudWatch Alarm for \"Root Account Usage\"",
     "rationale": "There was no CloudWatch alarm for the usage of the root account. Monitoring for root account log ins will provide visibility into the use of a fully privileged account.",
     "remediation": "Enable a CloudWatch alarm to monitor the usage of the root account.",
+    "associated_risks": [
+      "Untraceable incident"
+    ],
     "compliance": [
         {
             "name": "CIS Amazon Web Services Foundations",

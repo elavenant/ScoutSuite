@@ -140,7 +140,7 @@
             "resources": {
                 "connections": {
                     "cols": 2,
-                    "path": "services.directconnect.connections"
+                    "path": "services.directconnect.regions.id.connections"
                 }
             }
         }
@@ -542,7 +542,7 @@
             "hidden": true,
             "resources": {
                 "file_systems": {
-                    "path": "services.efs.regions.id.file_systems",
+                    "path": "services.efs.regions.id.filesystems",
                     "callbacks": [
                         [ "match_security_groups_and_resources_callback", {"status_path": ["LifeCycleState"], "sg_list_attribute_name": ["security_groups"]} ]
                     ]

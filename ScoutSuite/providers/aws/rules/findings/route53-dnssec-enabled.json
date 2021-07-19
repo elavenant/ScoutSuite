@@ -1,0 +1,14 @@
+{
+    "description": "Enable DNSSEC Signing for Route 53 Hosted Zones",
+    "rationale": "Domain Name System Security Extensions (DNSSEC) represents a set of protocols that adds a layer of security to the Domain Name System (DNS) lookup and exchange processes by enabling DNS responses to be validated. Having a trustworthy Domain Name System (DNS) that translates a domain name into its associated IP address is extremely important for web security nowadays. Attackers can hijack the process of domain/IP lookup and redirect users to malicious web content through DNS hijacking and Man-In-The-Middle (MITM) attacks. DNSSEC security feature helps mitigate the risk of such attacks by encrypting signing DNS records. As a result, it prevents attackers from issuing fake DNS responses that may misdirect web clients to fake, fraudulent, or scam websites. When you enable DNSSEC signing on a public hosted zone, Route 53 cryptographically signs each DNS record in that hosted zone. Amazon Route 53 manages the Zone Signing Key (ZSK), and you can manage the Key Signing Key (KSK) in AWS Key Management Service (KMS).",
+    "references": [
+        "https://www.cloudconformity.com/knowledge-base/aws/Route53/enable-dnssec-signing.html"
+    ],
+    "dashboard_name": "Domains",
+    "path": "route53.regions.id",
+  "associated_risks": [
+        "Resource compromission"
+    ],
+    "conditions": [
+    ]
+}

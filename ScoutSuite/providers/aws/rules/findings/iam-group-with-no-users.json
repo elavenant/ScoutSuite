@@ -4,8 +4,11 @@
     "references": [
         "https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#use-groups-for-permissions"
     ],
-    "dashboard_name": "groups",
+    "dashboard_name": "Groups",
     "path": "iam.groups.id",
+    "associated_risks": [
+      "Maintenance difficulty"
+    ],
     "conditions": [
         "and",
         [

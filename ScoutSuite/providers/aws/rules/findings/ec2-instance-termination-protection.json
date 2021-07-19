@@ -1,0 +1,16 @@
+{
+    "description": "EC2 Instance Termination Protection",
+    "rationale": "Ensure that the EC2 instances provisioned outside of the AWS Auto Scaling Groups (ASGs) have Termination Protection safety feature enabled in order to protect your instances from being accidentally terminated.",
+    "dashboard_name": "Instances",
+    "path": "ec2.regions.id.vpcs.id.instances.id",
+    "references": [
+        "https://www.cloudconformity.com/knowledge-base/aws/EC2/ec2-instance-termination-protection.html"
+    ],
+    "associated_risks": [
+      "Resource reliability"
+    ],
+    "conditions": [
+    ],
+    "arg_names": [
+    ]
+}

@@ -6,6 +6,9 @@
     ],
     "dashboard_name": "Statements",
     "display_path": "iam.policies.id",
+    "associated_risks": [
+      "Privilege escalation"
+    ],
     "path": "iam.policies.id.PolicyDocument.Statement.id",
     "conditions": [
         "and",

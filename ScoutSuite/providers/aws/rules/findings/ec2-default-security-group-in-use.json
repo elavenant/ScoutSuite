@@ -22,6 +22,9 @@
     "references": [
         "https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-cis-controls.html#securityhub-cis-controls-4.3"
     ],
+    "associated_risks": [
+      "Resource compromission"
+    ],
     "dashboard_name": "Security groups",
     "path": "ec2.regions.id.vpcs.id.security_groups.id",
     "conditions": [

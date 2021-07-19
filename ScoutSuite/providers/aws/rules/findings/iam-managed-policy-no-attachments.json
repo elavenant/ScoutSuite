@@ -6,6 +6,10 @@
     ],
     "dashboard_name": "Policies",
     "display_path": "iam.policies.id",
+    "associated_risks": [
+      "Privilege escalation",
+       "Maintenance difficulty"
+    ],
     "path": "iam.policies.id",
     "conditions": [
         "and",

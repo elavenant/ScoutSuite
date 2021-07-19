@@ -4,6 +4,9 @@
     "references": [
         "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html"
     ],
+    "associated_risks": [
+      "Resource exposition"
+    ],
     "dashboard_name": "Network interfaces",
     "display_path": "ec2.regions.id.vpcs.id.instances.id",
     "path": "ec2.regions.id.vpcs.id.instances.id.network_interfaces.id",

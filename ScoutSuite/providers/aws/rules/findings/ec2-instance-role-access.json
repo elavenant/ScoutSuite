@@ -1,0 +1,16 @@
+{
+    "description": "EC2 Instance Using IAM Roles",
+    "rationale": "Use IAM Roles/Instance Profiles instead of IAM Access Keys to appropriately grant access permissions to any application that perform AWS API requests running on your EC2 instances. With IAM roles you can avoid sharing long-term credentials and protect your instances against unauthorized access.",
+    "dashboard_name": "Instances",
+    "path": "ec2.regions.id.vpcs.id.instances.id",
+    "references": [
+        "https://www.cloudconformity.com/knowledge-base/aws/EC2/ec2-instance-using-iam-roles.html"
+    ],
+    "associated_risks": [
+      "privilege escalation"
+    ],
+    "conditions": [
+    ],
+    "arg_names": [
+    ]
+}

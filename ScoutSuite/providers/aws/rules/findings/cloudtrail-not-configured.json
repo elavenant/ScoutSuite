@@ -6,6 +6,9 @@
     ],
     "dashboard_name": "Regions",
     "path": "cloudtrail.regions.id",
+    "associated_risks": [
+      "Undetected incident"
+    ],
     "conditions": [
         "and",
         [

@@ -20,5 +20,8 @@
             ""
         ]
     ],
+    "associated_risks": [
+      "Maintenance difficulty"
+    ],
     "id_suffix": "inline_policies"
 }

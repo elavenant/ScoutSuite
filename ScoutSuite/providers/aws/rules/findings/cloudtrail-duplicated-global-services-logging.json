@@ -6,6 +6,9 @@
     ],
     "dashboard_name": "Configurations",
     "path": "cloudtrail.regions.id.trails.id",
+    "associated_risks": [
+      "Extensive costs"
+    ],
     "conditions": [
         "and",
         [

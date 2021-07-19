@@ -6,6 +6,9 @@
     ],
     "dashboard_name": "Instances",
     "path": "rds.regions.id.vpcs.id.instances.id",
+    "associated_risks": [
+      "Data loss"
+    ],
     "conditions": [
         "and",
         [

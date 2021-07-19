@@ -2,6 +2,9 @@
     "description": "No CloudWatch Alarm for \"Network Access Control Lists Changes\"",
     "rationale": "There was no CloudWatch alarm to detect changes to NACL. Monitoring for NACL changes will help ensure that no service or resource is unintentionally exposed.",
     "remediation": "Enable a CloudWatch alarm to detect NACL changes.",
+    "associated_risks": [
+      "Untraceable incident"
+    ],
     "compliance": [
         {
             "name": "CIS Amazon Web Services Foundations",

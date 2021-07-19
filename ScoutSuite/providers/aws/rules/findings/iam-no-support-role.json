@@ -2,6 +2,9 @@
     "description": "No Authorized User to Manage Incidents with AWS Support",
     "rationale": "The <samp>arn:aws:iam::aws:policy/AWSSupportAccess</samp> AWS Managed Policy was not found to be attached to any principal. There should be at least one user authorized to manage incidents with AWS Support.",
     "remediation": "Attach the AWSSupportAccess to a role or group",
+    "associated_risks": [
+      "Architecture inconsistent"
+    ],
     "compliance": [
         {
             "name": "CIS Amazon Web Services Foundations",

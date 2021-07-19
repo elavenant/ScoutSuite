@@ -3,6 +3,9 @@
     "rationale": "This configuration goes against organizational policies.",
     "dashboard_name": "Users",
     "path": "iam.users.id",
+    "associated_risks": [
+      "Maintenance difficulty"
+    ],
     "conditions": [
         "and",
         [

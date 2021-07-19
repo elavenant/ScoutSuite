@@ -22,6 +22,9 @@
     "references": [
         "https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#enable-mfa-for-privileged-users"
     ],
+    "associated_risks": [
+        "Unauthorized access"
+    ],
     "dashboard_name": "Users",
     "path": "iam.users.id",
     "conditions": [

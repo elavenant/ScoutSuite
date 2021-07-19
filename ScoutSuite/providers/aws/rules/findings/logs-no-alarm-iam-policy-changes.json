@@ -2,6 +2,9 @@
     "description": "No CloudWatch Alarm for \"IAM Policy Changes\"",
     "rationale": "There was no CloudWatch alarm to monitor IAM policy changes. Monitoring for IAM policy changes will help ensure authentication and authorization control remain intact.",
     "remediation": "Enable a CloudWatch alarm to monitor the usage of the root account.",
+    "associated_risks": [
+      "Untraceable incident"
+    ],
     "compliance": [
         {
             "name": "CIS Amazon Web Services Foundations",

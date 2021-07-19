@@ -6,6 +6,10 @@
     ],
     "dashboard_name": "Parameter Groups",
     "path": "redshift.regions.id.parameter_groups.id",
+    "associated_risks": [
+      "Data leakage",
+        "Resource compromission"
+    ],
     "conditions": [
         "and",
         [

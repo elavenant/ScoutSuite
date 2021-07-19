@@ -7,6 +7,9 @@
     "dashboard_name": "Load Balancer Listeners",
     "display_path": "elbv2.regions.id.vpcs.id.lbs.id",
     "path": "elbv2.regions.id.vpcs.id.lbs.id.listeners.id.SslPolicy",
+    "associated_risks": [
+      "Deprecated configuration"
+    ],
     "conditions": [
         "and",
         [

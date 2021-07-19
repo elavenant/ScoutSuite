@@ -1,0 +1,14 @@
+{
+    "description": "AWS AMI Encryption",
+    "rationale": "Ensure that your Amazon Machine Images (AMIs) are encrypted to fulfill compliance requirements for data-at-rest encryption. The Amazon Machine Image (AMI) data encryption and decryption is handled transparently and does not require any additional action from your applications.\n\nThis rule can help you with the following compliance standards:\n\nPayment Card Industry Data Security Standard (PCI DSS)\nHealth Insurance Portability and Accountability Act (HIPAA)\nGeneral Data Protection Regulation (GDPR)\nAPRA\nMAS\nNIST 800-53 (Rev. 4)\nThis rule can help you work with the AWS Well-Architected Framework.",
+    "references": [
+        "https://www.cloudconformity.com/knowledge-base/aws/EC2/ami-encrypted.html"
+    ],
+    "associated_risks": [
+      "Resource compromission"
+    ],
+    "dashboard_name": "Images",
+    "path": "ec2.regions.id.images.id",
+    "conditions": [
+    ]
+}

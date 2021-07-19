@@ -7,6 +7,9 @@
     ],
     "dashboard_name": "Roles",
     "display_path": "iam.roles.id",
+    "associated_risks": [
+      "Unauthorized access"
+    ],
     "path": "iam.roles.id.assume_role_policy.PolicyDocument.Statement.id",
     "conditions": [
         "and",

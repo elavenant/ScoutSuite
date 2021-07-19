@@ -2,7 +2,11 @@
     "description": "Global Service Logging Disabled",
     "rationale": "API activity for global services such as IAM and STS is not logged. Investigation of incidents will be incomplete due to the lack of information.",
     "references": [
-        "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html#cloudtrail-concepts-global-service-events"
+        "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html#cloudtrail-concepts-global-service-events",
+        "https://www.cloudconformity.com/knowledge-base/aws/CloudTrail/cloudtrail-global-services-enabled.html"
+    ],
+    "associated_risks": [
+      "Architecture inconsistent"
     ],
     "dashboard_name": "Configurations",
     "path": "cloudtrail.regions.id.trails.id",

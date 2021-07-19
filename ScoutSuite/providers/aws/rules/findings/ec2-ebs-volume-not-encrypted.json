@@ -4,6 +4,9 @@
     "references": [
         "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html"
     ],
+    "associated_risks": [
+      "Data leakage"
+    ],
     "dashboard_name": "Volumes",
     "path": "ec2.regions.id.volumes.id",
     "conditions": [

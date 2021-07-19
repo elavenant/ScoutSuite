@@ -4,6 +4,9 @@
     "references": [
         "https://docs.aws.amazon.com/AmazonS3/latest/dev/security-best-practices.html"
     ],
+    "associated_risks": [
+        "Data loss"
+    ],
     "dashboard_name": "Buckets",
     "path": "s3.buckets.id",
     "conditions": [

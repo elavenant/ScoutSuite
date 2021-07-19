@@ -22,6 +22,9 @@
     "references": [
         "https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#rotate-credentials"
     ],
+    "associated_risks": [
+        "Unauthorized access"
+    ],
     "dashboard_name": "Access keys",
     "display_path": "iam.users.id",
     "path": "iam.users.id.AccessKeys.id",

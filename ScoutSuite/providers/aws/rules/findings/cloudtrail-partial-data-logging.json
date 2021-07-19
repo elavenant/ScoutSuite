@@ -7,6 +7,9 @@
     "dashboard_name": "Configurations",
     "display_path": "cloudtrail.regions.id.trails.id",
     "path": "cloudtrail.regions.id.trails.id",
+    "associated_risks": [
+      "Undetected incident"
+    ],
     "conditions": [
         "and",
         [

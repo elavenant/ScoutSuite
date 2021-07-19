@@ -1,10 +1,13 @@
 {
     "description": "DKIM Not Enabled",
-    "rationale": "DKIM signing is not enabled for emails sent from the identity.",
+    "rationale": "DKIM signing is not enabled for emails sent from the identity. Ensure DomainKeys Identified Mail (DKIM) feature is enabled within your AWS SES settings to protect both email senders and receivers against phishing attacks by using DKIM-signature headers to make sure that each message sent is authentic.",
     "references": [
         "https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-authentication-dkim.html"
     ],
     "dashboard_name": "Identities",
+    "associated_risks": [
+        "Resource exposition"
+    ],
     "path": "ses.regions.id.identities.id",
     "conditions": [
         "and",

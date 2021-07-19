@@ -1,0 +1,14 @@
+{
+    "description": "Privacy Protection",
+    "rationale": "Ensure that your Amazon Route 53 domains have Privacy Protection feature enabled in order to hide all their contact information from WHOIS queries and reduce the amount of spam received. The feature allows you to conceal your personal phone number, email and physical address for the domain names registered and/or transferred to AWS Route 53 service.",
+    "references": [
+        "https://www.cloudconformity.com/knowledge-base/aws/Route53/privacy-protection.html"
+    ],
+    "dashboard_name": "Domains",
+    "path": "route53.regions.id",
+  "associated_risks": [
+        "Data leakage"
+    ],
+    "conditions": [
+    ]
+}

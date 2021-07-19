@@ -7,6 +7,9 @@
     ],
     "dashboard_name": "Buckets",
     "path": "s3.buckets.id",
+    "associated_risks": [
+        "Data leakage"
+    ],
     "conditions": [
         "and",
         [

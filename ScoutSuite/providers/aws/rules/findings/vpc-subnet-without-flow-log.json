@@ -2,6 +2,9 @@
     "description": "Subnet without a Flow Log",
     "rationale": "Flow logs enable the investigation of incidents involving unauthorized network traffic, such as an attacker exfiltrating data or pivoting to other hosts.",
     "remediation": "Create a flow log for each subnet.",
+    "associated_risks": [
+        "Undetected incident"
+    ],
     "compliance": [
         {
             "name": "CIS Amazon Web Services Foundations",

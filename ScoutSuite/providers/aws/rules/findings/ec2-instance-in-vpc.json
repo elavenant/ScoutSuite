@@ -1,0 +1,16 @@
+{
+    "description": "EC2 Instance In VPC",
+    "rationale": "Ensure that all your EC2 instances are deployed within the AWS EC2-VPC platform instead of EC2-Classic platform for better flexibility and control over security, traffic routing and availability.",
+    "dashboard_name": "Instances",
+    "path": "ec2.regions.id.vpcs.id.instances.id",
+    "associated_risks": [
+      "Depreciated configuration"
+    ],
+    "references": [
+        "https://www.cloudconformity.com/knowledge-base/aws/EC2/ec2-instance-in-vpc.html"
+    ],
+    "conditions": [
+    ],
+    "arg_names": [
+    ]
+}

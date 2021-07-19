@@ -4,6 +4,9 @@
     "references": [
         "https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html"
     ],
+    "associated_risks": [
+      "Data leakage"
+    ],
     "dashboard_name": "Load Balancer Listeners",
     "display_path": "elb.regions.id.vpcs.id.elbs.id",
     "path": "elb.regions.id.vpcs.id.elbs.id.listeners.id",

@@ -4,6 +4,9 @@
     "references": [
         "https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html"
     ],
+    "associated_risks": [
+      "Architecture inconsistent"
+    ],
     "dashboard_name": "Security groups",
     "path": "ec2.regions.id.vpcs.id.security_groups.id",
     "conditions": [

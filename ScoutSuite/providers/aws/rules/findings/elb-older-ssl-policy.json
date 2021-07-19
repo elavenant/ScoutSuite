@@ -4,6 +4,9 @@
     "references": [
         "https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-security-policy-table.html"
     ],
+    "associated_risks": [
+      "Depreciated configuration"
+    ],
     "dashboard_name": "Load Balancer Listeners Security Policy",
     "display_path": "elb.regions.id.elb_policies.id.reference_security_policy",
     "path": "elb.regions.id.elb_policies.id.reference_security_policy",

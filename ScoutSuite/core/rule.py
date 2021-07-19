@@ -38,8 +38,11 @@ class Rule:
         self.data_path = data_path
         self.filename = filename
         self.rule_type = rule_type
+        self.id = self.get_attribute('id', rule, '')
         self.enabled = bool(self.get_attribute('enabled', rule, False))
         self.level = self.get_attribute('level', rule, '')
+        self.filter = self.get_attribute('filter', rule, '')
+        self.automated = self.get_attribute('automated', rule, True)
         self.args = self.get_attribute('args', rule, [])
         self.conditions = self.get_attribute('conditions', rule, [])
         self.key_suffix = self.get_attribute('key_suffix', rule, None)
