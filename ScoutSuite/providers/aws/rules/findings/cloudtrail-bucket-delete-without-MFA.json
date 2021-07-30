@@ -9,6 +9,18 @@
     "associated_risks": [
       "Data loss"
     ],
+    "remediation": "Quick win\n",
     "conditions": [
+        "and",
+        [
+            "this",
+            "withKey",
+            "bucket_id"
+        ],
+        [
+            "_GET_VALUE_AT_(s3.buckets._GET_VALUE_AT_(cloudtrail.regions.id.trails.id.bucket_id).version_mfa_delete_enabled)",
+            "equal",
+            "False"
+        ]
     ]
 }

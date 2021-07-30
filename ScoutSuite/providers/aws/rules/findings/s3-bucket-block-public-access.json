@@ -11,5 +11,26 @@
         "Unauthorized access"
     ],
     "conditions": [
+        "and",
+        [
+            "s3.buckets.id.public_access_block_configuration.BlockPublicAcls",
+            "false",
+            ""
+        ],
+        [
+            "s3.buckets.id.public_access_block_configuration.BlockPublicPolicy",
+            "false",
+            ""
+        ],
+        [
+            "s3.buckets.id.public_access_block_configuration.IgnorePublicAcls",
+            "false",
+            ""
+        ],
+        [
+            "s3.buckets.id.public_access_block_configuration.RestrictPublicBuckets",
+            "false",
+            ""
+        ]
     ]
 }

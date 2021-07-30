@@ -7,6 +7,7 @@
     "associated_risks": [
       "Data leakage"
     ],
+    "remediation": "Quick win\n",
     "dashboard_name": "Snapshots",
     "path": "ec2.regions.id.snapshots.id",
     "conditions": [

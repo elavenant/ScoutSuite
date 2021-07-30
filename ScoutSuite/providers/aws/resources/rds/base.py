@@ -25,6 +25,7 @@ class RDS(Regions):
                 sum([len(vpc['snapshots']) for vpc in self['regions'][region]['vpcs'].values()])
             self['regions'][region]['subnet_groups_count'] =\
                 sum([len(vpc['subnet_groups']) for vpc in self['regions'][region]['vpcs'].values()])
+            self['regions'][region]['has_event_subscriptions'] = await self.facade.rds.has_event_subscriptions(region)
         
         self['instances_count'] = sum([region['instances_count'] for region in self['regions'].values()])
         self['snapshots_count'] = sum([region['snapshots_count'] for region in self['regions'].values()])

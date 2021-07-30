@@ -7,8 +7,15 @@
     "associated_risks": [
       "Resource compromission"
     ],
+    "remediation": "Quick win\n",
     "dashboard_name": "Images",
     "path": "ec2.regions.id.images.id",
     "conditions": [
+        "and",
+        [
+            "ec2.regions.id.images.id.BlockDeviceMappings.id.Ebs.Encrypted",
+            "equal",
+            "false"
+        ]
     ]
 }

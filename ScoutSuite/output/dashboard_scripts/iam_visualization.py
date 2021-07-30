@@ -79,11 +79,11 @@ class AWSIAMVisualization(Visualization):
                 ]
             },
             "collapsed": {
-                "Arn": {'level': 1, 'hidden': 0},
-                "Permissions": {'level': 2, 'hidden': 0},
-                "Policies": {'level': 1, 'hidden': 0},
-                "Inline policies": {'level': 1, 'hidden': 0},
-                "Active access keys": {'level': 1, 'hidden': 0}
+                "Arn": {'level': 1, 'hidden': 1},
+                "Permissions": {'level': 2, 'hidden': 1},
+                "Policies": {'level': 1, 'hidden': 1},
+                "Inline policies": {'level': 1, 'hidden': 1},
+                "Active access keys": {'level': 1, 'hidden': 1}
             }
         }
         data_users = []

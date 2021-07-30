@@ -75,6 +75,14 @@ class AWSFindingsVisualization(Visualization):
                         'format': {'bg_color': '#808080',
                                    'font_color': 'white',
                                    }
+                    },
+                    {
+                        'type': 'text',
+                        'criteria': 'containing',
+                        "value": 'To check manually',
+                        'format': {'bg_color': '#FFFF00',
+                                   'font_color': '#5F5F5F',
+                                   }
                     }
                 ]
             },
@@ -103,6 +111,7 @@ class AWSFindingsVisualization(Visualization):
 
             for finding_key, finding in findings.items():
 
+                compliance = 1
                 finding_completed = finding
 
                 for field in header_list:
@@ -139,12 +148,19 @@ class AWSFindingsVisualization(Visualization):
                     else:
                         rsc = rsc_name
 
+                if finding_completed["flagged_items"] > 0:
+                    compliance = 0
+                if finding_completed["enabled"] and finding_completed["checked_items"] == 0:
+                    compliance = -1
+                if not finding_completed["enabled"]:
+                    compliance = "To check manually"
+
                 line = {
                     "Id": finding_completed["id"],
                     "Name": finding_key,
                     "Description": finding_completed["description"],
                     "Rationale": finding_completed["rationale"],
-                    "Compliance": 0 if finding_completed["flagged_items"] > 0 else 1,
+                    "Compliance": compliance,
                     "Category": service.upper(),
                     "Sub category": finding_completed["dashboard_name"],
                     "Checked items": finding_completed["checked_items"],
@@ -154,16 +170,12 @@ class AWSFindingsVisualization(Visualization):
                     "Macro filter button": macro_filter,
                     'Items': beautify_rsc,
                     'Items list': json.dumps(rsc),
-                    "Scoring scale": "Compliant: 1\nNot compliant: 0",
+                    "Scoring scale": "Compliant: 1\nNot compliant: 0\nNo resources to check: -1",
                     "References": "\n".join(finding_completed["references"]) if finding_completed["references"] else "",
                     "Path": finding_completed["path"],
                     "Remediation": finding_completed["remediation"],
                     "Risk associated": "\n".join(finding_completed["associated_risks"] if finding_completed["associated_risks"] else "")
                 }
-
-                # If the rule isn't enabled, put -1 in compliance
-                if not finding_completed["enabled"]:
-                    line["Compliance"] = -1
 
                 data_findings.append(line)
 
@@ -181,7 +193,6 @@ def find_rsc(json_file, rule):
     rsc_name = []
     rsc_arn = []
     rsc_id = []
-
     if "id" in path:
         for item in items:
             item = item.split('.')

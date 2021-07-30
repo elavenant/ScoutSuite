@@ -1,9 +1,10 @@
 from ScoutSuite.output.export_scripts import json_to_excel
-from ScoutSuite.output.export_scripts import findings
+from ScoutSuite.output.dashboard_scripts import findings
 import json
 import sys
 from time import strftime
 from datetime import datetime
+
 
 def main():
     args = sys.argv[1:]
@@ -18,23 +19,19 @@ def main():
         save_file = args[index + 1]
     viz_iam(file, save_file)
 
+
 def build_json(json_file):
     """
     
     build a json containing users information for excel reporting
     
-    parameters:
-        - Name
-        - Tags
+    sheets:
+        - Dashboard
+        - Users
+        - Roles
         - Groups
-        - Roles 
-        - Permissions
-        - MFA devices
         - Policies
-        - Inline policies
-        - Create date
-        - Last use
-        - Number of active AccessKeys 
+        - Findings
     
     """
     
@@ -43,7 +40,7 @@ def build_json(json_file):
     roles = json_file["services"]["iam"]["roles"]
     groups = json_file["services"]["iam"]["groups"]
     policies = json_file["services"]["iam"]["policies"]
-    json_res["sheet_list"] = ["Dashboard", "Users", "Roles", "Groups", "Policies", "Findings"]
+    json_res["sheet_list"] = ["Dashboard", "Users", "Roles", "Groups", "Policies", "Controls"]
     json_res["sheet_data"] = {}
   
     json_res["sheet_data"]["Dashboard"] = build_dashboard(json_res["sheet_list"])
@@ -51,10 +48,11 @@ def build_json(json_file):
     json_res["sheet_data"]["Groups"] = build_group_sheet(groups, policies)
     json_res["sheet_data"]["Roles"] = build_role_sheet(roles, policies)
     json_res["sheet_data"]["Policies"] = build_policy_sheet(policies)
-    json_res["sheet_data"]["Findings"] = findings.build_finding_sheet(json_file, "iam")
+    json_res["sheet_data"]["Controls"] = findings.build_finding_sheet(json_file, "iam")
     
     return json.dumps(json_res)
-    
+
+
 def viz_iam(file, save_file):
     
     with open(file) as f:
@@ -70,9 +68,9 @@ def viz_iam(file, save_file):
 def build_dashboard(sheet_list):
     data_header = {"Version": "1.0", "Date": str(datetime.now()), "Auteurs": "ScoutSuite"}
     data_body = {
-        "Findings": {
-            "Findings": {
-                "shortcut": "Findings",
+        "Controls": {
+            "Controls": {
+                "shortcut": "Controls",
                 "description": "report of automated tests by ScoutSuite"
             }
         },
@@ -105,9 +103,9 @@ def build_user_sheet(users, roles, policies):
     """
     Users sheet
     """
-    header_list = ["Name", "Human account", "Tags", "Groups", "Roles", "MFA devices", "Create date", "Last use", "Permissions", "Policies", "Inline policies", "Active access keys"]
-    header_format = {
-        "header_style": {'bold': True, 'bg_color': '#0070C0', 'font_color': 'white', 'left': 2, 'right': 2, 'bottom': 2, 'top': 2, 'align': 'center', 'valign': 'vcenter'},
+    header_list = ["Arn", "Name", "Human account", "Tags", "Groups", "Roles", "MFA devices", "Create date", "Last use", "Permissions", "Policies", "Inline policies", "Active access keys"]
+    cell_format = {
+        "header_style": {'bold': True, 'bg_color': '#60497A', 'font_color': 'white', 'left': 2, 'right': 2, 'bottom': 2, 'top': 2, 'align': 'center', 'valign': 'vcenter'},
         "data_style": {
             "Create date": {'num_format': 'yyyy-mm-dd hh:mm:ss'},
             "Last use": {'num_format': 'yyyy-mm-dd hh:mm:ss'}
@@ -138,6 +136,7 @@ def build_user_sheet(users, roles, policies):
             ]
         },
         "collapsed": {
+            "Arn": {'level': 1,'hidden': 0},
             "Permissions": {'level': 2,'hidden': 0},
             "Policies": {'level': 1,'hidden': 0},
             "Inline policies": {'level': 1,'hidden': 0},
@@ -156,19 +155,20 @@ def build_user_sheet(users, roles, policies):
                     for principal_key, arn in statement["Principal"].items():
                         if arn == user["arn"]:
                             user_roles.append(role["name"])
-                            
-        #Extracting user's policies
+
+        # Extracting user's policies
         user_policies = []
         if "policies" in user.keys():
             for policy in user["policies"]:
                 user_policies.append(policies[policy]["name"])
-                
-        #Extracting last use info
+
+        # Extracting last use info
         last_authenticated = ""
         if "LastAuthenticated" in user.keys():
             last_authenticated = user["LastAuthenticated"][:-6]
         
         line = {
+            "Arn": user["arn"],
             "Name": user["name"],
             "Tags": json.dumps(user["Tags"]),
             "Groups": json.dumps(user["groups"]),
@@ -184,7 +184,7 @@ def build_user_sheet(users, roles, policies):
         
         data_users.append(line)
          
-    sheet_data = {"header_list": header_list,"cell_format": header_format, "data": data_users}
+    sheet_data = {"header_list": header_list, "cell_format": cell_format, "data": data_users}
     
     return sheet_data
     
@@ -193,13 +193,14 @@ def build_group_sheet(groups, policies):
     """
     Group sheet
     """
-    header_list = ["Name", "Create date", "Policies", "Inline policies"]
+    header_list = ["Arn", "Name", "Create date", "Policies", "Inline policies"]
     cell_format = {
-        "header_style": {'bold': True, 'bg_color': '#0070C0', 'font_color': 'white', 'left': 2, 'right': 2, 'bottom': 2, 'top': 2, 'align': 'center', 'valign': 'vcenter'},
+        "header_style": {'bold': True, 'bg_color': '#60497A', 'font_color': 'white', 'left': 2, 'right': 2, 'bottom': 2, 'top': 2, 'align': 'center', 'valign': 'vcenter'},
         "data_style": {
             "Create date": {'num_format': 'yyyy-mm-dd hh:mm:ss'},
         },
         "collapsed": {
+            "Arn": {'level': 1, 'hidden': 1},
             "Policies": {'level': 1,'hidden': 1},
             "Inline policies": {'level': 1,'hidden': 1}
         }
@@ -208,12 +209,13 @@ def build_group_sheet(groups, policies):
     
     for group_key, group in groups.items():
         
-        #Extracting group's policies
+        # Extracting group's policies
         group_policies = []
         for policy in group["policies"]:
             group_policies.append(policies[policy]["name"])
         
         line = {
+            "Arn": group["arn"],
             "Name": group["name"],
             "Create date": group["CreateDate"][:-6],
             "Policies": json.dumps(group_policies),
@@ -231,13 +233,14 @@ def build_role_sheet(roles, policies):
     """
     Role sheet
     """
-    header_list = ["Name", "Tags", "Description", "Create date", "Policies", "Inline policies"]
+    header_list = ["Arn", "Name", "Tags", "Description", "Create date", "Policies", "Inline policies"]
     cell_format = {
-        "header_style": {'bold': True, 'bg_color': '#0070C0', 'font_color': 'white', 'left': 2, 'right': 2, 'bottom': 2, 'top': 2, 'align': 'center', 'valign': 'vcenter'},
+        "header_style": {'bold': True, 'bg_color': '#60497A', 'font_color': 'white', 'left': 2, 'right': 2, 'bottom': 2, 'top': 2, 'align': 'center', 'valign': 'vcenter'},
         "data_style": {
             "Create date": {'num_format': 'yyyy-mm-dd hh:mm:ss'}
         },
         "collapsed": {
+            "Arn": {'level': 1,'hidden': 1},
             "Policies": {'level': 1,'hidden': 1},
             "Inline policies": {'level': 1,'hidden': 1}
         }
@@ -246,12 +249,14 @@ def build_role_sheet(roles, policies):
     
     for role_key, role in roles.items():
         
-        #Extracting role's policies
+        # Extracting role's policies
         role_policies = []
-        for policy in role["policies"]:
-            role_policies.append(policies[policy]["name"])
+        if "policies" in role.keys():
+            for policy in role["policies"]:
+                role_policies.append(policies[policy]["name"])
         
         line = {
+            "Arn": role["arn"],
             "Name": role["name"],
             "Create date": role["create_date"][:-6],
             "Policies": json.dumps(role_policies),
@@ -263,7 +268,8 @@ def build_role_sheet(roles, policies):
     sheet_data = {"header_list": header_list,"cell_format": cell_format, "data": data_roles}
     
     return sheet_data
-                                          
+
+
 def build_policy_sheet(policies):
     """
     Policy sheet
@@ -271,7 +277,7 @@ def build_policy_sheet(policies):
                                           
     header_list = ["Name", "Group attached", "Role attached", "User attached"]
     cell_format = {
-        "header_style": {'bold': True, 'bg_color': '#0070C0', 'font_color': 'white', 'left': 2, 'right': 2, 'bottom': 2, 'top': 2, 'align': 'center', 'valign': 'vcenter'},
+        "header_style": {'bold': True, 'bg_color': '#60497A', 'font_color': 'white', 'left': 2, 'right': 2, 'bottom': 2, 'top': 2, 'align': 'center', 'valign': 'vcenter'},
         "data_style": {
         },
         "conditional_format": {
@@ -288,8 +294,7 @@ def build_policy_sheet(policies):
         "collapsed": {
         }
     }
-    
-    
+
     data_policies = []
         
     for policy_key, policy in policies.items():
@@ -318,7 +323,16 @@ def build_policy_sheet(policies):
     sheet_data = {"header_list": header_list,"cell_format": cell_format, "data": data_policies}
     
     return sheet_data
-        
-        
+
+
+def get_id(arn):
+    index = arn.find("::") + 2
+    arn = arn[index:]
+    index = arn.find(":")
+    arn = arn[:index]
+
+    return arn
+
+
 if __name__ == "__main__":
     main()

@@ -9,9 +9,25 @@
         "Resource exposed",
       "Resource compromission"
     ],
-    "dashboard_name": "Keys",
+    "dashboard_name": "Statements",
     "display_path": "kms.regions.id.keys.id",
-    "path": "kms.regions.id.keys.id.policies.id",
+    "path": "kms.regions.id.keys.id.policy.Statement.id",
     "conditions": [
+        "and",
+        [
+            "kms.regions.id.keys.id.policy.Statement.id.Principal",
+            "withKey",
+            "AWS"
+        ],
+        [
+            "kms.regions.id.keys.id.policy.Statement.id.Principal.AWS",
+            "equal",
+            "*"
+        ],
+        [
+            "kms.regions.id.keys.id.policy.Statement.id.",
+            "withoutKey",
+            "Condition"
+        ]
     ]
 }

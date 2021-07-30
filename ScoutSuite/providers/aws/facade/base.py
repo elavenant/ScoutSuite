@@ -11,6 +11,7 @@ from ScoutSuite.providers.aws.facade.directconnect import DirectConnectFacade
 from ScoutSuite.providers.aws.facade.dynamodb import DynamoDBFacade
 from ScoutSuite.providers.aws.facade.ec2 import EC2Facade
 from ScoutSuite.providers.aws.facade.efs import EFSFacade
+from ScoutSuite.providers.aws.facade.eks import EKSFacade
 from ScoutSuite.providers.aws.facade.elasticache import ElastiCacheFacade
 from ScoutSuite.providers.aws.facade.elb import ELBFacade
 from ScoutSuite.providers.aws.facade.elbv2 import ELBv2Facade
@@ -249,6 +250,7 @@ class AWSFacade(AWSBaseFacade):
         self.directconnect = DirectConnectFacade(self.session)
         self.dynamodb = DynamoDBFacade(self.session)
         self.efs = EFSFacade(self.session)
+        self.eks = EKSFacade(self.session)
         self.elasticache = ElastiCacheFacade(self.session)
         self.emr = EMRFacade(self.session)
         self.route53 = Route53Facade(self.session)

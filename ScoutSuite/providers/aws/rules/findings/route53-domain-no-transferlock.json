@@ -9,6 +9,7 @@
     ],
     "dashboard_name": "Domains",
     "path": "route53.regions.id.domains.id",
+    "remediation": "Quick win\n",
     "conditions": [
         "and",
         [

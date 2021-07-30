@@ -25,8 +25,10 @@ class EC2Instances(AWSResources):
                                                                  raw_instance['OwnerId'],
                                                                  raw_instance['InstanceId'])
         instance['reservation_id'] = raw_instance['ReservationId']
+        instance["VpcId"] = raw_instance["VpcId"]
         instance['availability_zone'] = raw_instance.get('Placement', {}).get('AvailabilityZone')
         instance['monitoring_enabled'] = raw_instance['Monitoring']['State'] == 'enabled'
+        instance["disable_api_termination"] = await self.facade.ec2.get_api_termination(self.region, id)
         instance['user_data'] = await self.facade.ec2.get_instance_user_data(self.region, id)
         instance['user_data_secrets'] = self._identify_user_data_secrets(instance['user_data'])
 

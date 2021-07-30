@@ -9,6 +9,7 @@
   "associated_risks": [
         "Resource compromission"
     ],
+  "remediation": "Quick win\n",
     "conditions": [
     ]
 }

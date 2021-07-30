@@ -9,6 +9,7 @@ from ScoutSuite.providers.aws.resources.directconnect.base import DirectConnect
 from ScoutSuite.providers.aws.resources.dynamodb.base import DynamoDB
 from ScoutSuite.providers.aws.resources.ec2.base import EC2
 from ScoutSuite.providers.aws.resources.efs.base import EFS
+from ScoutSuite.providers.aws.resources.eks.base import EKS
 from ScoutSuite.providers.aws.resources.elasticache.base import ElastiCache
 from ScoutSuite.providers.aws.resources.elb.base import ELB
 from ScoutSuite.providers.aws.resources.elbv2.base import ELBv2
@@ -41,10 +42,6 @@ except ImportError:
     pass
 try:
     from ScoutSuite.providers.aws.resources.private_ecs.base import ECS
-except ImportError:
-    pass
-try:
-    from ScoutSuite.providers.aws.resources.private_eks.base import EKS
 except ImportError:
     pass
 try:
@@ -92,6 +89,7 @@ class AWSServicesConfig(BaseServicesConfig):
         self.dynamodb = DynamoDB(facade)
         self.ec2 = EC2(facade)
         self.efs = EFS(facade)
+        self.eks = EKS(facade)
         self.elasticache = ElastiCache(facade)
         self.elb = ELB(facade)
         self.elbv2 = ELBv2(facade)

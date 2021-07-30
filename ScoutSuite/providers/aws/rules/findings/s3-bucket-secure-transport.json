@@ -3,12 +3,14 @@
     "rationale": "Ensure that your AWS S3 buckets enforce encryption of data over the network (as it travels to and from Amazon S3) using Secure Sockets Layer (SSL). Security\nWhen S3 buckets are not configured to strictly require SSL connections, the communication between the clients (users, applications) and these buckets is vulnerable to eavesdropping and man-in-the-middle (MITM) attacks. Cloud Conformity strongly recommends enforcing SSL-only access by denying all regular, unencrypted HTTP requests to your buckets when dealing with sensitive or private data.",
     "compliance": [
     ],
-    "dashboard_name": "Bucket",
+    "references": [
+        "https://www.cloudconformity.com/knowledge-base/aws/S3/secure-transport.html"
+    ],
+    "dashboard_name": "Buckets",
     "display_path": "s3.buckets.id",
     "path": "s3.buckets.id",
     "associated_risks": [
         "Data leakage"
     ],
-    "conditions": [
-    ]
+    "conditions": []
 }

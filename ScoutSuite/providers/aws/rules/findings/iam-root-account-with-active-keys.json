@@ -1,7 +1,7 @@
 {
     "description": "Root Account Has Active Keys",
     "rationale": "AWS root account access keys should be deleted as they provide unrestricted access to the AWS Account.",
-    "remediation": "Delete or disable active root account access keys",
+    "remediation": "Quick win\nDelete or disable active root account access keys",
     "compliance": [
         {
             "name": "CIS Amazon Web Services Foundations",

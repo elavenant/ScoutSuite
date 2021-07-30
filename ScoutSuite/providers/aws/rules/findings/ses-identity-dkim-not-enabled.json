@@ -8,6 +8,7 @@
     "associated_risks": [
         "Resource exposition"
     ],
+    "remediation": "Quick win\n",
     "path": "ses.regions.id.identities.id",
     "conditions": [
         "and",

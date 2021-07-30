@@ -21,4 +21,10 @@ class HostedZones(AWSResources):
         hosted_zone_dict['config'] = raw_hosted_zone.get('Config')
         hosted_zone_dict['resource_record_sets'] = await self.facade.route53.get_resource_records(hosted_zone_dict['id'])
         hosted_zone_dict['resource_record_set_count'] = raw_hosted_zone.get('ResourceRecordSetCount')
+
+        for record_set in hosted_zone_dict['resource_record_sets']:
+            addresses = [a["Value"] for a in record_set["ResourceRecords"]]
+            metadata = await self.facade.route53.describe_addresses(self.region, addresses)
+            hosted_zone_dict['resource_record_sets'][record_set["name"]]["ResourceRecords"] = metadata
+
         return hosted_zone_dict['id'], hosted_zone_dict

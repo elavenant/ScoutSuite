@@ -9,6 +9,7 @@
     "associated_risks": [
         "Resource availability"
     ],
+    "remediation": "Quick win\n",
     "conditions": [
         "and",
         [

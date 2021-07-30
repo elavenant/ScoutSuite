@@ -11,5 +11,11 @@
     "display_path": "elb.regions.id.vpcs.id.elbs.id",
     "path": "elb.regions.id.vpcs.id.elbs.id",
     "conditions": [
+        "and",
+        [
+            "elb.regions.id.vpcs.id.elbs.id.attributes.CrossZoneLoadBalancing.Enabled",
+            "equal",
+            "false"
+        ]
     ]
 }

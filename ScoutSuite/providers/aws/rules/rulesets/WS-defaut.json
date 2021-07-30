@@ -101,19 +101,19 @@
                 "id": "Cloudtrail-06"
             }
         ],
-        "cloudtrail-log-file-not-encrypted.json": [
-            {
-                "enabled": true,
-                "level": "warning",
-                "automated": false,
-                "id": "Cloudtrail-07"
-            }
-        ],
         "cloudtrail-delivery-failing.json": [
             {
                 "enabled": true,
                 "level": "low",
-                "automated": false,
+                "automated": true,
+                "id": "Cloudtrail-07"
+            }
+        ],
+        "cloudtrail-bucket-delete-without-mfa.json": [
+            {
+                "enabled": true,
+                "level": "warning",
+                "automated": true,
                 "id": "Cloudtrail-08"
             }
         ],
@@ -121,7 +121,7 @@
             {
                 "enabled": true,
                 "level": "warning",
-                "automated": false,
+                "automated": true,
                 "id": "Cloudwatch-01"
             }
         ],
@@ -129,7 +129,7 @@
             {
                 "enabled": true,
                 "level": "danger",
-                "automated": false,
+                "automated": true,
                 "id": "Cloudwatch-02"
             }
         ],
@@ -177,7 +177,7 @@
             {
                 "enabled": true,
                 "level": "warning",
-                "automated": false,
+                "automated": true,
                 "id": "EC2-02"
             }
         ],
@@ -518,7 +518,7 @@
             {
                 "enabled": true,
                 "level": "warning",
-                "automated": false,
+                "automated": true,
                 "id": "EC2-36"
             }
         ],
@@ -534,7 +534,7 @@
             {
                 "enabled": true,
                 "level": "warning",
-                "automated": false,
+                "automated": true,
                 "id": "EC2-38"
             }
         ],
@@ -550,8 +550,16 @@
             {
                 "enabled": true,
                 "level": "warning",
-                "automated": false,
+                "automated": true,
                 "id": "EKS-01"
+            }
+        ],
+        "eks-envelope-encryption.json": [
+            {
+                "enabled": true,
+                "level": "danger",
+                "automated": true,
+                "id": "EKS-02"
             }
         ],
         "elb-listener-allowing-cleartext.json": [
@@ -566,7 +574,7 @@
             {
                 "enabled": true,
                 "level": "warning",
-                "automated": false,
+                "automated": true,
                 "id": "ELB-02"
             }
         ],
@@ -574,7 +582,7 @@
             {
                 "enabled": true,
                 "level": "warning",
-                "automated": false,
+                "automated": true,
                 "id": "ELB-03"
             }
         ],
@@ -720,7 +728,7 @@
                 ],
                 "enabled": true,
                 "level": "warning",
-                "automated": false,
+                "automated": true,
                 "id": "IAM-10"
             }
         ],
@@ -1145,7 +1153,7 @@
             {
                 "enabled": true,
                 "level": "danger",
-                "automated": false,
+                "automated": true,
                 "id": "KMS-02"
             }
         ],
@@ -1337,7 +1345,7 @@
             {
                 "enabled": true,
                 "level": "low",
-                "automated": false,
+                "automated": true,
                 "id": "RDS-10"
             }
         ],
@@ -1345,7 +1353,7 @@
             {
                 "enabled": true,
                 "level": "warning",
-                "automated": false,
+                "automated": true,
                 "id": "RDS-11"
             }
         ],
@@ -1353,7 +1361,7 @@
             {
                 "enabled": true,
                 "level": "warning",
-                "automated": false,
+                "automated": true,
                 "id": "RDS-12"
             }
         ],
@@ -1361,7 +1369,7 @@
             {
                 "enabled": true,
                 "level": "warning",
-                "automated": false,
+                "automated": true,
                 "id": "RDS-13"
             }
         ],
@@ -1377,7 +1385,7 @@
             {
                 "enabled": true,
                 "level": "danger",
-                "automated": false,
+                "automated": true,
                 "id": "RDS-15"
             }
         ],
@@ -1385,7 +1393,7 @@
             {
                 "enabled": true,
                 "level": "low",
-                "automated": false,
+                "automated": true,
                 "id": "RDS-16"
             }
         ],
@@ -1393,7 +1401,7 @@
             {
                 "enabled": true,
                 "level": "danger",
-                "automated": false,
+                "automated": true,
                 "id": "RDS-17"
             }
         ],
@@ -1457,7 +1465,7 @@
             {
                 "enabled": true,
                 "level": "low",
-                "automated": false,
+                "automated": true,
                 "id": "Redshift-08"
             }
         ],
@@ -1473,7 +1481,7 @@
             {
                 "enabled": true,
                 "level": "warning",
-                "automated": false,
+                "automated": true,
                 "id": "Route53-02"
             }
         ],
@@ -1489,7 +1497,7 @@
             {
                 "enabled": true,
                 "level": "warning",
-                "automated": false,
+                "automated": true,
                 "id": "Route53-04"
             }
         ],
@@ -1513,7 +1521,7 @@
             {
                 "enabled": true,
                 "level": "danger",
-                "automated": false,
+                "automated": true,
                 "id": "S3-01"
             }
         ],
@@ -1521,7 +1529,7 @@
             {
                 "enabled": true,
                 "level": "danger",
-                "automated": false,
+                "automated": true,
                 "id": "S3-02"
             }
         ],

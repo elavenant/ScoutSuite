@@ -7,9 +7,16 @@
     "associated_risks": [
       "Resource reliability"
     ],
+    "remediation": "Quick win\n",
     "dashboard_name": "Load Balancers",
     "display_path": "elb.regions.id.vpcs.id.elbs.id",
     "path": "elb.regions.id.vpcs.id.elbs.id",
     "conditions": [
+        "and",
+        [
+            "elb.regions.id.vpcs.id.elbs.id.attributes.ConnectionDraining.Enabled",
+            "equal",
+            "false"
+        ]
     ]
 }

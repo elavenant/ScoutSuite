@@ -37,6 +37,16 @@ class EC2Facade(AWSBaseFacade):
                 except Exception as e:
                     print_exception(f'Unable to decode EC2 instance user data: {e}')
 
+    async def get_api_termination(self, region: str, instance_id: str):
+        ec2_client = AWSFacadeUtils.get_client('ec2', self.session, region)
+        try:
+            return await run_concurrently(
+                lambda: ec2_client.describe_instance_attribute(Attribute='disableApiTermination ', InstanceId=instance_id))
+        except Exception as e:
+            print_exception(
+                f'Failed to describe EC2 instance attributes: {e}')
+            return None
+
     async def _decode_user_data(self, user_data):
         try:
             value = base64.b64decode(user_data)

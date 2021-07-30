@@ -4,6 +4,7 @@
     "automated": false,
     "dashboard_name": "General",
     "path": "iam",
+    "remediation": "Quick win\n",
     "conditions": [
     ],
     "arg_names": [

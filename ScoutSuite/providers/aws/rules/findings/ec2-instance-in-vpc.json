@@ -4,12 +4,23 @@
     "dashboard_name": "Instances",
     "path": "ec2.regions.id.vpcs.id.instances.id",
     "associated_risks": [
-      "Depreciated configuration"
+      "Deprecated configuration"
     ],
     "references": [
         "https://www.cloudconformity.com/knowledge-base/aws/EC2/ec2-instance-in-vpc.html"
     ],
     "conditions": [
+        "or",
+        [
+            "ec2.regions.id.vpcs.id.instances.id.VpcId",
+            "equal",
+            ""
+        ],
+        [
+            "ec2.regions.id.vpcs.id.instances.id.VpcId",
+            "equal",
+            "null"
+        ]
     ],
     "arg_names": [
     ]

@@ -8,7 +8,13 @@
     "associated_risks": [
       "Data leakage"
     ],
-    "path": "cloudwatch.regions.id",
+    "path": "cloudwatch.regions.id.event_bus.Policy.Statement.id",
     "conditions": [
+        "and",
+        [
+            "cloudwatch.regions.id.event_bus.Policy.Statement.id.Principal",
+            "equal",
+            "*"
+        ]
     ]
 }

@@ -3,12 +3,14 @@ from ScoutSuite.providers.aws.resources.regions import Regions
 
 from .alarms import Alarms
 from .metric_filters import MetricFilters
+from .event_bus import EventBus
 
 
 class CloudWatch(Regions):
     _children = [
         (Alarms, 'alarms'),
-        (MetricFilters, 'metric_filters')
+        (MetricFilters, 'metric_filters'),
+        (EventBus, 'event_bus')
     ]
 
     def __init__(self, facade: AWSFacade):

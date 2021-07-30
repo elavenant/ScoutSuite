@@ -8,7 +8,13 @@
     "associated_risks": [
       "Untreated incident"
     ],
-    "path": "cloudwatch.regions.id",
+    "path": "cloudwatch.regions.id.event_bus.has_rules",
     "conditions": [
+        "and",
+        [
+            "this",
+            "equal",
+            "False"
+        ]
     ]
 }

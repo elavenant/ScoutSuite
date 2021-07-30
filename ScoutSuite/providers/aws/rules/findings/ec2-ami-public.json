@@ -8,6 +8,7 @@
     "associated_risks": [
       "Resource compromission"
     ],
+    "remediation": "Quick win\n",
     "dashboard_name": "Images",
     "path": "ec2.regions.id.images.id",
     "conditions": [

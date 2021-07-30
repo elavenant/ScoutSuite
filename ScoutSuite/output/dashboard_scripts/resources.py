@@ -51,8 +51,12 @@ class AWSResourcesVisualization(Visualization):
 
                     tags = ""
                     if "tags" in rsc_data.keys():
-                        for tag in rsc_data["tags"]["Tags"]:
-                            tags += "'" + tag["Key"] + "': " + "'" + tag["Value"] + "'"
+                        if "Tags" in rsc_data["tags"].keys():
+                            for tag in rsc_data["tags"]["Tags"]:
+                                tags += "'" + tag["Key"] + "': " + "'" + tag["Value"] + "'"
+                        else:
+                            for tag in rsc_data["tags"]:
+                                tags += "'" + tag + "': " + "'" + rsc_data["tags"][tag] + "'"
 
                     line = {
                         "Id": rsc_data["id"] if "id" in rsc_data.keys() else rsc_key,

@@ -46,6 +46,10 @@
                 "metric_filters": {
                     "cols": 2,
                     "path": "services.cloudwatch.regions.id.metric_filters"
+                },
+                "event_bus": {
+                    "cols": 2,
+                    "path": "services.cloudwatch.regions.id.event_bus"
                 }
             }
         },

@@ -104,7 +104,10 @@ def get_value_at(all_info, current_path, key, to_string=False):
                 elif p == '':
                     pass
                 else:
-                    target_obj = target_obj[p]
+                    if p in target_obj:
+                        target_obj = target_obj[p]
+                    else:
+                        target_obj = p
             except Exception as e:
                 print_exception(f'Unable to get \"{p}\" from target object {target_obj}: {e}',
                                 additional_details={'current_path': current_path,

@@ -5,10 +5,17 @@
         "https://www.cloudconformity.com/knowledge-base/aws/Route53/privacy-protection.html"
     ],
     "dashboard_name": "Domains",
-    "path": "route53.regions.id",
+    "path": "route53.regions.id.domains.id",
+  "remediation": "Quick win\n",
   "associated_risks": [
         "Data leakage"
     ],
     "conditions": [
+      "and",
+      [
+        "route53.regions.id.domains.id.domain_detail.RegistrantPrivacy",
+        "false",
+        ""
+      ]
     ]
 }

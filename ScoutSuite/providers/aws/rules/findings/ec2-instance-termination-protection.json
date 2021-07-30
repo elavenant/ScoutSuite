@@ -10,6 +10,12 @@
       "Resource reliability"
     ],
     "conditions": [
+        "and",
+        [
+           "ec2.regions.id.vpcs.id.instances.id.disable_api_termination",
+            "equal",
+            "false"
+        ]
     ],
     "arg_names": [
     ]

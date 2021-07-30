@@ -11,5 +11,11 @@
     "dashboard_name": "Clusters",
     "path": "redshift.regions.id.vpcs.id.clusters.id",
     "conditions": [
+        "and",
+        [
+            "redshift.regions.id.vpcs.id.clusters.id.Endpoint.Port",
+            "equal",
+            "5439"
+        ]
     ]
 }

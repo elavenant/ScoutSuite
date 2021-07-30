@@ -10,6 +10,7 @@
     "associated_risks": [
         "Data leakage"
     ],
+    "remediation": "Quick win\n",
     "conditions": [
         "and",
         [

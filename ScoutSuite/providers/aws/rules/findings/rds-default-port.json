@@ -12,5 +12,21 @@
     "display_path": "rds.regions.id.vpcs.id.instances.id",
     "path": "rds.regions.id.vpcs.id.instances.id",
     "conditions": [
+        "and",
+        [
+            "rds.regions.id.vpcs.id.instances.id.Endpoint.Port",
+            "equal",
+            "3306"
+        ],
+        [
+            "rds.regions.id.vpcs.id.instances.id.Endpoint.Port",
+            "equal",
+            "1433"
+        ],
+        [
+            "rds.regions.id.vpcs.id.instances.id.Endpoint.Port",
+            "equal",
+            "5432"
+        ]
     ]
 }

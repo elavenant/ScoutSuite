@@ -179,3 +179,13 @@ class RDSFacade(AWSBaseFacade):
         except Exception as e:
             print_exception(f'Failed to get RDS security groups: {e}')
             return []
+
+    async def has_events_subscription(self, region: str):
+        client = AWSFacadeUtils.get_client('rds', self.session, region)
+        try:
+            return await True if len(run_concurrently(
+                lambda: client.describe_event_subscriptions(
+                    region=region)[
+                    'EventSubscriptionsList'])) > 0 else False
+        except Exception as e:
+            print_exception(f'Failed to describe RDS event subscriptions: {e}')

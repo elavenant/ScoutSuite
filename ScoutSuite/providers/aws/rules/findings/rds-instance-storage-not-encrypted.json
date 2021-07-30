@@ -9,6 +9,7 @@
     ],
     "dashboard_name": "Instances",
     "path": "rds.regions.id.vpcs.id.instances.id",
+    "remediation": "Quick win\n",
     "conditions": [
         "and",
         [

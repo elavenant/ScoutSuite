@@ -3,6 +3,7 @@
     "rationale": "Ensure that certificates which are in use are not about to expire.",
     "dashboard_name": "Certificates",
     "path": "acm.regions.id.certificates.id",
+    "remediation": "Quick win\n",
     "conditions": [
         "and",
         [

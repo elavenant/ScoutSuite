@@ -1,0 +1,23 @@
+{
+    "description": "Enable Envelope Encryption for EKS Kubernetes Secrets",
+    "rationale": "Use AWS Key Management Service (KMS) keys to provide envelope encryption of Kubernetes secrets stored in Amazon Elastic Kubernetes Service (EKS), in order to meet security and compliance requirements. Implementing envelope encryption of Kubernetes secrets is considered a security best practice for applications that store sensitive and confidential data. Set up your own AWS KMS Customer Master Key (CMK) and associate the key with your Amazon EKS cluster. When secrets are stored using the Kubernetes secrets API, they are encrypted with a Kubernetes-generated data encryption key, which is then further encrypted using the associated KMS CMK that you have created.",
+    "references": [
+        "https://www.cloudconformity.com/knowledge-base/aws/EKS/enable-envelope-encryption.html"
+    ],
+    "remediation": "Quick win\n",
+    "associated_risks": [
+      "Data leakage",
+      "Resource compromisison"
+    ],
+    "dashboard_name": "General",
+    "display_path": "eks.regions.id.clusters.id",
+    "path": "eks.regions.id.clusters.id",
+    "conditions": [
+        "and",
+        [
+            "this",
+            "withoutKey",
+            "encryptionConfig"
+        ]
+    ]
+}

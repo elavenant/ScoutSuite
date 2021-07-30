@@ -8,6 +8,7 @@
     "associated_risks": [
         "Data leakage"
     ],
+    "remediation": "Quick win\n",
     "display_path": "sns.regions.id.topics.id",
     "path": "sns.regions.id.topics.id",
     "conditions": [

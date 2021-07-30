@@ -96,3 +96,10 @@ class AWSFacadeUtils:
         except Exception as e:
             print_exception(f'Failed to create client for the {service} service: {e}')
             return None
+
+    @staticmethod
+    def expand_list_to_dict(source_list):
+        res = {}
+        for e in source_list:
+            res[e] = {"id": e}
+        return res

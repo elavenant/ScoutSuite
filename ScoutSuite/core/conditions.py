@@ -302,6 +302,8 @@ def fix_path_string(all_info, current_path, path_to_value):
                     break
                 tmp = nested[0].replace('_GET_VALUE_AT_(', '', 1)
             dv = get_value_at(all_info, current_path, tmp)
+            if type(dv) == bool:
+                dv = str(dv)
             path_to_value = path_to_value.replace('_GET_VALUE_AT_(%s)' % tmp, dv)
     return path_to_value
 
