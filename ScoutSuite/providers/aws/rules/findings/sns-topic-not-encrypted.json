@@ -2,7 +2,11 @@
     "description": "SNS Topic Encrypted With KMS Customer Master Keys",
     "rationale": "Ensure that your AWS Simple Notification Service (SNS) topics are encrypted with KMS Customer Master Keys (CMKs) instead of AWS managed-keys (default keys used by the SNS service when there are no customer-managed keys created) in order to have a more granular control over the SNS data-at-rest encryption and decryption process.",
     "references": [
-        "https://www.cloudconformity.com/knowledge-base/aws/SNS/topic-encrypted-with-kms-customer-master-keys.html"
+        "https://www.cloudconformity.com/knowledge-base/aws/SNS/topic-encrypted-with-kms-customer-master-keys.html",
+        "https://aws.amazon.com/sns/faqs/",
+        "https://docs.aws.amazon.com/sns/latest/dg/sns-security.html",
+        "https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html",
+        "https://docs.aws.amazon.com/sns/latest/dg/sns-enable-encryption.html"
     ],
     "dashboard_name": "Topics",
     "associated_risks": [
@@ -11,6 +15,5 @@
     "remediation": "Quick win\n",
     "display_path": "sns.regions.id.topics.id",
     "path": "sns.regions.id.topics.id",
-    "conditions": [
-    ]
+    "conditions": []
 }

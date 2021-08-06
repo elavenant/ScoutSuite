@@ -1,0 +1,27 @@
+{
+    "description": "Create Alert for \"Create Policy Assignment\" Events",
+    "rationale": "Ensure that an Azure activity log alert is used to detect \"Create Policy Assignment\" events within your Microsoft Azure cloud account. Activity log alerts get activated when a new activity log event that matches the condition specified in the alert occurs. In this case, the condition used is 'Whenever the Policy Activity Log \"Create policy assignment (policyAssignments)\" has \"any\" level, with \"any\" status and event is initiated by \"any\"'.Monitoring your Azure cloud account for \"Create Policy Assignment\" events can provide insights into changes done within the \"Policy Assignment\" Azure policy and can help reduce the time it takes to detect unsolicited changes.",
+    "dashboard_name": "Activity log",
+    "path": "monitor.subscriptions.id.activity_logs.id",
+    "references": [
+        "https://www.cloudconformity.com/knowledge-base/azure/ActivityLog/create-alert-for-create-policy-assignment-events.html",
+        "https://docs.microsoft.com/en-us/azure/azure-monitor/platform/alerts-activity-log",
+    ],
+    "associated_risks": [
+        "Undetected incident",
+        "Unauthorized access"
+    ],
+    "conditions": [
+        "and",
+        [
+            "monitor.subscriptions.id.activity_logs.id.enabled",
+            "true",
+            ""
+        ],
+        [
+            "monitor.subscriptions.id.activity_logs.id.operation_name_list",
+            "containNoneOf",
+            "Microsoft.Authorization/policyAssignments/write"
+        ]
+    ]
+}

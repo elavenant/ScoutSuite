@@ -1,0 +1,76 @@
+{
+    "description": "Check for Key Vault Full Administrator Permissions",
+    "rationale": "Ensure that there is no Microsoft Azure user, group or application with full administrator privileges configured to access and manage Azure Key Vaults, in order to adhere to security best practices and implement the principle of least privilege (i.e. the practice of providing every principal the minimal amount of access required to perform its tasks).",
+    "dashboard_name": "Key Vault",
+    "display_path": "keyvault.subscriptions.id.vaults.id",
+    "path": "keyvault.subscriptions.id.vaults.id.properties.access_policies.id",
+    "associated_risks": [
+        "Resource compromission"
+    ],
+    "references": [
+        "https://www.cloudconformity.com/knowledge-base/azure/KeyVault/full-admin-permissions.html",
+        "https://docs.microsoft.com/en-us/azure/key-vault/general/overview-security",
+        "https://docs.microsoft.com/en-us/azure/key-vault/general/group-permissions-for-apps"
+    ],
+    "conditions": [
+        "and",
+        [
+            "keyvault.subscriptions.id.vaults.id.properties.access_policies.id.permissions.keys",
+            "listMatch",
+            [
+                "Get",
+                "List",
+                "Update",
+                "Create",
+                "Import",
+                "Delete",
+                "Recover",
+                "Backup",
+                "Restore",
+                "Decrypt",
+                "Encrypt",
+                "UnwrapKey",
+                "WrapKey",
+                "Verify",
+                "Sign",
+                "Purge"
+            ]
+        ],
+        [
+            "keyvault.subscriptions.id.vaults.id.properties.access_policies.id.permissions.certificates",
+            "listMatch",
+            [
+                "Get",
+                "List",
+                "Update",
+                "Create",
+                "Import",
+                "Delete",
+                "Recover",
+                "Backup",
+                "Restore",
+                "ManageContacts",
+                "ManageIssuers",
+                "GetIssuers",
+                "ListIssuers",
+                "SetIssuers",
+                "DeleteIssuers",
+                "Purge"
+            ]
+        ],
+        [
+            "keyvault.subscriptions.id.vaults.id.properties.access_policies.id.permissions.secrets",
+            "listMatch",
+            [
+                "Get",
+                "List",
+                "Set",
+                "Delete",
+                "Recover",
+                "Backup",
+                "Restore",
+                "Purge"
+            ]
+        ]
+    ]
+}

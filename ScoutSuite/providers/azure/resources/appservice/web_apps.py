@@ -64,6 +64,9 @@ class WebApplication(AzureResources):
         web_app_dict['in_progress_operation_id'] = raw_web_app.in_progress_operation_id
         web_app_dict['identity'] = raw_web_app.identity
         web_app_dict['additional_properties'] = raw_web_app.additional_properties
+        web_app_dict['remote_debugging_enabled'] = raw_web_app.config.remote_debugging_enabled
+        web_app_dict['always_on'] = raw_web_app.config.always_on
+        web_app_dict['ftps_state'] = raw_web_app.config.ftps_state
 
         web_app_dict['outbound_ip_addresses'] = raw_web_app.outbound_ip_addresses.split(',')
         web_app_dict['possible_outbound_ip_addresses'] = raw_web_app.possible_outbound_ip_addresses.split(',')

@@ -1,0 +1,15 @@
+{
+    "description": "Restrict Non-Admin Access to Administration Portal",
+    "rationale": "Ensure that \"Restrict access to Azure AD administration portal\" policy is set to \"Yes\" within your Azure Active Directory (AD) settings to deny access to the Azure AD administration portal for all non-administrator users. This setting is limited to administration portal only and enabling it does not restrict access using PowerShell or another client such as Microsoft Visual Studio. By default, \"Restrict access to Azure AD administration portal\" is set to \"No\".",
+    "dashboard_name": "Administration",
+    "path": "aad.users.id",
+    "references": [
+        "https://www.cloudconformity.com/knowledge-base/azure/ActiveDirectory/restrict-access-to-azure-ad-administration-portal.html",
+        "https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/directory-assign-admin-roles",
+        "https://azure.microsoft.com/mediahandler/files/resourcefiles/cis-microsoft-azure-foundations-security-benchmark/CIS_Microsoft_Azure_Foundations_Benchmark_v1.0.0.pdf"
+    ],
+    "associated_risks": [
+        "Unauthorized access"
+    ],
+    "conditions": []
+}

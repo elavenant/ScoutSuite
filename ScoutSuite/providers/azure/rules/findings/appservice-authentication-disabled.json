@@ -9,6 +9,10 @@
             "reference": "9.1"
         }
     ],
+    "associated_risks": [
+      "Resource compromission",
+      "Unauthorized access"
+    ],
     "references": [
         "https://docs.microsoft.com/en-us/azure/app-service/app-service-authentication-overview"
     ],

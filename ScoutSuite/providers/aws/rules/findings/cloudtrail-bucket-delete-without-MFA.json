@@ -2,12 +2,19 @@
     "description": "CloudTrail Bucket MFA Delete Enabled",
     "rationale": "Ensure that your AWS CloudTrail logging bucket use Multi-Factor Authentication (MFA) Delete feature in order to prevent the deletion of any versioned log files.\n\nThis rule can help you with the following compliance standards:\n\nPayment Card Industry Data Security Standard (PCI DSS)\nHealth Insurance Portability and Accountability Act (HIPAA)\nGeneral Data Protection Regulation (GDPR)\nAPRA\nMAS\nNIST 800-53 (Rev. 4)\nThis rule can help you work with the AWS Well-Architected Framework",
     "references": [
-        "https://www.cloudconformity.com/knowledge-base/aws/CloudTrail/cloudtrail-bucket-mfa-delete-enabled.html"
+        "https://www.cloudconformity.com/knowledge-base/aws/CloudTrail/cloudtrail-bucket-mfa-delete-enabled.html",
+        "https://aws.amazon.com/iam/faqs/",
+        "http://aws.amazon.com/iam/details/mfa/",
+        "http://docs.aws.amazon.com/AmazonS3/latest/dev/DataDurability.html",
+        "http://docs.aws.amazon.com/AmazonS3/latest/dev/Versioning.html",
+        "http://docs.aws.amazon.com/AmazonS3/latest/dev/DeletingObjects.html",
+        "http://docs.aws.amazon.com/AmazonS3/latest/dev/DeletingObjectVersions.html",
+        "http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMFADelete.html"
     ],
     "dashboard_name": "Configurations",
     "path": "cloudtrail.regions.id.trails.id",
     "associated_risks": [
-      "Data loss"
+        "Data loss"
     ],
     "remediation": "Quick win\n",
     "conditions": [

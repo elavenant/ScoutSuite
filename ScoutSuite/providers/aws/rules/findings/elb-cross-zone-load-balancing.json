@@ -2,10 +2,13 @@
     "description": "ELB Cross-Zone Load Balancing Enabled",
     "rationale": "By using at least two subnets in different Availability Zones with the Cross-Zone Load Balancing feature enabled, your ELBs can distribute the traffic evenly across all backend instances. To use Cross-Zone Load Balancing at optimal level, Amazon recommends maintaining an equal EC2 capacity distribution in each of the AZs registered with the load balancer.",
     "references": [
-        "https://www.cloudconformity.com/knowledge-base/aws/ELB/elb-cross-zone-load-balancing-enabled.html"
+        "https://www.cloudconformity.com/knowledge-base/aws/ELB/elb-cross-zone-load-balancing-enabled.html",
+        "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elastic-load-balancing.html",
+        "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/how-elb-works.html",
+        "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/enable-disable-crosszone-lb.html"
     ],
     "associated_risks": [
-      "Resource reliability"
+        "Resource reliability"
     ],
     "dashboard_name": "Load Balancers",
     "display_path": "elb.regions.id.vpcs.id.elbs.id",

@@ -2,10 +2,12 @@
     "description": "ELB Connection Draining Enabled",
     "rationale": "With Connection Draining feature enabled, if an EC2 backend instance fails health checks the Elastic Load Balancer will not send any new requests to the unhealthy instance. However, it will still allow existing (in-flight) requests to complete for the duration of the configured timeout.Enabling this feature will allow better management of the resources behind the Elastic Load Balancer, such as replacing backend instances without impacting the user experience. For example, taking an instance out of service and replacing it with a fresh EC2 instance that contains updated software, while avoid breaking open network connections.",
     "references": [
-        "https://www.cloudconformity.com/knowledge-base/aws/ELB/elb-connection-draining-enabled.html"
+        "https://www.cloudconformity.com/knowledge-base/aws/ELB/elb-connection-draining-enabled.html",
+        "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elastic-load-balancing.html",
+        "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/config-conn-drain.html"
     ],
     "associated_risks": [
-      "Resource reliability"
+        "Resource reliability"
     ],
     "remediation": "Quick win\n",
     "dashboard_name": "Load Balancers",

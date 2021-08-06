@@ -2,7 +2,12 @@
     "description": "Enable Server-Side Encryption for AWS SNS Topics\n",
     "rationale": "Ensure that Server-Side Encryption (SSE) is enabled for your AWS Simple Notification Service (SNS) topics for additional protection of sensitive data delivered as messages to subscribers. With the SSE feature enabled, when messages are published to encrypted topics, AWS SNS immediately encrypts the messages using a 256-bit AES-GCM algorithm and a Customer Master Key (CMK) issued by Amazon KMS service. AWS SNS Server-Side Encryption can work with both AWS-managed CMKs and customer-managed CMKs.",
     "references": [
-        "https://www.cloudconformity.com/knowledge-base/aws/SNS/server-side-encryption.html"
+        "https://www.cloudconformity.com/knowledge-base/aws/SNS/server-side-encryption.html",
+        "https://aws.amazon.com/sns/faqs/",
+        "https://docs.aws.amazon.com/sns/latest/dg/sns-getting-started.html",
+        "https://docs.aws.amazon.com/sns/latest/dg/sns-security.html",
+        "https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html",
+        "https://docs.aws.amazon.com/sns/latest/dg/sns-enable-encryption.html"
     ],
     "dashboard_name": "Topics",
     "associated_risks": [
@@ -11,6 +16,5 @@
     "remediation": "Quick win\n",
     "display_path": "sns.regions.id.topics.id",
     "path": "sns.regions.id.topics.id",
-    "conditions": [
-    ]
+    "conditions": []
 }

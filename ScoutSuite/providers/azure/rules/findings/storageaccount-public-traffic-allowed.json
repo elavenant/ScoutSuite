@@ -9,6 +9,9 @@
             "reference": "3.7"
         }
     ],
+    "associated_risks": [
+      "Data leakage"
+    ],
     "references": [
         "https://docs.microsoft.com/en-us/azure/storage/common/storage-network-security"
     ],

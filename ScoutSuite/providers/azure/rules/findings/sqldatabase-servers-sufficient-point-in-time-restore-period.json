@@ -1,0 +1,16 @@
+{
+    "description": "Check for Sufficient Point in Time Restore (PITR) Backup Retention Period",
+    "rationale": "Ensure that Microsoft Azure SQL databases have a sufficient Point in Time Restore (PITR) backup retention period configured for security and compliance purposes. Azure SQL service automatically creates database backups that are kept between 7 and 35 days. The SQL service uses Azure read-access geo-redundant storage (RA-GRS) to ensure that the backups are preserved even if the primary datacenter becomes unavailable. Prior to running this rule by the Cloud Conformity engine, the PITR backup retention period must configured within the rule settings, on the Cloud Conformity account dashboard. The supported values are: 1, 7, 14, 21, 28 and 35 days. Azure default backup short term retention days setting is 7.",
+    "associated_risks": [
+        "Resource reliability"
+    ],
+    "references": [
+        "https://www.cloudconformity.com/knowledge-base/azure/Sql/sufficient-pitr-backup.html",
+        "https://docs.microsoft.com/en-us/azure/sql-database/sql-database-single-database-quickstart-guide",
+        "https://docs.microsoft.com/en-us/azure/sql-database/sql-database-automated-backups?tabs=single-database"
+    ],
+    "dashboard_name": "SQL Servers",
+    "display_path": "sqldatabase.subscriptions.id.servers.id",
+    "path": "sqldatabase.subscriptions.id.servers.id",
+    "conditions": []
+}

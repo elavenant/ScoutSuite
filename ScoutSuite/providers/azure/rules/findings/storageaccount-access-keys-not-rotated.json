@@ -9,6 +9,10 @@
             "reference": "3.2"
         }
     ],
+    "associated_risks": [
+      "Data leakage",
+        "Unauthorized access"
+    ],
     "references": [
         "https://docs.microsoft.com/en-us/azure/storage/common/storage-create-storage-account"
     ],

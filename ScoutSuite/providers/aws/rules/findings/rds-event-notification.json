@@ -2,11 +2,15 @@
     "description": "RDS Event Notifications",
     "rationale": "Ensure that your AWS RDS resources have event notifications enabled in order to be notified when an event occurs for a given database instance, database snapshot, database security group or database parameter group. The RDS service groups these events into categories that you can subscribe to so that you can be notified via AWS SNS when an event in that category occurs. For example, if you subscribe to the Backup category for a given RDS database instance, you will be notified whenever a backup-related event occurs for the specified database instance.",
     "references": [
-        "https://www.cloudconformity.com/knowledge-base/aws/RDS/notifications.html"
+        "https://www.cloudconformity.com/knowledge-base/aws/RDS/notifications.html",
+        "https://aws.amazon.com/rds/faqs/",
+        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Monitoring.html",
+        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html",
+        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ListEvents.html"
     ],
     "associated_risks": [
-      "Undetected incident",
-      "Resource reliability"
+        "Undetected incident",
+        "Resource reliability"
     ],
     "dashboard_name": "Events",
     "display_path": "rds.regions.id",

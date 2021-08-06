@@ -1,0 +1,16 @@
+{
+    "description": "Enable Auto-Failover Groups\n",
+    "rationale": "Enable automatic tuning for Microsoft Azure SQL servers in order to monitor database queries and improve database workload performance. Automatic Tuning is a built-in intelligence feature that automatically tunes your Azure SQL databases to optimize their performance. The feature options are:\n\nFORCE PLAN â€“ this option identifies SQL queries that are using an execution plan that is slower than the previous optimal plan, and queries that are using the last known optimal plan instead of the regressed plan.\n\nCREATE INDEX â€“ this recommendation identifies database indexes that may improve performance of your workload, creates indexes, and automatically verifies if the performance of SQL queries has been improved.\n\nDROP INDEX â€“ this option identifies redundant and duplicate indexes daily, except for unique indexes, and indexes that were not used for a long time, such as more than 90 days. Note that this option is not compatible with applications using partition switching and index hints. Dropping unused indexes is not currently supported for Premium and Business Critical service tiers.",
+    "associated_risks": [
+        "Resource reliability"
+    ],
+    "references": [
+        "https://www.cloudconformity.com/knowledge-base/azure/Sql/enable-automatic-tuning.html",
+        "https://docs.microsoft.com/en-us/azure/sql-database/sql-database-automatic-tuning",
+        "https://docs.microsoft.com/en-us/azure/sql-database/sql-database-automatic-tuning-enable"
+    ],
+    "dashboard_name": "SQL Servers",
+    "display_path": "sqldatabase.subscriptions.id.servers.id",
+    "path": "sqldatabase.subscriptions.id.servers.id",
+    "conditions": []
+}

@@ -3,7 +3,7 @@
     "rationale": "Not encrypting CloudTrail logs with SSE-KMS affects the confidentiality of the log data.",
     "remediation": "Ensure each Trail is encrypted with a KMS key",
     "associated_risks": [
-      "Data leakage"
+        "Data leakage"
     ],
     "compliance": [
         {
@@ -24,7 +24,15 @@
     ],
     "references": [
         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/encrypting-cloudtrail-log-files-with-aws-kms.html",
-        "https://www.cloudconformity.com/knowledge-base/aws/CloudTrail/cloudtrail-logs-encrypted.html"
+        "https://www.cloudconformity.com/knowledge-base/aws/CloudTrail/cloudtrail-logs-encrypted.html",
+        "https://aws.amazon.com/cloudtrail/faqs/",
+        "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html",
+        "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-kms-key-policy-for-cloudtrail.html",
+        "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-kms-key-policy-for-cloudtrail-update-trail.html",
+        "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/encrypting-cloudtrail-log-files-with-aws-kms.html",
+        "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-kms-key-policy-for-cloudtrail-encrypt.html",
+        "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-create-and-update-a-trail.html",
+        "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-create-and-update-a-trail-by-using-the-aws-cli.html"
     ],
     "dashboard_name": "Configurations",
     "display_path": "cloudtrail.regions.id.trails.id",
@@ -56,7 +64,6 @@
                     ""
                 ]
             ]
-
         ]
     ],
     "id_suffix": "cloudtrail-kms-key-unused"

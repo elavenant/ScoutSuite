@@ -13,6 +13,9 @@
         "https://docs.microsoft.com/en-us/azure/storage/blobs/storage-manage-access-to-resources"
     ],
     "dashboard_name": "Storage Accounts",
+    "associated_risks": [
+      "Data leakage"
+    ],
     "display_path": "storageaccounts.subscriptions.id.storage_accounts.id",
     "path": "storageaccounts.subscriptions.id.storage_accounts.id.blob_containers.id",
     "conditions": [

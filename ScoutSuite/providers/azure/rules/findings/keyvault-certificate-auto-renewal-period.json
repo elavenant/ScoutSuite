@@ -1,0 +1,16 @@
+{
+    "description": "Check for Sufficient Certificate Auto-Renewal Period",
+    "rationale": "Having the right number of days before expiration set to trigger auto-renewal for your Azure Key Vault SSL certificates, will enforce your certificate renewal strategy to follow the best practices as specified in the compliance regulations implemented within your organization. Setting a longer period of time before certificate expiration will allow you to mitigate efficiently any issues that your auto-renewal process may encounter such as an invalid or expired Certificate Authority (CA).",
+    "dashboard_name": "Key Vault",
+    "references": [
+        "https://www.cloudconformity.com/knowledge-base/azure/KeyVault/sufficient-auto-renewal-period.html",
+        "https://docs.microsoft.com/en-us/azure/key-vault/general/about-keys-secrets-certificates",
+        "https://docs.microsoft.com/en-us/azure/key-vault/certificates/certificate-scenarios",
+    ],
+    "display_path": "keyvault.subscriptions.id.vaults.id",
+    "path": "keyvault.subscriptions.id.vaults.id",
+    "associated_risks": [
+        "Deprecated configuration"
+    ],
+    "conditions": []
+}

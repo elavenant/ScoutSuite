@@ -2,7 +2,10 @@
     "description": "Enable S3 Block Public Access for AWS Accounts\n",
     "rationale": "Ensure that Amazon S3 public access is blocked at the AWS account level for data protection. Ensure that Amazon S3 Block Public Access feature is enabled for your AWS account to restrict public access to all your S3 buckets, including those that you create in the future. This feature has the ability to override existing policies and permissions in order to block S3 public access and to make sure that this type of access is not granted to newly created buckets and objects. When configuring Amazon S3 Block Public Access, you have two options for managing public ACLs and two for managing public bucket policies:\n1. Manage public Access Control Lists (ACLs):\n- Block new public ACLs and uploading public objects (BlockPublicAcls)\n- Remove public access granted through public ACLs (IgnorePublicAcls)\n\n2. Manage public S3 bucket policies:\n- Block new public bucket policies (BlockPublicPolicy)\n- Block public and cross-account access to buckets that have public policies (RestrictPublicBuckets)\nBy default, this conformity rule checks for all four settings (i.e. BlockPublicAcls, IgnorePublicAcls, BlockPublicPolicy and RestrictPublicBuckets) in order to determine if the feature is enabled or not. However, you can customize the rule configuration by disabling/enabling these settings within your Cloud Conformity account.",
     "references": [
-        "https://www.cloudconformity.com/knowledge-base/aws/S3/account-public-access-block.html"
+        "https://www.cloudconformity.com/knowledge-base/aws/S3/account-public-access-block.html",
+        "https://aws.amazon.com/s3/faqs/",
+        "https://docs.aws.amazon.com/AmazonS3/latest/user-guide/block-public-access.html",
+        "https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html"
     ],
     "dashboard_name": "Buckets",
     "path": "s3.buckets.id",

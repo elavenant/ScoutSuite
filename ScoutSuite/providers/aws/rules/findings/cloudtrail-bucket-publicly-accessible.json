@@ -2,14 +2,19 @@
     "description": "Bucket Publicly Accessible",
     "rationale": "Check for any AWS CloudTrail logging buckets that are publicly accessible, in order to determine if your AWS account could be at risk.\n\nThis rule can help you with the following compliance standards:\n\nThe Center of Internet Security AWS Foundations Benchmark\nPayment Card Industry Data Security Standard (PCI DSS)\nGeneral Data Protection Regulation (GDPR)\nAPRA\nMAS\nNIST 800-53 (Rev. 4)\nThis rule can help you work with the AWS Well-Architected Framework",
     "references": [
-        "https://www.cloudconformity.com/knowledge-base/aws/CloudTrail/cloudtrail-bucket-publicly-accessible.html"
+        "https://www.cloudconformity.com/knowledge-base/aws/CloudTrail/cloudtrail-bucket-publicly-accessible.html",
+        "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/how-cloudtrail-works.html",
+        "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html",
+        "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-s3-bucket-policy-for-cloudtrail.html",
+        "http://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html",
+        "http://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html",
+        "http://docs.aws.amazon.com/AmazonS3/latest/UG/EditingBucketPermissions.html"
     ],
     "dashboard_name": "Configurations",
     "path": "cloudtrail.regions.id.trails.id",
     "associated_risks": [
-      "Data leakage"
+        "Data leakage"
     ],
     "remediation": "Quick win\n",
-    "conditions": [
-    ]
+    "conditions": []
 }

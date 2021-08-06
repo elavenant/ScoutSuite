@@ -3,13 +3,16 @@
     "rationale": "Ensure that your Amazon Simple Queue Service (SQS) queues are protecting the contents of their messages using Server-Side Encryption (SSE). The SQS service uses an AWS KMS Customer Master Key (CMK) to generate data keys required for the encryption/decryption process of SQS messages. There is no additional charge for using SQS Server-Side Encryption, however, there is a charge for using AWS KMS.",
     "dashboard_name": "Queues",
     "references": [
-      "https://www.cloudconformity.com/knowledge-base/aws/SQS/server-side-encryption.html"
+        "https://www.cloudconformity.com/knowledge-base/aws/SQS/server-side-encryption.html",
+        "https://aws.amazon.com/sqs/faqs/",
+        "https://aws.amazon.com/kms/pricing/",
+        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html",
+        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html"
     ],
     "display_path": "sqs.regions.id.queues.id",
     "path": "sqs.regions.id.queues.id",
     "associated_risks": [
         "Data leakage"
     ],
-    "conditions": [
-    ]
+    "conditions": []
 }

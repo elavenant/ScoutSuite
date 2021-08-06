@@ -1,0 +1,16 @@
+{
+    "description": "App Service Authentication Disabled",
+    "rationale": "Ensure that your Microsoft Azure App Services applications have a sufficient daily backup retention period configured for scheduled backups, in order to follow security and regulatory requirements. Prior to running this rule by the Cloud Conformity engine, the backup retention period must be configured in the rule settings, on the Cloud Conformity account dashboard. A retention value of 0 will keep backup files indefinitely.",
+    "references": [
+        "https://www.cloudconformity.com/knowledge-base/azure/AppService/sufficient-backup-retention-period.html",
+        "https://azure.microsoft.com/en-us/services/app-service/",
+        "https://docs.microsoft.com/en-us/azure/app-service/manage-backup",
+        "https://docs.microsoft.com/en-us/azure/app-service/scripts/cli-backup-onetime"
+    ],
+    "associated_risks": [
+        "Resource reliability"
+    ],
+    "dashboard_name": "Web Apps",
+    "path": "appservice.subscriptions.id.web_apps.id",
+    "conditions": []
+}

@@ -1,9 +1,9 @@
 import sys
 import json
-from ScoutSuite.output.dashboard_scripts.visualization import Visualization
-from ScoutSuite.output.dashboard_scripts.iam_visualization import AWSIAMVisualization
-from ScoutSuite.output.dashboard_scripts.resources import AWSResourcesVisualization
-from ScoutSuite.output.dashboard_scripts.findings import AWSFindingsVisualization
+from ScoutSuite.output.dashboard_scripts.aws.iam_visualization import AWSIAMVisualization
+from ScoutSuite.output.dashboard_scripts.aws.resources import AWSResourcesVisualization
+from ScoutSuite.output.dashboard_scripts.azure.resources import AzureResourcesVisualization
+from ScoutSuite.output.dashboard_scripts.base.findings import FindingsVisualization
 from ScoutSuite.output.export_scripts import json_to_excel
 
 
@@ -44,16 +44,21 @@ class Excel:
         if self.provider == 'aws':
 
             self.visualizations.append(AWSResourcesVisualization(self.json_file, self.services))
-            self.visualizations.append(AWSFindingsVisualization(self.json_file, self.services))
+            self.visualizations.append(FindingsVisualization(self.json_file, self.services))
 
             # If IAM is the only service we can add detailed version
             if self.services == ["iam"]:
                 self.visualizations.append(AWSIAMVisualization(self.json_file))
 
-            self.build_json()
-            self.merge_json()
+        elif self.provider == 'azure':
 
-            self.save()
+            self.visualizations.append(AzureResourcesVisualization(self.json_file, self.services))
+            self.visualizations.append(FindingsVisualization(self.json_file, self.services))
+
+        self.build_json()
+        self.merge_json()
+
+        self.save()
 
     def build_json(self):
         for i in range(len(self.visualizations)):

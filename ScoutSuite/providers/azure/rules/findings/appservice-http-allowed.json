@@ -12,6 +12,9 @@
     "references": [
         "https://docs.microsoft.com/en-us/azure/app-service/app-service-web-tutorial-custom-ssl#enforce-https"
     ],
+    "associated_risks": [
+      "Data leakage"
+    ],
     "dashboard_name": "Web Apps",
     "path": "appservice.subscriptions.id.web_apps.id",
     "conditions": [

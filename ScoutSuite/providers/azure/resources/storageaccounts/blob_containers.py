@@ -22,5 +22,7 @@ class BlobContainers(AzureResources):
         blob_container = {}
         blob_container['id'] = raw_blob_container.name
         blob_container['public_access_allowed'] = raw_blob_container.public_access != "None"
+        blob_container['has_legal_hold'] = raw_blob_container.has_legal_hold
+        blob_container['has_immutability_policy'] = raw_blob_container.has_immutability_policy
 
         return blob_container['id'], blob_container

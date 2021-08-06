@@ -1,0 +1,22 @@
+{
+    "description": "Enable FTPS-Only Access\n",
+    "rationale": "Ensure that your Azure App Services web applications enforce FTPS-only access to encrypt FTP traffic. FTPS (Secure FTP) is used to enhance security for your Azure web application as it adds an extra layer of security to the FTP protocol, and help you to comply with the industry standards and regulations.",
+    "references": [
+        "https://www.cloudconformity.com/knowledge-base/azure/AppService/enable-ftps-only.html",
+        "https://azure.microsoft.com/en-us/services/app-service/",
+        "https://docs.microsoft.com/en-us/azure/app-service/deploy-ftp#enforce-ftps"
+    ],
+    "associated_risks": [
+        "Data leakage"
+    ],
+    "dashboard_name": "Web Apps",
+    "path": "appservice.subscriptions.id.web_apps.id",
+    "conditions": [
+        "and",
+        [
+            "appservice.subscriptions.id.web_apps.id.ftps_state",
+            "equal",
+            "AllAllowed"
+        ]
+    ]
+}

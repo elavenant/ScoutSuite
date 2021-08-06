@@ -2,13 +2,15 @@
     "description": "Ensure that stacks have not driften",
     "rationale": "Ensure that your AWS CloudFormation stacks are not drifted from their expected template configuration. A CloudFormation stack is considered to have drifted from its configuration if one or more of its resources have been drifted. A stack resource is considered to have drifted if its actual property values differ from the expected property values specified as stack template parameters. This includes if the property or resource has been deleted. For each resource within the stack that supports drift detection, Amazon CloudFormation compares the actual configuration of the resource with its expected template configuration. Only resource properties explicitly defined in the stack template are checked for drift.",
     "references": [
-        "https://www.cloudconformity.com/knowledge-base/aws/CloudFormation/drift-detection.html"
+        "https://www.cloudconformity.com/knowledge-base/aws/CloudFormation/drift-detection.html",
+        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacks.html",
+        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html",
+        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/detect-drift-stack.html"
     ],
     "dashboard_name": "Stacks",
     "path": "cloudformation.regions.id.stacks.id",
     "associated_risks": [
-      "Resource loss"
+        "Resource loss"
     ],
-    "conditions": [
-    ]
+    "conditions": []
 }

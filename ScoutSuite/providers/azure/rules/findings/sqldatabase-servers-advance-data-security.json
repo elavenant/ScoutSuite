@@ -1,0 +1,17 @@
+{
+    "description": "Advanced Data Security for SQL Servers\n",
+    "rationale": "Ensure that Advanced Data Security feature is enabled within your Microsoft Azure SQL server configuration settings to provide a set of advanced SQL security capabilities for your SQL database servers, such Data Discovery and Classification â€“ used for discovering and classifying sensitive data, Vulnerability Assessment â€“ useful for finding and mitigating potential database vulnerabilities, and Advanced Threat Protection â€“ a service used for detecting abnormal activities that could indicate a threat to your SQL databases.",
+    "associated_risks": [
+        "Deprecated configuration"
+    ],
+    "references": [
+        "https://www.cloudconformity.com/knowledge-base/azure/Sql/advanced-data-security-policy.html",
+        "https://docs.microsoft.com/en-us/azure/sql-database/sql-database-advanced-data-security",
+        "https://docs.microsoft.com/en-us/azure/sql-database/sql-database-threat-detection#azure-sql-database-threat-detection-alerts",
+        "https://azure.microsoft.com/mediahandler/files/resourcefiles/cis-microsoft-azure-foundations-security-benchmark/CIS_Microsoft_Azure_Foundations_Benchmark_v1.0.0.pdf"
+    ],
+    "dashboard_name": "SQL Servers",
+    "display_path": "sqldatabase.subscriptions.id.servers.id",
+    "path": "sqldatabase.subscriptions.id.servers.id",
+    "conditions": []
+}

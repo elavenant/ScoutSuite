@@ -2,10 +2,13 @@
     "description": "EKS Security Groups",
     "rationale": "Ensure that the security groups associated with your Amazon Elastic Kubernetes Service (EKS) clusters are configured to allow inbound traffic only on TCP port 443 (HTTPS) in order to protect your clusters against malicious activities such as brute-force attacks and meet compliance requirements within your organization.",
     "references": [
-        "https://www.cloudconformity.com/knowledge-base/aws/EKS/security-groups.html"
+        "https://www.cloudconformity.com/knowledge-base/aws/EKS/security-groups.html",
+        "https://aws.amazon.com/eks/faqs/",
+        "https://docs.aws.amazon.com/eks/latest/userguide/clusters.html",
+        "https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html"
     ],
     "associated_risks": [
-      "Resource reliability"
+        "Resource reliability"
     ],
     "dashboard_name": "Rules",
     "display_path": "eks.regions.id.clusters.id.security_groups.id",

@@ -1,0 +1,25 @@
+{
+    "description": "Disable Remote Debugging",
+    "rationale": "Ensure that your Azure App Services web applications have remote debugging disabled in order to enhance security and protect the applications from unauthorized access. Remote Debugging feature is available for web applications (e.g. ASP.NET, ASP.NET Core, Node.js, Python).",
+    "references": [
+        "https://www.cloudconformity.com/knowledge-base/azure/AppService/disable-remote-debugging.html",
+        "https://azure.microsoft.com/en-us/services/app-service/",
+        "https://docs.microsoft.com/en-us/azure/app-service/configure-common#configure-general-settings",
+        "https://docs.microsoft.com/en-us/visualstudio/debugger/remote-debugging?view=vs-2019"
+    ],
+    "associated_risks": [
+        "Resource compromission",
+        "Unauthorized access"
+    ],
+    "dashboard_name": "Web Apps",
+    "path": "appservice.subscriptions.id.web_apps.id",
+    "conditions": [
+        "and",
+        [
+            "appservice.subscriptions.id.web_apps.id.remote_debugging_enabled",
+            "true",
+            ""
+        ]
+    ],
+    "id_suffix": "remote_debugging_enabled"
+}

@@ -1,0 +1,29 @@
+{
+    "description": "Create Alert for \"Create or Update Security Solution\" Events",
+    "rationale": "Ensure that an Azure activity log alert is fired whenever \"Create\" or \"Update Security Solution\" events are triggered in your Microsoft Azure cloud account. Activity log alerts get activated when a new activity log event that matches the condition specified in the alert occurs. In this case, the alert condition that this conformity rule searches for is 'Whenever the Security Activity Log \"Create or Update Security Solutions (Microsoft.Security/securitySolutions)\" has \"any\" level, with \"any\" status and event is initiated by \"any '.",
+    "dashboard_name": "Activity log",
+    "path": "monitor.subscriptions.id.activity_logs.id",
+    "references": [
+        "https://www.cloudconformity.com/knowledge-base/azure/ActivityLog/create-or-update-security-solution-alert.html",
+        "https://docs.microsoft.com/en-us/azure/azure-monitor/platform/alerts-activity-log",
+        "https://docs.microsoft.com/en-us/azure/azure-monitor/platform/alerts-action-rules",
+        "https://azure.microsoft.com/mediahandler/files/resourcefiles/cis-microsoft-azure-foundations-security-benchmark/CIS_Microsoft_Azure_Foundations_Benchmark_v1.0.0.pdf"
+    ],
+    "associated_risks": [
+        "Undetected incident",
+        "Deprecated configuration"
+    ],
+    "conditions": [
+        "and",
+        [
+            "monitor.subscriptions.id.activity_logs.id.enabled",
+            "true",
+            ""
+        ],
+        [
+            "monitor.subscriptions.id.activity_logs.id.operation_name_list",
+            "containNoneOf",
+            "Microsoft.Security/securitySolutions/write"
+        ]
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "description": "Create Alert for \"Create, Update or Delete SQL Server Firewall Rule\" Events\n",
+    "rationale": "Ensure that an Azure activity log alert is fired whenever \"Create\", \"Update\" or \"Delete SQL Server Firewall Rule\" events are triggered in your Microsoft Azure cloud account. Activity log alerts get activated when a new activity log event that matches the condition specified in the alert occurs. In this case, the condition required for the alert is 'Whenever the Administrative Activity Log \"Create/Update server firewall rule (Microsoft.Sql/servers/firewallRules)\" has \"any\" level, with \"any\" status and event is initiated by \"any\"'.",
+    "dashboard_name": "Activity log",
+    "path": "monitor.subscriptions.id.activity_logs.id",
+    "references": [
+      "https://www.cloudconformity.com/knowledge-base/azure/ActivityLog/create-or-update-or-delete-sql-server-firewall-rule-alert.html"
+    ],
+    "associated_risks": [
+      "Undetected incident",
+      "Unauthorized access"
+    ],
+    "conditions": [
+      "and",
+      [
+        "monitor.subscriptions.id.activity_logs.id.enabled",
+        "true",
+        ""
+      ],
+      [
+        "monitor.subscriptions.id.activity_logs.id.operation_name_list",
+        "containNoneOf",
+        "Microsoft.Sql/servers/firewallRules/write"
+      ]
+    ]
+}

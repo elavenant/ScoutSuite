@@ -1,0 +1,16 @@
+{
+    "description": "Restrict Guest User Invitations",
+    "rationale": "Ensure that \"Guests can invite\" setting is set to \"No\" in your Azure Active Directory (AD) user settings so that the guest users within your directory cannot invite themselves other guests to collaborate on cloud resources secured by your Active Directory account.",
+    "dashboard_name": "Administration",
+    "path": "aad.users.id",
+    "references": [
+        "https://www.cloudconformity.com/knowledge-base/azure/ActiveDirectory/guests-can-invite.html",
+        "https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/directory-assign-admin-roles",
+        "https://docs.microsoft.com/en-us/azure/active-directory/b2b/delegate-invitations",
+        "https://azure.microsoft.com/mediahandler/files/resourcefiles/cis-microsoft-azure-foundations-security-benchmark/CIS_Microsoft_Azure_Foundations_Benchmark_v1.0.0.pdf"
+    ],
+    "associated_risks": [
+        "Unauthorized access"
+    ],
+    "conditions": []
+}

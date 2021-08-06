@@ -1,0 +1,25 @@
+{
+    "description": "Enable Always On",
+    "rationale": "Ensure that your Microsoft Azure App Services web applications have Always On feature enabled in order to prevent applications from being idled out due to inactivity. Always On keeps your websites/web applications loaded even when there's no traffic.",
+    "references": [
+        "https://www.cloudconformity.com/knowledge-base/azure/AppService/enable-always-on.html",
+        "https://azure.microsoft.com/en-us/services/app-service/",
+        "https://azure.microsoft.com/en-us/updates/azure-web-sites-adds-always-on/",
+        "https://docs.microsoft.com/en-us/azure/app-service/configure-common"
+    ],
+    "associated_risks": [
+        "Resource reliability",
+        "Performance efficiency"
+    ],
+    "dashboard_name": "Web Apps",
+    "path": "appservice.subscriptions.id.web_apps.id",
+    "conditions": [
+        "and",
+        [
+            "appservice.subscriptions.id.web_apps.id.always_on",
+            "false",
+            ""
+        ]
+    ],
+    "id_suffix": "always_on"
+}

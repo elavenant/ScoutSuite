@@ -1,0 +1,18 @@
+{
+    "description": "Enable Authentication Reconfirmation\n",
+    "rationale": "The \"Number of days before users are asked to re-confirm their authentication information\" represents the period of time, up to a maximum of 730 days, before AD registered users are prompted to reconfirm their existing authentication details to make sure that these are still valid. If authentication reconfirmation is disabled, i.e. set to zero days, the Active Directory users will never be prompted to reconfirm their existing authentication information. If one or more authentication details set for an AD user changes, the password reset information for that user reverts to the previously registered authentication information.",
+    "dashboard_name": "Authentication",
+    "path": "aad.users.id",
+    "references": [
+        "https://www.cloudconformity.com/knowledge-base/azure/ActiveDirectory/number-of-days-before-authentication-information-re-confirmation.html",
+        "https://docs.microsoft.com/en-us/azure/active-directory/authentication/active-directory-passwords-faq",
+        "https://docs.microsoft.com/en-us/azure/active-directory/authentication/concept-sspr-policy",
+        "https://docs.microsoft.com/en-us/azure/active-directory/authentication/concept-sspr-howitworks",
+        "https://azure.microsoft.com/mediahandler/files/resourcefiles/cis-microsoft-azure-foundations-security-benchmark/CIS_Microsoft_Azure_Foundations_Benchmark_v1.0.0.pdf"
+    ],
+    "associated_risks": [
+        "Resource compromission",
+        "Unauthorized access"
+    ],
+    "conditions": []
+}

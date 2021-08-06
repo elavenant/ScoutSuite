@@ -1,0 +1,24 @@
+{
+    "description": "Check for Network Security Groups with Port Ranges\n",
+    "rationale": "Ensure that your Azure network security groups (NSGs) don't have range of ports configured to allow inbound traffic in order to protect associated virtual machine instances against Denial-of-Service (DoS) attacks or brute-force attacks. To follow cloud security best practices, it is strongly recommended to open only specific ports within your NSGs, based on your application requirements.",
+    "dashboard_name": "NSGs",
+    "display_path": "network.subscriptions.id.security_groups.id",
+    "path": "network.subscriptions.id.security_groups.id.security_rules.id",
+    "associated_risks": [
+        "Resource compromission"
+    ],
+    "conditions": [
+        "or",
+        [
+            "network.subscriptions.id.security_groups.id.security_rules.id.destination_port_ranges",
+            "match",
+            "[0-9]+-[0-9]+"
+
+        ],
+        [
+            "network.subscriptions.id.security_groups.id.security_rules.id.destination_ports",
+            "match",
+            "[0-9]+-[0-9]+"
+        ]
+    ]
+}

@@ -9,6 +9,9 @@
             "reference": "3.8"
         }
     ],
+    "associated_risks": [
+      "Deprecated configuration"
+    ],
     "references": [
         "https://docs.microsoft.com/en-us/azure/storage/common/storage-network-security"
     ],

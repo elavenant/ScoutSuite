@@ -1,0 +1,16 @@
+{
+    "description": "Install Endpoint Protection\n",
+    "rationale": "Ensure that all your Microsoft Azure virtual machines (VMs) have endpoint protection installed in order to help you identify and remove viruses, spyware and other malicious software. The Azure Security Center service monitors the status of anti-malware protection for Azure virtual machines (VMs) and highlights if there is insufficient protection, marking the virtual machines without endpoint protection as vulnerable to malware threats.",
+    "references": [
+        "https://www.cloudconformity.com/knowledge-base/azure/VirtualMachines/install-endpoint-protection.html",
+        "https://docs.microsoft.com/en-us/azure/security/fundamentals/antimalware",
+        "https://docs.microsoft.com/en-us/azure/security-center/security-center-install-endpoint-protection",
+        "https://azure.microsoft.com/mediahandler/files/resourcefiles/cis-microsoft-azure-foundations-security-benchmark/CIS_Microsoft_Azure_Foundations_Benchmark_v1.0.0.pdf"
+    ],
+    "associated_risks": [
+        "Resource compromission"
+    ],
+    "dashboard_name": "Instances",
+    "path": "virtualmachines.subscriptions.id.instances.id",
+    "conditions": []
+}

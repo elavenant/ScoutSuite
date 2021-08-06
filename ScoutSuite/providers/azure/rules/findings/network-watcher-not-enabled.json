@@ -8,6 +8,9 @@
             "reference": "6.5"
         }
     ],
+    "associated_risks": [
+        "Undetected incident"
+    ],
     "dashboard_name": "Network Configurations",
     "display_path": "network.subscriptions.id.watchers",
     "path": "network.subscriptions.id.watchers",

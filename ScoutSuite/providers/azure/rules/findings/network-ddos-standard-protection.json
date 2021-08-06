@@ -1,0 +1,20 @@
+{
+    "description": "Enable DDoS Standard Protection for Virtual Networks",
+    "rationale": "Ensure that DDoS Standard Protection feature is enabled for all your security-critical Microsoft Azure virtual networks (VNETs). DDoS Protection Standard is a premium paid cloud feature that offers enhanced Distributed Denial-of-Service (DDoS) mitigation capabilities via adaptive tuning, attack alert notifications, and telemetry to protect against the impacts of large DDoS attacks for all the protected resources available within your Azure virtual networks.",
+    "dashboard_name": "Virtual Networks",
+    "display_path": "network.subscriptions.id.virtual_networks.id",
+    "path": "network.subscriptions.id.virtual_networks.id",
+    "associated_risks": [
+        "Resource compromission"
+    ],
+    "remediation": "Quick Win.",
+    "conditions": [
+        "and",
+        [
+            "network.subscriptions.id.virtual_networks.id.enable_ddos_protection",
+            "false",
+            ""
+
+        ]
+    ]
+}

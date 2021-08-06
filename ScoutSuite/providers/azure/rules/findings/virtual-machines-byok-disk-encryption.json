@@ -1,0 +1,24 @@
+{
+    "description": "Use BYOK for Disk Volumes Encryption",
+    "rationale": "Ensure that your Azure virtual machine disk volumes are using customer-managed keys (also known as Bring Your Own Keys - BYOKs) instead of service-managed keys (default keys used by Microsoft Azure for disk encryption), in order to have a more granular control over your VM data encryption/decryption process.",
+    "references": [
+        "https://www.cloudconformity.com/knowledge-base/azure/VirtualMachines/disk-encrypted-with-byok.html",
+        "https://docs.microsoft.com/en-us/azure/security/fundamentals/azure-disk-encryption-vms-vmss",
+        "https://azure.microsoft.com/en-us/pricing/details/virtual-machines/series/",
+        "https://docs.microsoft.com/en-us/azure/virtual-machines/linux/disk-encryption-overview",
+        "https://docs.microsoft.com/en-us/azure/virtual-machines/windows/disk-encryption-cli-quickstart"
+    ],
+    "associated_risks": [
+        "Data leakage"
+    ],
+    "dashboard_name": "Disks",
+    "path": "virtualmachines.subscriptions.id.disks.id",
+    "conditions": [
+        "and",
+        [
+            "virtualmachines.subscriptions.id.disks.id.encryption_settings.key_encryption_key.key_url",
+            "equal",
+            ""
+        ]
+    ]
+}

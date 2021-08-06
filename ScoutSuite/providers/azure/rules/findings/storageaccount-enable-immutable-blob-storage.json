@@ -1,0 +1,30 @@
+{
+    "description": "Enable Immutable Blob Storage",
+    "rationale": "Ensure that Immutable Blob Storage feature is enabled for Microsoft Azure Storage blob containers that hold sensitive and business-critical information. Immutable Blob Storage enables you to store critical, production data objects in a WORM (Write Once, Read Many) state. This state makes the data non-erasable and non-modifiable for a user-specified time interval. Azure blob objects can be created and read, but not modified or deleted, for the duration of the retention interval configured. The feature supports two types of policies that you can apply to a container for retaining the data within the specified container in a non-modifiable and delete-protected state:\n\n1. A time-based immutability policy â€“ this policy can be used for regulatory compliance to lock data from future edits. Once the policy is locked, it cannot be unlocked.\n\n2. A legal hold policy â€“ this allows you to set an indefinite hold on all the blob objects within a container. When a legal hold is set, the data inside the container moves to a delete-protected and modify-protected state.",
+    "references": [
+        "https://www.cloudconformity.com/knowledge-base/azure/StorageAccounts/enable-immutable-blob-storage.html",
+        "https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blobs-overview",
+        "https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction",
+        "https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-immutable-storage?tabs=azure-portal",
+        "https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-immutability-policies-manage?tabs=azure-portal"
+    ],
+    "associated_risks": [
+        "Data loss"
+    ],
+    "dashboard_name": "Storage Accounts",
+    "display_path": "storageaccounts.subscriptions.id.storage_accounts.id",
+    "path": "storageaccounts.subscriptions.id.storage_accounts.id.blob_containers.id",
+    "conditions": [
+        "or",
+        [
+            "storageaccounts.subscriptions.id.storage_accounts.id.blob_containers.id.has_legal_hold",
+            "true",
+            ""
+        ],
+        [
+            "storageaccounts.subscriptions.id.storage_accounts.id.blob_containers.id.has_immutability_policy",
+            "true",
+            ""
+        ]
+    ]
+}

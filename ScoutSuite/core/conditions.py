@@ -155,6 +155,14 @@ def pass_condition(b, test, a):
             if c and c != '' and c not in a:
                 result = True
                 break
+    elif test == 'listMatch':
+        result = False
+        if not type(b) == list:
+            b = [b]
+        if not type(a) == list:
+            a = [a]
+        if a == b:
+            result = True
     elif test == 'containNoneOf':
         result = True
         if not type(b) == list:

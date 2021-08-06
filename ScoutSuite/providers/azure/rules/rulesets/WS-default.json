@@ -4,73 +4,217 @@
         "aad-guest-users.json": [
             {
                 "enabled": true,
-                "level": "warning"
+                "level": "warning",
+                "automated": true,
+                "id": "AAD-01"
+            }
+        ],
+        "aad-administrator-security-group-creation.json": [
+            {
+                "enabled": true,
+                "level": "danger",
+                "automated": false,
+                "id": "AAD-02"
+            }
+        ],
+        "aad-administrator-manage-office-365-groups.json": [
+            {
+                "enabled": true,
+                "level": "danger",
+                "automated": false,
+                "id": "AAD-03"
+            }
+        ],
+        "aad-disable-remembering-mfa.json": [
+            {
+                "enabled": true,
+                "level": "danger",
+                "automated": false,
+                "id": "AAD-04"
+            }
+        ],
+        "aad-enable-authentication-reconfirmation.json": [
+            {
+                "enabled": true,
+                "level": "warning",
+                "automated": false,
+                "id": "AAD-05"
+            }
+        ],
+        "aad-enable-dual-identification-for-password-reset.json": [
+            {
+                "enabled": true,
+                "level": "warning",
+                "automated": false,
+                "id": "AAD-06"
+            }
+        ],
+        "aad-enable-notifications-password-resets.json": [
+            {
+                "enabled": true,
+                "level": "danger",
+                "automated": false,
+                "id": "AAD-07"
+            }
+        ],
+        "aad-enforce-administrators-consent-for-app-use.json": [
+            {
+                "enabled": true,
+                "level": "danger",
+                "automated": false,
+                "id": "AAD-08"
+            }
+        ],
+        "aad-limit-guest-user-permissions.json": [
+            {
+                "enabled": true,
+                "level": "danger",
+                "automated": false,
+                "id": "AAD-08"
+            }
+        ],
+        "aad-require-mfa-to-join-devices.json": [
+            {
+                "enabled": true,
+                "level": "warning",
+                "automated": false,
+                "id": "AAD-09"
+            }
+        ],
+        "aad-restrict-guest-user-invitations.json": [
+            {
+                "enabled": true,
+                "level": "danger",
+                "automated": false,
+                "id": "AAD-10"
+            }
+        ],
+        "aad-restrict-non-admin-access-administration-portal.json": [
+            {
+                "enabled": true,
+                "level": "warning",
+                "automated": false,
+                "id": "AAD-11"
             }
         ],
         "appservice-authentication-disabled.json": [
             {
                 "enabled": true,
-                "level": "warning"
+                "level": "warning",
+                "automated": true,
+                "id": "Appservice-01"
             }
         ],
         "appservice-client-certificates-disabled.json": [
             {
                 "enabled": true,
-                "level": "warning"
+                "level": "warning",
+                "automated": true,
+                "id": "Appservice-02"
             }
         ],
         "appservice-http-2-disabled.json": [
             {
                 "enabled": true,
-                "level": "warning"
+                "level": "warning",
+                "automated": true,
+                "id": "Appservice-03"
             }
         ],
         "appservice-http-allowed.json": [
             {
                 "enabled": true,
-                "level": "danger"
+                "level": "danger",
+                "automated": true,
+                "id": "Appservice-04"
             }
         ],
         "appservice-managed-service-identities-disabled.json": [
             {
                 "enabled": true,
-                "level": "warning"
+                "level": "warning",
+                "automated": true,
+                "id": "Appservice-05"
             }
         ],
         "appservice-outdated-version-dotnet.json": [
             {
                 "enabled": true,
-                "level": "warning"
+                "level": "warning",
+                "automated": true,
+                "id": "Appservice-06"
             }
         ],
         "appservice-outdated-version-java.json": [
             {
                 "enabled": true,
-                "level": "warning"
+                "level": "warning",
+                "automated": true,
+                "id": "Appservice-07"
             }
         ],
         "appservice-outdated-version-php.json": [
             {
                 "enabled": true,
-                "level": "warning"
+                "level": "warning",
+                "automated": true,
+                "id": "Appservice-08"
             }
         ],
         "appservice-outdated-version-python.json": [
             {
                 "enabled": true,
-                "level": "warning"
+                "level": "warning",
+                "automated": true,
+                "id": "Appservice-09"
             }
         ],
         "appservice-tls-v1-supported.json": [
             {
                 "enabled": true,
-                "level": "warning"
+                "level": "warning",
+                "automated": true,
+                "id": "Appservice-10"
             }
         ],
         "appservice-webapp-using-outdated-progamming-language-version.json": [
             {
                 "enabled": false,
-                "level": "warning"
+                "level": "warning",
+                "automated": true,
+                "id": "Appservice-11"
+            }
+        ],
+        "appservice-check-sufficient-backup-retention.json": [
+            {
+                "enabled": true,
+                "level": "warning",
+                "automated": true,
+                "id": "Appservice-12"
+            }
+        ],
+        "appservice-disable-remote-debugging.json": [
+            {
+                "enabled": true,
+                "level": "danger",
+                "automated": true,
+                "id": "Appservice-13"
+            }
+        ],
+        "appservice-always-on.json": [
+            {
+                "enabled": true,
+                "level": "warning",
+                "automated": true,
+                "id": "Appservice-14"
+            }
+        ],
+        "appservice-ftps-only-access.json": [
+            {
+                "enabled": true,
+                "level": "warning",
+                "automated": true,
+                "id": "Appservice-14"
             }
         ],
         "network-security-groups-rule-inbound-internet-all.json": [
@@ -79,6 +223,118 @@
                 "level": "danger",
                 "automated": true,
                 "id": "Network-01"
+            }
+        ],
+        "keyvault-full-administrator-permissions.json": [
+            {
+                "enabled": true,
+                "level": "danger",
+                "automated": true,
+                "id": "Keyvault-01"
+            }
+        ],
+        "keyvault-enable-audit-event-logging.json": [
+            {
+                "enabled": true,
+                "level": "warning",
+                "automated": true,
+                "id": "Keyvault-02"
+            }
+        ],
+        "keyvault-certificate-auto-renewal-period.json": [
+            {
+                "enabled": true,
+                "level": "warning",
+                "automated": false,
+                "id": "Keyvault-03"
+            }
+        ],
+        "keyvault-enable-certificate-transparency.json": [
+            {
+                "enabled": true,
+                "level": "warning",
+                "automated": false,
+                "id": "Keyvault-04"
+            }
+        ],
+        "keyvault-enable-recoverability.json": [
+            {
+                "enabled": true,
+                "level": "danger",
+                "automated": true,
+                "id": "Keyvault-05"
+            }
+        ],
+        "keyvault-restrict-default-network-access.json": [
+            {
+                "enabled": true,
+                "level": "warning",
+                "automated": true,
+                "id": "Keyvault-06"
+            }
+        ],
+        "monitor-create-alert-create-policy-assignment.json": [
+            {
+                "enabled": true,
+                "level": "danger",
+                "automated": true,
+                "id": "monitor-01"
+            }
+        ],
+        "monitor-create-or-update-load-balancer.json": [
+            {
+                "enabled": true,
+                "level": "danger",
+                "automated": true,
+                "id": "monitor-02"
+            }
+        ],
+        "monitor-create-or-update-security-solution.json": [
+            {
+                "enabled": true,
+                "level": "danger",
+                "automated": true,
+                "id": "monitor-03"
+            }
+        ],
+        "monitor-create-or-update-virtual-machine.json": [
+            {
+                "enabled": true,
+                "level": "danger",
+                "automated": true,
+                "id": "monitor-04"
+            }
+        ],
+        "monitor-create-or-update-sql-server-firewall-rule.json": [
+            {
+                "enabled": true,
+                "level": "danger",
+                "automated": true,
+                "id": "monitor-05"
+            }
+        ],
+        "monitor-create-or-update-sql-database.json": [
+            {
+                "enabled": true,
+                "level": "danger",
+                "automated": true,
+                "id": "monitor-06"
+            }
+        ],
+        "monitor-create-or-update-network-security-group.json": [
+            {
+                "enabled": true,
+                "level": "danger",
+                "automated": true,
+                "id": "monitor-07"
+            }
+        ],
+        "monitor-create-or-update-storage-accounts.json": [
+            {
+                "enabled": true,
+                "level": "danger",
+                "automated": true,
+                "id": "monitor-08"
             }
         ],
         "network-security-groups-rule-inbound-service.json": [
@@ -132,54 +388,76 @@
                 "id": "Network-06"
             }
         ],
-        "network-flow-log-retention-period.json": [
+        "network-security-group-with-port-range.json": [
             {
                 "enabled": true,
                 "level": "warning",
                 "automated": true,
-                "id": "Network-06"
+                "id": "Network-07"
+            }
+        ],
+        "network-ddos-standard-protection.json": [
+            {
+                "enabled": true,
+                "level": "warning",
+                "automated": true,
+                "id": "Network-08"
             }
         ],
         "securitycenter-auto-provisioning-off.json": [
             {
                 "enabled": true,
-                "level": "warning"
+                "level": "warning",
+                "automated": true,
+                "id": "Securitycenter-01"
             }
         ],
         "securitycenter-security-contacts-email-not-set.json": [
             {
                 "enabled": true,
-                "level": "warning"
+                "level": "warning",
+                "automated": true,
+                "id": "Securitycenter-02"
             }
         ],
         "securitycenter-security-contacts-no-admin-email-notifications.json": [
             {
                 "enabled": true,
-                "level": "warning"
+                "level": "warning",
+                "automated": true,
+                "id": "Securitycenter-03"
             }
         ],
         "securitycenter-security-contacts-no-email-notifications.json": [
             {
                 "enabled": true,
-                "level": "warning"
+                "level": "warning",
+                "automated": true,
+                "id": "Securitycenter-04"
             }
         ],
         "securitycenter-security-contacts-not-set.json": [
             {
                 "enabled": true,
-                "level": "warning"
+                "level": "warning",
+                "automated": true,
+                "id": "Securitycenter-05"
             }
         ],
         "securitycenter-security-contacts-phone-not-set.json": [
             {
                 "enabled": true,
-                "level": "warning"
+                "level": "warning",
+                "automated": true,
+                "id": "Securitycenter-06"
             }
         ],
         "securitycenter-standard-tier-not-enabled.json": [
             {
                 "enabled": true,
-                "level": "warning"
+                "level": "warning",
+                "automated": true,
+                "id": "Securitycenter-07"
             }
         ],
         "sqldatabase-databases-auditing-low-retention.json": [
@@ -188,31 +466,41 @@
                     "90"
                 ],
                 "enabled": true,
-                "level": "warning"
+                "level": "warning",
+                "automated": true,
+                "id": "Sqldatabase-01"
             }
         ],
         "sqldatabase-databases-no-auditing.json": [
             {
                 "enabled": true,
-                "level": "warning"
+                "level": "warning",
+                "automated": true,
+                "id": "Sqldatabase-02"
             }
         ],
         "sqldatabase-databases-no-threat-detection.json": [
             {
                 "enabled": true,
-                "level": "warning"
+                "level": "warning",
+                "automated": true,
+                "id": "Sqldatabase-03"
             }
         ],
         "sqldatabase-databases-no-transparent-data-encryption.json": [
             {
                 "enabled": true,
-                "level": "warning"
+                "level": "warning",
+                "automated": true,
+                "id": "Sqldatabase-04"
             }
         ],
         "sqldatabase-databases-threat-detection-disabled-alerts.json": [
             {
                 "enabled": true,
-                "level": "warning"
+                "level": "warning",
+                "automated": true,
+                "id": "Sqldatabase-05"
             }
         ],
         "sqldatabase-databases-threat-detection-low-retention.json": [
@@ -221,13 +509,17 @@
                     "90"
                 ],
                 "enabled": true,
-                "level": "warning"
+                "level": "warning",
+                "automated": true,
+                "id": "Sqldatabase-06"
             }
         ],
         "sqldatabase-databases-threat-detection-send-alerts-disabled.json": [
             {
                 "enabled": true,
-                "level": "warning"
+                "level": "warning",
+                "automated": true,
+                "id": "Sqldatabase-07"
             }
         ],
         "sqldatabase-servers-auditing-low-retention.json": [
@@ -236,31 +528,41 @@
                     "90"
                 ],
                 "enabled": true,
-                "level": "warning"
+                "level": "low",
+                "automated": true,
+                "id": "Sqldatabase-08"
             }
         ],
         "sqldatabase-servers-no-ad-admin-configured.json": [
             {
                 "enabled": true,
-                "level": "warning"
+                "level": "warning",
+                "automated": true,
+                "id": "Sqldatabase-09"
             }
         ],
         "sqldatabase-servers-no-auditing.json": [
             {
                 "enabled": true,
-                "level": "warning"
+                "level": "warning",
+                "automated": true,
+                "id": "Sqldatabase-10"
             }
         ],
         "sqldatabase-servers-no-threat-detection.json": [
             {
                 "enabled": true,
-                "level": "warning"
+                "level": "warning",
+                "automated": true,
+                "id": "Sqldatabase-11"
             }
         ],
         "sqldatabase-servers-threat-detection-disabled-alerts.json": [
             {
                 "enabled": true,
-                "level": "warning"
+                "level": "warning",
+                "automated": true,
+                "id": "Sqldatabase-12"
             }
         ],
         "sqldatabase-servers-threat-detection-low-retention.json": [
@@ -269,13 +571,81 @@
                     "90"
                 ],
                 "enabled": true,
-                "level": "warning"
+                "level": "low",
+                "automated": true,
+                "id": "Sqldatabase-13"
             }
         ],
         "sqldatabase-servers-threat-detection-send-alerts-disabled.json": [
             {
                 "enabled": true,
-                "level": "warning"
+                "level": "warning",
+                "automated": true,
+                "id": "Sqldatabase-14"
+            }
+        ],
+        "sqldatabase-servers-advance-data-security.json": [
+            {
+                "enabled": true,
+                "level": "warning",
+                "automated": false,
+                "id": "Sqldatabase-15"
+            }
+        ],
+        "sqldatabase-servers-publicly-accessible.json": [
+            {
+                "enabled": true,
+                "level": "warning",
+                "automated": false,
+                "id": "Sqldatabase-16"
+            }
+        ],
+        "sqldatabase-servers-sufficient-point-in-time-restore-period.json": [
+            {
+                "enabled": true,
+                "level": "warning",
+                "automated": false,
+                "id": "Sqldatabase-17"
+            }
+        ],
+        "sqldatabase-servers-unrestricted-access.json": [
+            {
+                "enabled": true,
+                "level": "danger",
+                "automated": false,
+                "id": "Sqldatabase-18"
+            }
+        ],
+        "sqldatabase-servers-enable-auditing.json": [
+            {
+                "enabled": true,
+                "level": "warning",
+                "automated": false,
+                "id": "Sqldatabase-19"
+            }
+        ],
+        "sqldatabase-servers-enable-auto-failover-groups.json": [
+            {
+                "enabled": true,
+                "level": "warning",
+                "automated": false,
+                "id": "Sqldatabase-20"
+            }
+        ],
+        "sqldatabase-servers-automatic-tuning.json": [
+            {
+                "enabled": true,
+                "level": "warning",
+                "automated": false,
+                "id": "Sqldatabase-21"
+            }
+        ],
+        "storageaccount-https-shared-access-signature-tokens.json": [
+            {
+                "enabled": true,
+                "level": "warning",
+                "automated": false,
+                "id": "Storageaccount-01"
             }
         ],
         "storageaccount-access-keys-not-rotated.json": [
@@ -284,43 +654,97 @@
                     "90"
                 ],
                 "enabled": true,
-                "level": "warning"
+                "level": "warning",
+                "automated": true,
+                "id": "Storageaccount-02"
             }
         ],
         "storageaccount-account-allowing-clear-text.json": [
             {
                 "enabled": true,
-                "level": "warning"
+                "level": "warning",
+                "automated": true,
+                "id": "Storageaccount-03"
             }
         ],
         "storageaccount-public-blob-container.json": [
             {
                 "enabled": true,
-                "level": "danger"
+                "level": "danger",
+                "automated": true,
+                "id": "Storageaccount-04"
             }
         ],
         "storageaccount-public-traffic-allowed.json": [
             {
                 "enabled": true,
-                "level": "warning"
+                "level": "warning",
+                "automated": true,
+                "id": "Storageaccount-05"
             }
         ],
         "storageaccount-trusted-microsoft-services.json": [
             {
                 "enabled": true,
-                "level": "warning"
+                "level": "warning",
+                "automated": true,
+                "id": "Storageaccount-06"
+            }
+        ],
+        "storageaccount-enable-immutable-blob-storage.json": [
+            {
+                "enabled": true,
+                "level": "danger",
+                "automated": true,
+                "id": "Storageaccount-07"
             }
         ],
         "virtual-machines-disk-encryption.json": [
             {
                 "enabled": true,
-                "level": "warning"
+                "level": "warning",
+                "automated": true,
+                "id": "Virtualmachines-01"
             }
         ],
         "virtual-machines-extensions-installed.json": [
             {
                 "enabled": true,
-                "level": "warning"
+                "level": "warning",
+                "automated": true,
+                "id": "Virtualmachines-02"
+            }
+        ],
+        "virtual-machines-ssh-authentication-type.json": [
+            {
+                "enabled": true,
+                "level": "danger",
+                "automated": true,
+                "id": "Virtualmachines-03"
+            }
+        ],
+        "virtual-machines-enable-accelerated-networking.json": [
+            {
+                "enabled": true,
+                "level": "low",
+                "automated": true,
+                "id": "Virtualmachines-04"
+            }
+        ],
+        "virtual-machines-install-endpoint-protection.json": [
+            {
+                "enabled": true,
+                "level": "danger",
+                "automated": false,
+                "id": "Virtualmachines-05"
+            }
+        ],
+        "virtual-machines-byok-disk-encryption.json": [
+            {
+                "enabled": true,
+                "level": "danger",
+                "automated": true,
+                "id": "Virtualmachines-06"
             }
         ]
     }

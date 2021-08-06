@@ -2,6 +2,9 @@
     "description": "Disks Lacking Encryption",
     "rationale": "Encrypting disks ensures that their entire content is fully unrecoverable without a key and thus protects the volume from unwarranted reads.",
     "remediation": "Ensure that disks are encrypted, where possible.",
+    "associated_risks": [
+      "Data leakage"
+    ],
     "compliance": [
         {
             "name": "CIS Microsoft Azure Foundations",

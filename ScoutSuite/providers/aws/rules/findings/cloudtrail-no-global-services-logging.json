@@ -3,10 +3,16 @@
     "rationale": "API activity for global services such as IAM and STS is not logged. Investigation of incidents will be incomplete due to the lack of information.",
     "references": [
         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html#cloudtrail-concepts-global-service-events",
-        "https://www.cloudconformity.com/knowledge-base/aws/CloudTrail/cloudtrail-global-services-enabled.html"
+        "https://www.cloudconformity.com/knowledge-base/aws/CloudTrail/cloudtrail-global-services-enabled.html",
+        "https://aws.amazon.com/cloudtrail/faqs/",
+        "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html",
+        "http://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html",
+        "http://docs.aws.amazon.com/general/latest/gr/rande.html",
+        "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-create-and-update-a-trail.html",
+        "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-create-and-update-a-trail-by-using-the-aws-cli.html"
     ],
     "associated_risks": [
-      "Architecture inconsistent"
+        "Architecture inconsistent"
     ],
     "dashboard_name": "Configurations",
     "path": "cloudtrail.regions.id.trails.id",

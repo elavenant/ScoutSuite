@@ -4,10 +4,14 @@
     "dashboard_name": "Instances",
     "path": "ec2.regions.id.vpcs.id.instances.id",
     "associated_risks": [
-      "Deprecated configuration"
+        "Deprecated configuration"
     ],
     "references": [
-        "https://www.cloudconformity.com/knowledge-base/aws/EC2/ec2-instance-in-vpc.html"
+        "https://www.cloudconformity.com/knowledge-base/aws/EC2/ec2-instance-in-vpc.html",
+        "https://aws.amazon.com/ec2/faqs/",
+        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html",
+        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-vpc.html",
+        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html"
     ],
     "conditions": [
         "or",
@@ -22,6 +26,5 @@
             "null"
         ]
     ],
-    "arg_names": [
-    ]
+    "arg_names": []
 }

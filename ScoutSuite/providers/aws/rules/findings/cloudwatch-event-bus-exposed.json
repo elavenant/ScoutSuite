@@ -2,11 +2,14 @@
     "description": "Event Bus Exposed",
     "rationale": "Ensure that your Amazon CloudWatch default event bus is not configured to allow access to everyone (*) in order to prevent anonymous users from sharing their CloudWatch events. An AWS CloudWatch default event bus is a feature that facilitates AWS accounts to share events with each other. This feature can be useful to AWS accounts that belong to the same organization or belong to organizations that are associated or have a similar relationship. The event bus has an access policy that specifies the AWS entities that are allowed to send events to the bus. To follow security best practices, you need to allow only the authorized users to send their events data by managing the permissions defined for the default event bus.\n\nThis rule can help you with the following compliance standards:\n\nPayment Card Industry Data Security Standard (PCI DSS)\nGeneral Data Protection Regulation (GDPR)\nAPRA\nMAS\nNIST 800-53 (Rev. 4)\nThis rule can help you work with the AWS Well-Architected Framework.",
     "references": [
-      "https://www.cloudconformity.com/knowledge-base/aws/CloudWatchEvents/event-bus-exposed.html"
+        "https://www.cloudconformity.com/knowledge-base/aws/CloudWatchEvents/event-bus-exposed.html",
+        "https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CWE_GettingStarted.html",
+        "https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/WhatIsCloudWatchEvents.html",
+        "https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEvents-CrossAccountEventDelivery.html"
     ],
     "dashboard_name": "Events",
     "associated_risks": [
-      "Data leakage"
+        "Data leakage"
     ],
     "path": "cloudwatch.regions.id.event_bus.Policy.Statement.id",
     "conditions": [

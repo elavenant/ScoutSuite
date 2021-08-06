@@ -1,0 +1,16 @@
+{
+    "description": "Enable Auditing for SQL Servers\n",
+    "rationale": "Ensure that the \"Auditing\" feature is enabled within your Microsoft Azure SQL server configuration settings in order to monitor your SQL databases for security, compliance and troubleshooting purposes. Microsoft Azure allows an SQL server to be created as a service. Enabling auditing at the server level ensures that all existing and newly created databases on that SQL server are audited.",
+    "associated_risks": [
+        "Undetected incident"
+    ],
+    "references": [
+        "https://www.cloudconformity.com/knowledge-base/azure/Sql/auditing.html",
+        "https://docs.microsoft.com/en-us/azure/sql-database/sql-database-auditing",
+        "https://azure.microsoft.com/mediahandler/files/resourcefiles/cis-microsoft-azure-foundations-security-benchmark/CIS_Microsoft_Azure_Foundations_Benchmark_v1.0.0.pdf"
+    ],
+    "dashboard_name": "SQL Servers",
+    "display_path": "sqldatabase.subscriptions.id.servers.id",
+    "path": "sqldatabase.subscriptions.id.servers.id",
+    "conditions": []
+}

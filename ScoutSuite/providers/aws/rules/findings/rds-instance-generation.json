@@ -2,15 +2,18 @@
     "description": "DB Instance Generation",
     "rationale": "Ensure that all RDS databases instances provisioned within your AWS account are using the latest generation of instance classes in order to get the best performance with lower costs. Using the latest generation of RDS database instances instead of the previous generation instances has tangible benefits such as better hardware performance (more computing capacity and faster CPUs, memory optimization and higher network throughput), better support for latest DB engines versions (e.g. MySQL 5.7) and lower costs for memory and storage.",
     "references": [
-        "https://www.cloudconformity.com/knowledge-base/aws/RDS/db-instance-generation.html"
+        "https://www.cloudconformity.com/knowledge-base/aws/RDS/db-instance-generation.html",
+        "https://aws.amazon.com/rds/faqs/",
+        "https://aws.amazon.com/rds/previous-generation/",
+        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html",
+        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Modifying.html"
     ],
     "associated_risks": [
-      "Cost optimization",
-      "Performance efficiency"
+        "Cost optimization",
+        "Performance efficiency"
     ],
     "dashboard_name": "Instances",
     "display_path": "rds.regions.id.vpcs.id.instances.id",
     "path": "rds.regions.id.vpcs.id.instances.id",
-    "conditions": [
-    ]
+    "conditions": []
 }

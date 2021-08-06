@@ -1,0 +1,17 @@
+{
+    "description": "Check for Unrestricted SQL Database Access",
+    "rationale": "Ensure that firewalls associated with your Microsoft Azure SQL servers are not configured to allow unrestricted inbound access (i.e. 0.0.0.0/0) in order to protect against unauthorized connections. By default, a Microsoft SQL server firewall contains a StartIP of 0.0.0.0 and an EndIP of 0.0.0.0, allowing access to all Microsoft Azure services. Additionally, a custom rule can be set up with StartIP of 0.0.0.0 and EndIP of 255.255.255.255 to allow access from any IP address over the Internet. To reduce the potential attack surface for your SQL servers, firewall rules should be configured with granular IPs by referencing the range of IP addresses available from specific, authorized networks.",
+    "associated_risks": [
+        "Resource compromission",
+        "Data leakage"
+    ],
+    "references": [
+        "https://www.cloudconformity.com/knowledge-base/azure/Sql/unrestricted-sql-database-access.html",
+        "https://docs.microsoft.com/en-us/azure/sql-database/sql-database-vnet-service-endpoint-rule-overview",
+        "https://azure.microsoft.com/mediahandler/files/resourcefiles/cis-microsoft-azure-foundations-security-benchmark/CIS_Microsoft_Azure_Foundations_Benchmark_v1.0.0.pdf"
+    ],
+    "dashboard_name": "SQL Servers",
+    "display_path": "sqldatabase.subscriptions.id.servers.id",
+    "path": "sqldatabase.subscriptions.id.servers.id",
+    "conditions": []
+}

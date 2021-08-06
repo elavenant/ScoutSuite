@@ -10,6 +10,9 @@
     ],
     "dashboard_name": "Users",
     "path": "aad.users.id",
+    "associated_risks": [
+        "Unauthorized access"
+    ],
     "conditions": [
         "and",
         [

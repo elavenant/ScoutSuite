@@ -8,6 +8,9 @@
             "reference": "4.2"
         }
     ],
+    "associated_risks": [
+        "Undetected incident"
+    ],
     "dashboard_name": "SQL Databases",
     "display_path": "sqldatabase.subscriptions.id.servers.id",
     "path": "sqldatabase.subscriptions.id.servers.id.databases.id",

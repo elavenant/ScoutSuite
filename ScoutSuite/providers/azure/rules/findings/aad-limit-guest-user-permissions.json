@@ -1,0 +1,17 @@
+{
+    "description": "Limit Guest User Permissions",
+    "rationale": "Ensure that \"Guest user permissions are limited\" safety feature is enabled within your Azure Active Directory (AD) settings in order to implement the principle of least privilege and enhance the access security to your Active Directory account. The principle of least privilege represents the practice of providing every user the minimal amount of access required to perform successfully its tasks.",
+    "dashboard_name": "Administration",
+    "path": "aad.users.id",
+    "references": [
+        "https://www.cloudconformity.com/knowledge-base/azure/ActiveDirectory/guest-user-permissions-are-limited.html",
+        "https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/directory-assign-admin-roles",
+        "https://azure.microsoft.com/en-gb/blog/invite-guest-users-to-your-azure-analysis-services-by-using-b2b/",
+        "https://docs.microsoft.com/en-us/azure/active-directory/b2b/delegate-invitations",
+        "https://azure.microsoft.com/mediahandler/files/resourcefiles/cis-microsoft-azure-foundations-security-benchmark/CIS_Microsoft_Azure_Foundations_Benchmark_v1.0.0.pdf"
+    ],
+    "associated_risks": [
+        "Unauthorized access"
+    ],
+    "conditions": []
+}

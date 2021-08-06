@@ -1,6 +1,9 @@
 {
     "description": "No Automatic Provisioning of Monitoring Agent",
     "rationale": "Automatic provisioning of monitoring agent should be set.",
+    "associated_risks": [
+        "Undetected incident"
+    ],
     "compliance": [
         {
             "name": "CIS Microsoft Azure Foundations",

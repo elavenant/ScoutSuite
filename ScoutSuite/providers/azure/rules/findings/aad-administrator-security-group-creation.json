@@ -1,0 +1,16 @@
+{
+    "description": "Allow Only Administrators to Create Security Groups\n",
+    "rationale": "Security groups are used to manage member and machine access to Azure shared resources for a group of users. When \"Users can create security groups in Azure portals\" feature is enabled, all users in your Active Directory account are allowed to create new security groups and add members to those groups. Unless your business requires permission delegation, security group creation should be restricted to AD administrators only.",
+    "dashboard_name": "Administration",
+    "path": "aad.users.id",
+    "references": [
+        "https://www.cloudconformity.com/knowledge-base/azure/ActiveDirectory/users-can-create-security-groups.html",
+        "https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/groups-self-service-management#making-a-group-available-for-end-user-self-service",
+        "https://azure.microsoft.com/mediahandler/files/resourcefiles/cis-microsoft-azure-foundations-security-benchmark/CIS_Microsoft_Azure_Foundations_Benchmark_v1.0.0.pdf"
+    ],
+    "associated_risks": [
+        "Resource compromission",
+        "Privilege escalation"
+    ],
+    "conditions": []
+}

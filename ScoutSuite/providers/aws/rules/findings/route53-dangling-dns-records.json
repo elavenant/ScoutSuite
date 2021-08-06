@@ -1,25 +1,30 @@
 {
     "description": "Remove AWS Route 53 Dangling DNS Records",
-    "rationale": "Ensure that any dangling DNS records are deleted from your Amazon Route 53 public hosted zones in order to maintain the integrity and authenticity of your domains/subdomains and to protect against domain hijacking attacks. When an ephemeral AWS resource such as an Elastic IP (EIP) is released into the Amazon’s Elastic IP pool, an attacker may acquire the EIP resource and effectively control the domain/subdomain associated with that EIP in your Route 53 DNS records. In other words, if you haven't removed the DNS records that are pointing to EIPs that you have released, a malicious person who gets the same EIP from the AWS IP pool can control the domain/subdomain that you have mentioned in your DNS entries. Since there is no real authentication of the links between your DNS records and their EIPs, it is highly recommended to check regularly for any dangling DNS entries and remove them from your Route 53 hosted zones.",
+    "rationale": "Ensure that any dangling DNS records are deleted from your Amazon Route 53 public hosted zones in order to maintain the integrity and authenticity of your domains/subdomains and to protect against domain hijacking attacks. When an ephemeral AWS resource such as an Elastic IP (EIP) is released into the Amazonâ€™s Elastic IP pool, an attacker may acquire the EIP resource and effectively control the domain/subdomain associated with that EIP in your Route 53 DNS records. In other words, if you haven't removed the DNS records that are pointing to EIPs that you have released, a malicious person who gets the same EIP from the AWS IP pool can control the domain/subdomain that you have mentioned in your DNS entries. Since there is no real authentication of the links between your DNS records and their EIPs, it is highly recommended to check regularly for any dangling DNS entries and remove them from your Route 53 hosted zones.",
     "references": [
-        "https://www.cloudconformity.com/knowledge-base/aws/Route53/dangling-dns-records.html"
+        "https://www.cloudconformity.com/knowledge-base/aws/Route53/dangling-dns-records.html",
+        "https://aws.amazon.com/route53/faqs/",
+        "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/AboutHZWorkingWith.html",
+        "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/rrsets-working-with.html",
+        "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resource-record-sets-deleting.html",
+        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"
     ],
     "dashboard_name": "Record sets",
     "path": "route53.regions.id.hosted_zones.id.resource_record_sets.id",
-  "associated_risks": [
+    "associated_risks": [
         "Resource compromission"
     ],
     "conditions": [
-      "and",
-      [
-        "route53.regions.id.hosted_zones.id.resource_record_sets.id.Type",
-        "equal",
-        "A"
-      ],
-      [
-         "route53.regions.id.hosted_zones.id.resource_record_sets.id.ResourceRecords.id",
-        "empty",
-        ""
-      ]
+        "and",
+        [
+            "route53.regions.id.hosted_zones.id.resource_record_sets.id.Type",
+            "equal",
+            "A"
+        ],
+        [
+            "route53.regions.id.hosted_zones.id.resource_record_sets.id.ResourceRecords.id",
+            "empty",
+            ""
+        ]
     ]
 }

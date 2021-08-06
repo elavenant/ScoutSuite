@@ -1,0 +1,16 @@
+{
+    "description": "Allow Only Administrators to Manage Office 365 Groups",
+    "rationale": "Depending on your business requirements, you can use Azure Active Directory settings to achieve more granular access control over self-service group management for your users. Restricting Office 365 group management to Active Directory administrators only, prohibits users from making any changes to this type of groups. This ensures that Office 365 groups management is not delegated to unauthorized users.",
+    "dashboard_name": "Administration",
+    "path": "aad.users.id",
+    "references": [
+        "https://www.cloudconformity.com/knowledge-base/azure/ActiveDirectory/users-can-manage-office-365-groups.html",
+        "https://docs.microsoft.com/en-us/office365/admin/create-groups/manage-creation-of-groups?view=o365-worldwide",
+        "https://azure.microsoft.com/mediahandler/files/resourcefiles/cis-microsoft-azure-foundations-security-benchmark/CIS_Microsoft_Azure_Foundations_Benchmark_v1.0.0.pdf"
+    ],
+    "associated_risks": [
+        "Resource compromission",
+        "Privilege escalation"
+    ],
+    "conditions": []
+}

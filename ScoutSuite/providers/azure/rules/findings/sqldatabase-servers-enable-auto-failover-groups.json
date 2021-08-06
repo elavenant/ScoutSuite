@@ -1,0 +1,16 @@
+{
+    "description": "Enable Auto-Failover Groups\n",
+    "rationale": "When auto-failover groups are used for your Azure SQL databases, any outage that impacts one or more SQL databases within the group results in an automatic failover. In addition, auto-failover groups provide read-write and read-only listener endpoints that remain unchanged during failovers. Whether you use manual or automatic failover activation, the failover process switches all secondary databases in the group to primary databases. After the failover is completed, the DNS record is automatically updated to redirect the endpoints to the new Azure region.",
+    "associated_risks": [
+        "Resource reliability"
+    ],
+    "references": [
+        "https://www.cloudconformity.com/knowledge-base/azure/Sql/enable-auto-failover-groups.html",
+        "https://docs.microsoft.com/en-us/azure/sql-database/sql-database-auto-failover-group?tabs=azure-powershell",
+        "https://docs.microsoft.com/en-us/azure/sql-database/sql-database-configure-failover-group?tabs=azure-portal"
+    ],
+    "dashboard_name": "SQL Servers",
+    "display_path": "sqldatabase.subscriptions.id.servers.id",
+    "path": "sqldatabase.subscriptions.id.servers.id",
+    "conditions": []
+}

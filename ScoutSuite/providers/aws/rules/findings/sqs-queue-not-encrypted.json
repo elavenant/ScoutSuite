@@ -3,13 +3,16 @@
     "rationale": "Ensure that your Amazon Simple Queue Service (SQS) queues are using KMS CMK customer-managed keys instead of AWS managed-keys (i.e. default keys used when there are no customer keys defined) in order to benefit from a more granular control over the queues data encryption/decryption process.",
     "dashboard_name": "Queues",
     "references": [
-      "https://www.cloudconformity.com/knowledge-base/aws/SQS/queue-encrypted-with-kms-customer-master-keys.html"
+        "https://www.cloudconformity.com/knowledge-base/aws/SQS/queue-encrypted-with-kms-customer-master-keys.html",
+        "https://aws.amazon.com/sqs/faqs/",
+        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html",
+        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html",
+        "http://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html"
     ],
     "display_path": "sqs.regions.id.queues.id",
     "path": "sqs.regions.id.queues.id",
     "associated_risks": [
         "Data leakage"
     ],
-    "conditions": [
-    ]
+    "conditions": []
 }

@@ -9,6 +9,9 @@
             "reference": "9.10"
         }
     ],
+    "associated_risks": [
+      "Deprecated configuration"
+    ],
     "references": [
         "https://docs.microsoft.com/en-us/azure/app-service/web-sites-configure#general-settings"
     ],

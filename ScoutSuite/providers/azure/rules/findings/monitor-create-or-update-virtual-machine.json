@@ -1,0 +1,28 @@
+{
+    "description": "Create Alert for \"Create or Update Virtual Machine\" Events\n",
+    "rationale": "Ensure that an Azure activity log alert is fired whenever \"Create Virtual Machine\" or \"Update Virtual Machine\" events are triggered in your Microsoft Azure cloud account. Activity log alerts get triggered when a new activity log event that matches the condition specified in the alert configuration occurs. For this conformity rule, the matched condition is `Whenever the Administrative Activity Log \"Create or Update Virtual Machine (Microsoft.Compute/virtualMachines)\" has \"any\" Event level, with \"any\" Status and Event initiated by \"any\"`",
+    "dashboard_name": "Activity log",
+    "path": "monitor.subscriptions.id.activity_logs.id",
+    "references": [
+        "https://www.cloudconformity.com/knowledge-base/azure/ActivityLog/create-update-virtual-machine.html",
+        "https://docs.microsoft.com/en-us/azure/azure-monitor/platform/alerts-activity-log",
+        "https://docs.microsoft.com/en-us/azure/azure-monitor/platform/alerts-log",
+        "https://docs.microsoft.com/en-us/azure/azure-monitor/platform/alerts-action-rules"
+    ],
+    "associated_risks": [
+        "Undetected incident"
+    ],
+    "conditions": [
+        "and",
+        [
+            "monitor.subscriptions.id.activity_logs.id.enabled",
+            "true",
+            ""
+        ],
+        [
+            "monitor.subscriptions.id.activity_logs.id.operation_name_list",
+            "containNoneOf",
+            "Microsoft.Compute/virtualMachines/write"
+        ]
+    ]
+}

@@ -2,13 +2,15 @@
     "description": "CloudFormation Stack Policy",
     "rationale": "Ensure your AWS CloudFormation stacks are using policies as a fail-safe mechanism in order to prevent accidental updates to stack resources. A CloudFormation stack policy is a JSON-based document that defines which actions can be performed on specified resources.\n\nThis rule can help you with the following compliance standards:\n\nAPRA\nMAS\nNIST 800-53 (Rev. 4)\nThis rule can help you work with the AWS Well-Architected Framework",
     "references": [
-        "https://www.cloudconformity.com/knowledge-base/aws/CloudFormation/cloudformation-stack-policy.html"
+        "https://www.cloudconformity.com/knowledge-base/aws/CloudFormation/cloudformation-stack-policy.html",
+        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-whatis-howdoesitwork.html",
+        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html",
+        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"
     ],
     "dashboard_name": "Stacks",
     "path": "cloudformation.regions.id.stacks.id",
     "associated_risks": [
-      "Architecture inconsistent"
+        "Architecture inconsistent"
     ],
-    "conditions": [
-    ]
+    "conditions": []
 }

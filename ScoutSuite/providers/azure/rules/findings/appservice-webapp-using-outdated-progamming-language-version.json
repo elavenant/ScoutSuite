@@ -2,6 +2,9 @@
     "description": "(WIP) Web App Not Using Latest Programming Language Version",
     "rationale": "",
     "remediation": "",
+    "associated_risks": [
+      "Deprecated configuration"
+    ],
     "compliance": [
         {
             "name": "CIS Microsoft Azure Foundations",

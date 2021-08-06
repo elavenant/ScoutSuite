@@ -1,8 +1,8 @@
 import json
-from ScoutSuite.output.dashboard_scripts.visualization import Visualization
+from ScoutSuite.output.dashboard_scripts.base.visualization import Visualization
 
 
-class AWSFindingsVisualization(Visualization):
+class FindingsVisualization(Visualization):
 
     def __init__(self, input, service_list):
         self.service_list = service_list
@@ -22,6 +22,7 @@ class AWSFindingsVisualization(Visualization):
                 "Scoring scale": {'text_wrap': True},
                 "Items": {'text_wrap': True},
                 "Risk associated": {'text_wrap': True},
+                "References": {'text_wrap': True},
                 "Macro filter button": {'bg_color': "#D5D5D5"}
             },
             "conditional_format": {
@@ -88,7 +89,6 @@ class AWSFindingsVisualization(Visualization):
             },
             "collapsed": {
                 "Name": {'level': 2, 'hidden': 1},
-                "References": {'level': 2, 'hidden': 1},
                 "Flagged items": {'level': 2, 'hidden': 1},
                 "Checked items": {'level': 2, 'hidden': 1},
                 "Path": {'level': 2, 'hidden': 1},
@@ -184,7 +184,7 @@ class AWSFindingsVisualization(Visualization):
         self.json = {"sheet_list": ["Controls"], "sheet_data": {"Controls": sheet_data}}
 
 
-# Allows to find resources by path and returns their "name" or "arn"
+# Allows to find resources by path and returns their "id" "name" or "arn"
 def find_rsc(json_file, rule):
     path = rule["display_path"].split('.') if "display_path" in rule.keys() else rule["path"].split('.')
     items = rule["items"]
@@ -198,7 +198,12 @@ def find_rsc(json_file, rule):
             item = item.split('.')
             temp = json_file["services"]
             for chain_id, chain in enumerate(path):
-                temp = temp[item[chain_id]]
+                if item[chain_id] in temp:
+                    temp = temp[item[chain_id]]
+                else:
+                    # to handle "." in pathname that we don't want to chain (ex: Microsoft.Security)
+                    temp = temp[item[chain_id]+ "." + item[chain_id + 1]]
+                    break
 
             keys = []
             for key in temp.keys():
@@ -211,7 +216,7 @@ def find_rsc(json_file, rule):
             if "ARN" in keys_upper:
                 rsc_arn.append(temp[keys[keys_upper.index("ARN")]])
             else:
-                rsc_arn.append("Impossible to retrieve the arn of the resource")
+                rsc_arn.append("Impossible to retrieve the identifier of the resource")
             if "ID" in keys_upper:
                 rsc_id.append(temp[keys[keys_upper.index("ID")]])
             else:

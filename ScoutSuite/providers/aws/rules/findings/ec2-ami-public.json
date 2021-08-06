@@ -3,10 +3,14 @@
     "rationale": "AMIs should never intentionally be made public. If they need to be shared this can be done with specific AWS accounts.",
     "references": [
         "https://aws.amazon.com/security/security-bulletins/reminder-about-safely-sharing-and-using-public-amis/",
-        "https://www.cloudconformity.com/knowledge-base/aws/EC2/app-tier-ami-publicly-shared.html"
+        "https://www.cloudconformity.com/knowledge-base/aws/EC2/app-tier-ami-publicly-shared.html",
+        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/building-shared-amis.html",
+        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sharingamis-intro.html",
+        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sharingamis-explicit.html",
+        "https://d0.awsstatic.com/whitepapers/compliance/AWS_CIS_Foundations_Benchmark.pdf"
     ],
     "associated_risks": [
-      "Resource compromission"
+        "Resource compromission"
     ],
     "remediation": "Quick win\n",
     "dashboard_name": "Images",

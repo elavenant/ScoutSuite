@@ -1,4 +1,4 @@
-from ScoutSuite.output.dashboard_scripts.visualization import Visualization
+from ScoutSuite.output.dashboard_scripts.base.visualization import Visualization
 from ScoutSuite.output.export_scripts import json_to_excel
 import json
 import sys

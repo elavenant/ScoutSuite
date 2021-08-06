@@ -1,0 +1,25 @@
+{
+    "description": "Enable Accelerated Networking for Virtual Machines",
+    "rationale": "Without accelerated networking, all network traffic in and out of the virtual machine must traverse the host and the virtual switch. The virtual switch provides all policy enforcement, such as network security groups, Access Control Lists (ACLs), isolation, and other network virtualized services. But with accelerated networking, network traffic arrives at the virtual machine's network interface (NIC) and then it is forwarded to the VM. All network policies that the virtual switch applies are now offloaded and implemented at the hardware level and this reduces the overall latency. Applying the policy to the hardware enables the NIC to forward network traffic directly to the virtual machine (VM), bypassing the host and the virtual switch, while maintaining the policy enforcement that was applied to the host. The benefits of accelerated networking have a real impact when communicating across Azure Virtual Networks (VNets) or connecting to on-premises, as this feature provides low latency and high throughput.",
+    "references": [
+        "https://www.cloudconformity.com/knowledge-base/azure/VirtualMachines/ssh-authentication-type.html",
+        "https://docs.microsoft.com/en-us/azure/virtual-machines/linux/ssh-from-windows",
+        "https://docs.microsoft.com/en-us/azure/virtual-machines/linux/create-ssh-keys-detailed",
+        "https://docs.microsoft.com/en-us/azure/virtual-machines/linux/tutorial-custom-images",
+        "https://docs.microsoft.com/en-us/azure/virtual-machines/linux/capture-image",
+        "https://docs.microsoft.com/en-us/azure/virtual-machines/extensions/agent-linux"
+    ],
+    "associated_risks": [
+        "Performance efficiency"
+    ],
+    "dashboard_name": "Instances",
+    "path": "virtualmachines.subscriptions.id.instances.id",
+    "conditions": [
+        "and",
+        [
+            "_GET_VALUE_AT_(network.subscriptions.id.network_interfaces._GET_VALUE_AT_(virtualmachines.subscriptions.id.instances.id.network_profile.network_interfaces.id.id).enable_accelerated_networking)",
+            "false",
+            ""
+        ]
+    ]
+}

@@ -1,0 +1,16 @@
+{
+    "description": "Enable Certificate Transparency",
+    "rationale": "Ensure that Certificate Transparency feature is enabled for all Azure Key Vault SSL/TLS certificates in order to adhere to web security best practices. Certificate Transparency (CT) is a new Internet standard that addresses the concerns about mis-issued certificates by making the Transport Layer Security (TLS) ecosystem publicly auditable. Without CT, as domain owner there is no way to be aware of certificates that are issued to your domain, unless you request it yourself. With Certificate Transparency, you can easily audit the quality of the certificates that the Certificate Authority (CA) issued and determine whether the certificate is compliant with the standards enforced by the Certification Authority Browser Forum, also known as CA/Browser Forum.",
+    "dashboard_name": "Key Vault",
+    "references": [
+        "https://www.cloudconformity.com/knowledge-base/azure/KeyVault/enable-certificate-transparency.html",
+        "https://docs.microsoft.com/en-us/azure/key-vault/general/about-keys-secrets-certificates",
+        "https://support.microsoft.com/en-us/help/4093260/introduction-of-ad-cs-certificate-transparency"
+    ],
+    "display_path": "keyvault.subscriptions.id.vaults.id",
+    "path": "keyvault.subscriptions.id.vaults.id",
+    "associated_risks": [
+        "Audit difficulty"
+    ],
+    "conditions": []
+}

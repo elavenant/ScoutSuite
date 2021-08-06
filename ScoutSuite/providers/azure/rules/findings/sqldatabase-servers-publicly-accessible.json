@@ -1,0 +1,18 @@
+{
+    "description": "Check for Publicly Accessible SQL Servers\n",
+    "rationale": "You can connect to your Azure SQL database servers either publicly, via public IP addresses or service endpoints, or privately, using a private endpoint. A private endpoint connection is associated with a private IP address available within an Azure virtual network. This virtual network usually contains the virtual machines (VMs) that can access your targeted private resource â€“ in this case, the SQL database server.",
+    "associated_risks": [
+        "Resource exposition",
+        "Resource compromission"
+    ],
+    "references": [
+        "https://www.cloudconformity.com/knowledge-base/azure/Sql/publicly-accessible-sql-servers.html",
+        "https://docs.microsoft.com/en-us/azure/private-link/private-link-overview",
+        "https://docs.microsoft.com/en-us/azure/private-link/create-private-endpoint-portal",
+        "https://docs.microsoft.com/en-us/azure/private-link/create-private-endpoint-cli"
+    ],
+    "dashboard_name": "SQL Servers",
+    "display_path": "sqldatabase.subscriptions.id.servers.id",
+    "path": "sqldatabase.subscriptions.id.servers.id",
+    "conditions": []
+}

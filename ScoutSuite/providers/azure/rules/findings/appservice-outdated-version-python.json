@@ -12,6 +12,9 @@
     "references": [
         "https://docs.microsoft.com/en-us/azure/app-service/web-sites-configure#general-settings"
     ],
+    "associated_risks": [
+      "Deprecated configuration"
+    ],
     "dashboard_name": "Web Apps",
     "path": "appservice.subscriptions.id.web_apps.id",
     "conditions": [

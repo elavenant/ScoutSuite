@@ -1,0 +1,26 @@
+{
+    "description": "Check for SSH Authentication Type",
+    "rationale": "Using SSH keys instead of common credentials (i.e. username and password) represents the best way to secure your Linux virtual machines against malicious activities such as brute-force attacks, by providing a level of authorization that can only be fulfilled by privileged users who have ownership to the private key associated with the public key created on these virtual machines. An attacker may be able to get access to the virtual machineâ€™s public key, but without the associated private key, he/she will be unable to gain shell access to the server.",
+    "references": [
+        "https://www.cloudconformity.com/knowledge-base/azure/VirtualMachines/ssh-authentication-type.html",
+        "https://docs.microsoft.com/en-us/azure/virtual-machines/linux/ssh-from-windows",
+        "https://docs.microsoft.com/en-us/azure/virtual-machines/linux/create-ssh-keys-detailed",
+        "https://docs.microsoft.com/en-us/azure/virtual-machines/linux/tutorial-custom-images",
+        "https://docs.microsoft.com/en-us/azure/virtual-machines/linux/capture-image",
+        "https://docs.microsoft.com/en-us/azure/virtual-machines/extensions/agent-linux"
+    ],
+    "associated_risks": [
+        "Resource compromission",
+        "Unauthorized access"
+    ],
+    "dashboard_name": "Instances",
+    "path": "virtualmachines.subscriptions.id.instances.id",
+    "conditions": [
+        "and",
+        [
+            "virtualmachines.subscriptions.id.instances.id.os_profile.linux_configuration.disable_password_authentication",
+            "false",
+            ""
+        ]
+    ]
+}

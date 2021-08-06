@@ -1,0 +1,18 @@
+{
+    "description": "Allow Shared Access Signature Tokens Over HTTPS Only",
+    "rationale": "Ensure that your Microsoft Azure Storage SAS tokens are configured to allow access requests over the HTTPS protocol only. A Shared Access Signature (SAS) is a URI that grants restricted access rights to your Azure Storage resources. A SAS token is the query string that includes all of the information required to authenticate the Shared Access Signature, as well as to specify the Azure Storage service and resource, the permissions required for access, and the time-frame for which the signature is valid.",
+    "references": [
+        "https://www.cloudconformity.com/knowledge-base/azure/StorageAccounts/shared-access-signature-tokens-are-allowed-only-over-https.html",
+        "https://docs.microsoft.com/en-us/rest/api/storageservices/delegate-access-with-shared-access-signature",
+        "https://docs.microsoft.com/en-us/rest/api/storageservices/create-account-sas?redirectedfrom=MSDN",
+        "https://azure.microsoft.com/mediahandler/files/resourcefiles/cis-microsoft-azure-foundations-security-benchmark/CIS_Microsoft_Azure_Foundations_Benchmark_v1.0.0.pdf"
+    ],
+    "associated_risks": [
+        "Unauthorized access",
+        "Data leakage"
+    ],
+    "dashboard_name": "Storage Accounts",
+    "display_path": "storageaccounts.subscriptions.id.storage_accounts.id",
+    "path": "storageaccounts.subscriptions.id.storage_accounts.id",
+    "conditions": []
+}

@@ -1,0 +1,29 @@
+{
+    "description": "Restrict Default Network Access for Azure Key Vaults",
+    "rationale": "Ensure that your Microsoft Azure Key Vaults are configured to deny access to traffic from all networks (including the public Internet). By restricting the public access to your Azure Key Vaults, you add an important layer of security, since the default action is to accept connections from clients on any network. To limit access to trusted networks and/or IP addresses, you must change the Key Vault firewall default action from \"Allow\" to \"Deny\" and configure the appropriate access.",
+    "dashboard_name": "Key Vault",
+    "display_path": "keyvault.subscriptions.id.vaults.id",
+    "path": "keyvault.subscriptions.id.vaults.id",
+    "associated_risks": [
+        "Resource compromission",
+        "Data leakage"
+    ],
+    "references": [
+        "https://www.cloudconformity.com/knowledge-base/azure/KeyVault/restrict-default-network-access.html",
+        "https://docs.microsoft.com/en-us/azure/key-vault/general/network-security",
+        "https://docs.microsoft.com/en-us/azure/key-vault/general/overview-vnet-service-endpoints"
+    ],
+    "conditions": [
+        "or",
+        [
+            "keyvault.subscriptions.id.vaults.id.properties.networkAcls.defaultAction",
+            "equal",
+            "Allow"
+        ],
+        [
+            "keyvault.subscriptions.id.vaults.id.properties.networkAcls.defaultAction",
+            "empty",
+            ""
+        ]
+    ]
+}

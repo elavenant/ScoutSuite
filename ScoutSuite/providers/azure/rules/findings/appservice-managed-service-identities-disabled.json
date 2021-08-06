@@ -12,6 +12,9 @@
     "references": [
         "https://docs.microsoft.com/en-gb/azure/app-service/app-service-web-tutorial-connect-msi"
     ],
+    "associated_risks": [
+      "Data leakage"
+    ],
     "dashboard_name": "Web Apps",
     "path": "appservice.subscriptions.id.web_apps.id",
     "conditions": [

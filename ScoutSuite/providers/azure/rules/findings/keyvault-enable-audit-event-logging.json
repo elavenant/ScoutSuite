@@ -1,0 +1,37 @@
+{
+    "description": "Enable AuditEvent Logging for Azure Key Vaults",
+    "rationale": "Ensure that AuditEvent logging is enabled for Azure Key Vault instances in order to record any interactions with your vaults for enhancing data protection and compliance within your Azure cloud account. With Azure Key Vault, you can safeguard encryption keys and application secrets like passwords using keys stored in Hardware Security Modules (HSMs).",
+    "dashboard_name": "Key Vault",
+    "references": [
+        "https://www.cloudconformity.com/knowledge-base/azure/KeyVault/enable-audit-event-logging-for-azure-key-vaults.html",
+        "https://docs.microsoft.com/en-us/azure/key-vault/key-vault-logging",
+        "https://azure.microsoft.com/mediahandler/files/resourcefiles/cis-microsoft-azure-foundations-security-benchmark/CIS_Microsoft_Azure_Foundations_Benchmark_v1.0.0.pdf"
+    ],
+    "display_path": "keyvault.subscriptions.id.vaults.id",
+    "path": "keyvault.subscriptions.id.vaults.id.diagnostic_settings.Logs.id",
+    "associated_risks": [
+        "Undetected incident",
+        "Data leakage"
+    ],
+    "conditions": [
+        "or",
+        [
+            "keyvault.subscriptions.id.vaults.id.diagnostic_settings",
+            "empty",
+            ""
+        ],
+        [
+            "and",
+            [
+                "keyvault.subscriptions.id.vaults.id.diagnostic_settings.Logs.id.category",
+                "equal",
+                "AuditEvent"
+            ],
+            [
+                "keyvault.subscriptions.id.vaults.id.diagnostic_settings.Logs.id.enabled",
+                "false",
+                ""
+            ]
+        ]
+    ]
+}

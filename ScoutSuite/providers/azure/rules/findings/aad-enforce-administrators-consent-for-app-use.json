@@ -1,0 +1,17 @@
+{
+    "description": "Enforce Administrators to Provide Consent for Apps Before Use",
+    "rationale": "Ensure that only Microsoft Azure Active Directory (AD) administrators are allowed to provide consent for third-party multi-tenant applications before users may use them by disabling \"Users can consent to apps accessing company data on their behalf\" feature.",
+    "dashboard_name": "Administration",
+    "path": "aad.users.id",
+    "references": [
+        "https://www.cloudconformity.com/knowledge-base/azure/ActiveDirectory/notify-all-admins-when-other-admins-reset-their-password.html",
+        "https://www.cloudconformity.com/knowledge-base/azure/ActiveDirectory/notify-users-on-password-resets.html",
+        "https://docs.microsoft.com/en-us/azure/active-directory/authentication/active-directory-passwords-faq",
+        "https://docs.microsoft.com/en-us/azure/active-directory/authentication/concept-sspr-howitworks",
+        "https://azure.microsoft.com/mediahandler/files/resourcefiles/cis-microsoft-azure-foundations-security-benchmark/CIS_Microsoft_Azure_Foundations_Benchmark_v1.0.0.pdf"
+    ],
+    "associated_risks": [
+        "Unauthorized access"
+    ],
+    "conditions": []
+}

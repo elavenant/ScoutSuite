@@ -3,10 +3,13 @@
     "rationale": "Snapshots should never be public, as this risks exposing sensitive data.",
     "references": [
         "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ShareSnapshot.html",
-        "https://www.cloudconformity.com/knowledge-base/aws/RDS/public-snapshots.html"
+        "https://www.cloudconformity.com/knowledge-base/aws/RDS/public-snapshots.html",
+        "https://aws.amazon.com/premiumsupport/trustedadvisor/best-practices/",
+        "https://aws.amazon.com/premiumsupport/knowledge-center/rds-snapshots-share-account/",
+        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ShareSnapshot.html"
     ],
     "associated_risks": [
-      "Data leakage"
+        "Data leakage"
     ],
     "dashboard_name": "Snapshots",
     "display_path": "rds.regions.id.vpcs.id.snapshots.id",

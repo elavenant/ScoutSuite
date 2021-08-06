@@ -4,13 +4,20 @@
     "dashboard_name": "Instances",
     "path": "ec2.regions.id.vpcs.id.instances.id",
     "references": [
-        "https://www.cloudconformity.com/knowledge-base/aws/EC2/ec2-instance-using-iam-roles.html"
+        "https://www.cloudconformity.com/knowledge-base/aws/EC2/ec2-instance-using-iam-roles.html",
+        "https://aws.amazon.com/ec2/faqs/",
+        "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html",
+        "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2.html",
+        "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2_instance-profiles.html",
+        "http://docs.aws.amazon.com/directoryservice/latest/admin-guide/role_ec2_full_access.html",
+        "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp.html",
+        "http://docs.aws.amazon.com/config/latest/developerguide/iamrole-permissions.html",
+        "https://awspolicygen.s3.amazonaws.com/policygen.html",
+        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"
     ],
     "associated_risks": [
-      "privilege escalation"
+        "privilege escalation"
     ],
-    "conditions": [
-    ],
-    "arg_names": [
-    ]
+    "conditions": [],
+    "arg_names": []
 }

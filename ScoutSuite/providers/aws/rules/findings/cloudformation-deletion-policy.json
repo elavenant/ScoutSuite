@@ -2,13 +2,17 @@
     "description": "CloudFormation Deletion Policy in Use",
     "rationale": "Ensure that a deletion policy, implemented with the DeletionPolicy attribute, is used for your Amazon CloudFormation stacks in order to preserve or backup AWS resources when the stacks are deleted. For example, you can retain an Amazon S3 bucket or take a snapshot of an EBS volume so that you can continue to utilize or modify these resource after you delete their stack.\n\nAWS CloudFormation DeletionPolicy attribute has 3 options:\n\n1. Retain - CloudFormation keeps the AWS resource without deleting it or its contents when the stack is deleted and this option can be applied to any resource type. When CloudFormation service completes the stack deletion, the stack state will be \"DELETE_COMPLETE\" but the resources that are retained will continue to exist within your AWS account and continue to collect charges until you terminate or delete those resources.\n\n2. Snapshot - when this option is used, CloudFormation creates snapshots of the AWS resources that support snapshots before deleting them. Just like the Retain option, the snapshots created with this option will continue to incur AWS charges until you delete them. The Snapshot option can be applied to the following AWS resources:\n\nEBS volumes\nRDS instances\nRDS database clusters\nRedshift clusters\nElastiCache cache clusters\nElastiCache Redis replication groups\n\n3. Delete - CloudFormation deletes the specified AWS resource and all its content if applicable during stack deletion. DeletionPolicy attribute set to Delete can be applied to any AWS resource type.",
     "references": [
-        "https://www.cloudconformity.com/knowledge-base/aws/CloudFormation/deletion-policy.html"
+        "https://www.cloudconformity.com/knowledge-base/aws/CloudFormation/deletion-policy.html",
+        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-whatis-howdoesitwork.html",
+        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacks.html",
+        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html",
+        "https://aws.amazon.com/premiumsupport/knowledge-center/delete-cf-stack-retain-resources/",
+        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-sample-templates.html"
     ],
     "dashboard_name": "Stacks",
     "path": "cloudformation.regions.id.stacks.id",
     "associated_risks": [
-      "Architecture inconsistent"
+        "Architecture inconsistent"
     ],
-    "conditions": [
-    ]
+    "conditions": []
 }

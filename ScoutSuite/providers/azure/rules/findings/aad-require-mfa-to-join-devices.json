@@ -1,0 +1,16 @@
+{
+    "description": "Require MFA to Join Devices",
+    "rationale": "Multi-Factor Authentication should be mandatory when users are adding devices to the Azure Active Directory. This ensures that no rogue devices can be registered to your directory by compromised user accounts. When \"Require Multi-Factor Auth to join devices\" is set to \"Yes\", users who are adding devices from the Internet are forced to use the second method of authentication before their devices can be successfully added to your directory.",
+    "dashboard_name": "Administration",
+    "path": "aad.users.id",
+    "references": [
+        "https://www.cloudconformity.com/knowledge-base/azure/ActiveDirectory/require-multi-factor-auth-to-join-devices.html",
+        "https://blogs.technet.microsoft.com/janketil/2016/02/29/azure-mfa-for-enrollment-in-intune-and-azure-ad-device-registration-explained/",
+        "https://docs.microsoft.com/en-us/azure/active-directory/devices/overview",
+        "https://azure.microsoft.com/mediahandler/files/resourcefiles/cis-microsoft-azure-foundations-security-benchmark/CIS_Microsoft_Azure_Foundations_Benchmark_v1.0.0.pdf"
+    ],
+    "associated_risks": [
+        "Unauthorized access"
+    ],
+    "conditions": []
+}

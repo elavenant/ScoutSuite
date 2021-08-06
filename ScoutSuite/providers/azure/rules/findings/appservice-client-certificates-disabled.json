@@ -9,6 +9,10 @@
             "reference": "9.4"
         }
     ],
+    "associated_risks": [
+      "Resource compromission",
+      "Unauthorized access"
+    ],
     "references": [
         "https://docs.microsoft.com/bs-latn-ba/azure/app-service/app-service-web-configure-tls-mutual-auth"
     ],

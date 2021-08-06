@@ -2,10 +2,13 @@
     "description": "Enable Amazon RDS Storage AutoScaling",
     "rationale": "Ensure that your Amazon Relational Database Service (RDS) instances have Storage AutoScaling feature enabled in order to provide dynamic scaling support for the database's storage based on your application needs. Enabling RDS Storage AutoScaling will allow the storage to increase once the configured threshold is exceeded. The following types of RDS support Storage Auto Scaling: Amazon RDS for MariaDB, Amazon RDS for MySQL, Amazon RDS for PostgreSQL, Amazon RDS for SQL Server and Amazon RDS for Oracle.",
     "references": [
-        "https://www.cloudconformity.com/knowledge-base/aws/RDS/enable-rds-storage-autoscaling.html"
+        "https://www.cloudconformity.com/knowledge-base/aws/RDS/enable-rds-storage-autoscaling.html",
+        "https://aws.amazon.com/rds/faqs/",
+        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html",
+        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Modifying.html"
     ],
     "associated_risks": [
-      "Performance efficiency"
+        "Performance efficiency"
     ],
     "dashboard_name": "Instances",
     "display_path": "rds.regions.id.vpcs.id.instances.id",
