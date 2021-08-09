@@ -148,6 +148,11 @@ class FindingsVisualization(Visualization):
                     else:
                         rsc = rsc_name
 
+                # If rule is not automated we still might need the macro button
+                if not finding_completed["automated"]:
+                    ''' preparing macro filter array '''
+                    macro_filter["enabled"] = True
+
                 if finding_completed["flagged_items"] > 0:
                     compliance = 0
                 if finding_completed["enabled"] and finding_completed["checked_items"] == 0:
