@@ -2,6 +2,7 @@ import json
 import sys
 import xlsxwriter
 
+
 def create_block(row, col, nb_rows, nb_cols, sheet, cell_format):
     
     cell_format_base_italic = cell_format["cell_format_base_italic"]
@@ -36,7 +37,8 @@ def create_block(row, col, nb_rows, nb_cols, sheet, cell_format):
             else:
                 sheet.write(row+i, col+k, "", cell_format_base)
     sheet.set_column(col+nb_cols-1, col+nb_cols-1, 50)
-        
+
+
 def header(data, nb_cols, sheet, cell_format):
     row = 1
     col = 1
@@ -50,6 +52,7 @@ def header(data, nb_cols, sheet, cell_format):
         sheet.write(x, col+1, text, cell_format["cell_format_base"])
         x+=1
     return nb_rows + 2    
+
 
 def body(data, row, nb_cols, sheet, cell_format):
     row_index = 1
@@ -81,7 +84,8 @@ def body(data, row, nb_cols, sheet, cell_format):
             row_index += 2
         col_index -= 1
     return row + row_index 
-            
+
+
 def create_dashboard(data, sheet, workbook):
     
     cell_format_base_italic = {
