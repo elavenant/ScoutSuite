@@ -11,7 +11,7 @@ class FindingsVisualization(Visualization):
         self.json = {}
 
     def build_json(self):
-        header_list = ["Id", "Name", "Description", "Rationale", "Category", "Sub category", "Risk associated", "Items", "Items list", "Level", "Compliance", "Scoring scale", "Macro filter selector", "Macro filter button", "References", "Remediation", "Checked items", "Flagged items", "Path"]
+        header_list = ["Id", "Name", "Description", "Rationale", "Category", "Sub category", "Risk associated", "Items", "Items list", "Level", "Compliance", "Compliance %", "Scoring scale", "Macro filter selector", "Macro filter button", "References", "Remediation", "Checked items", "Flagged items", "Path"]
         cell_format = {
             "header_style": {'bold': True, 'bg_color': '#60497A', 'font_color': 'white',
                              'align': 'center', 'valign': 'vcenter'},
@@ -85,7 +85,15 @@ class FindingsVisualization(Visualization):
                                    'font_color': '#5F5F5F',
                                    }
                     }
+                ],
+                "Compliance %": [
+                    {
+                        'type': 'data_bar',
+                        'bar_solid': True,
+                        "format": {'num_format': "0%"}
+                    }
                 ]
+
             },
             "collapsed": {
                 "Name": {'level': 2, 'hidden': 1},
@@ -148,6 +156,15 @@ class FindingsVisualization(Visualization):
                     else:
                         rsc = rsc_name
 
+                # Compliance %
+                compliance_percentage = -1
+                col_n = header_list.index("Compliance %")
+                nbr_lines = len(data_findings)
+                if finding_completed["checked_items"] > 0:
+                    compliance_percentage = int(100-100*finding_completed["flagged_items"]/finding_completed["checked_items"])
+                else:
+                    compliance_percentage = 100
+
                 # If rule is not automated we still might need the macro button
                 if not finding_completed["automated"]:
                     ''' preparing macro filter array '''
@@ -155,6 +172,8 @@ class FindingsVisualization(Visualization):
 
                 if finding_completed["flagged_items"] > 0:
                     compliance = 0
+                if not "enabled" in finding_completed.keys():
+                    finding_completed["enabled"] = False
                 if finding_completed["enabled"] and finding_completed["checked_items"] == 0:
                     compliance = -1
                 if not finding_completed["enabled"]:
@@ -166,6 +185,7 @@ class FindingsVisualization(Visualization):
                     "Description": finding_completed["description"],
                     "Rationale": finding_completed["rationale"],
                     "Compliance": compliance,
+                    "Compliance %": compliance_percentage,
                     "Category": service.upper(),
                     "Sub category": finding_completed["dashboard_name"],
                     "Checked items": finding_completed["checked_items"],

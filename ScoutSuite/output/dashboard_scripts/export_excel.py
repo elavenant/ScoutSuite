@@ -25,12 +25,11 @@ class Excel:
         # loading data in json
         self.load_json()
 
-        # Adding default dashboard
-        self.add_dashboard()
-
         # if full services wanted
         if not self.services:
             self.get_full_services()
+
+        self.json["services_list"] = self.services
 
     def load_json(self):
         with open(RESULTS_PATH + self.file_input) as f:
@@ -57,6 +56,9 @@ class Excel:
 
         self.build_json()
         self.merge_json()
+
+        # Adding default dashboard
+        self.add_dashboard()
 
         self.save()
 
@@ -92,6 +94,14 @@ class Excel:
 
         sheet_data["Provider information"] = {
             "Account": account
+        }
+
+        #Compliance/service
+        services = [x.upper() for x in self.json["services_list"]]
+        sheet_data["Alerts"] = {
+            "services": services,
+            "Level_id": self.json["sheet_data"]["Controls"]["header_list"].index("Level"),
+            "Compliance_id": self.json["sheet_data"]["Controls"]["header_list"].index("Compliance")
         }
 
         self.json["sheet_data"]["Dashboard"] = sheet_data
